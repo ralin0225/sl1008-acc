@@ -114,4 +114,4 @@ npm test
 
 ## 本地分支
 
-项目根目录原来没有 Git，已建立 `main` 基线和 `feature/residential-six-checks` 分支。`output/acc/viewer` 原本就是独立仓库，也切到同名分支，保留其此前未提交改动。根仓库不管理 Viewer 的内部文件；查看界面变化请进入 Viewer 仓库。依赖、模型和 PDF 原件、运行历史保留在磁盘，不纳入根仓库。
+项目根目录原来没有 Git，已建立 `main` 基线和 `feature/residential-six-checks` 分支。为了把整个项目发布到同一个 GitHub 仓库，两个分支都将 Viewer 源代码和展示快照作为普通目录纳入根仓库，不再依赖没有来源地址的 gitlink。`main` 保留九项检查及对应界面，功能分支包含十五项检查及 Class 展示。本地 `output/acc/viewer/.git` 与原有工作仍保留在磁盘，但其 Git/托管元数据不上传；推送和分支比较统一从项目根目录进行。依赖、IFC/PDF 原件和运行历史仍保留在本地。

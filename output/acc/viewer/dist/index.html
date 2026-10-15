@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#173b55"><title>IFC · 法规双向查询</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/controls/OrbitControls.js":"./vendor/OrbitControls.js"}}</script>
+</head>
+<body>
+<header class="header">
+  <div class="brand"><span class="brand-mark" aria-hidden="true">↔</span><div><h1><span data-i18n="构件与条款">构件与条款</span></h1><p><span data-i18n="IFC / IBC 2021 · 双向查询工作台">IFC / IBC 2021 · 双向查询工作台</span></p></div></div>
+  <label class="model-control"><span data-i18n="测试模型">测试模型</span><select id="model-select" aria-label="测试模型" data-i18n-aria-label="测试模型"></select></label>
+  <div class="header-tools"><div class="language-switch" role="group" aria-label="界面语言" data-i18n-aria-label="界面语言"><button type="button" data-language="zh" aria-pressed="true">中文</button><button type="button" data-language="en" aria-pressed="false">English</button></div><button id="export-links"><span data-i18n="导出关联">导出关联</span></button><button id="import-links"><span data-i18n="导入关联">导入关联</span></button><input id="import-file" type="file" accept=".json" hidden></div>
+</header>
+<main class="workbench">
+  <aside class="explorer panel">
+    <div class="panel-title"><h2><span data-i18n="模型构件">模型构件</span></h2><span id="element-total" class="count">—</span></div>
+    <input id="element-search" class="search" placeholder="名称、类型或 GUID" data-i18n-placeholder="名称、类型或 GUID" aria-label="搜索构件" data-i18n-aria-label="搜索构件">
+    <select id="type-filter" aria-label="构件类型" data-i18n-aria-label="构件类型"><option value="">全部 IFC 类型</option></select>
+    <div id="element-list" class="element-list" aria-label="构件列表" data-i18n-aria-label="构件列表"></div>
+    <div class="explorer-foot"><span class="dot rendered"></span><span data-i18n="有几何">有几何</span> <span class="dot absent"></span><span data-i18n="无可用几何">无可用几何</span><br><span data-i18n="列表可查询全部构件，包括空间及层级对象。">列表可查询全部构件，包括空间及层级对象。</span></div>
+  </aside>
+  <section class="model-panel">
+    <div class="scene-toolbar"><div><span class="eyebrow" data-i18n="模型视图">模型视图</span><span id="schema-label">IFC4</span></div><div class="view-buttons"><button id="fit" title="显示完整模型" data-i18n-title="显示完整模型"><span data-i18n="全景">全景</span></button><button id="focus" title="定位当前构件或关联构件" data-i18n-title="定位当前构件或关联构件"><span data-i18n="定位">定位</span></button><button id="isolate" aria-pressed="false"><span data-i18n="隔离关联">隔离关联</span></button><button id="spaces" aria-pressed="false"><span data-i18n="显示空间">显示空间</span></button><button id="ghost" aria-pressed="false"><span data-i18n="透视">透视</span></button></div></div>
+    <div class="viewport" id="viewport"><div id="loading" class="loading" data-i18n="正在读取真实 IFC 几何…">正在读取真实 IFC 几何…</div><div id="hover-label" class="hover-label" hidden></div><div class="view-hint"><span data-i18n="拖动旋转 · 滚轮缩放 · 右键平移 · 单击查询">拖动旋转 · 滚轮缩放 · 右键平移 · 单击查询</span></div><div class="axis-label">Z ↑ <span><span data-i18n="单位 m">单位 m</span></span></div></div>
+    <div class="selection-bar"><span class="selection-symbol">↔</span><div><b id="selection-title" data-i18n="选择模型中的构件">选择模型中的构件</b><p id="selection-subtitle" data-i18n="或点击右侧法规，查看对应构件">或点击右侧法规，查看对应构件</p></div><button id="clear-selection"><span data-i18n="清除">清除</span></button></div>
+    <section class="inspector"><div class="panel-title"><h2><span data-i18n="构件信息与测试">构件信息与测试</span></h2><span id="test-status" class="status">UNKNOWN</span></div><div id="element-detail"><p class="muted"><span data-i18n="点击构件查看 GUID、属性、关联依据和测试状态。">点击构件查看 GUID、属性、关联依据和测试状态。</span></p></div></section>
+  </section>
+  <aside class="regulations panel">
+    <div class="tabs" role="tablist" aria-label="工作视图" data-i18n-aria-label="工作视图"><button id="compliance-tab" role="tab" aria-selected="true" data-i18n="合规检查">合规检查</button><button id="candidates-tab" role="tab" aria-selected="false" data-i18n="候选法规关联">候选法规关联</button></div>
+    <fieldset class="chapter-filter"><legend data-i18n="选择 IBC 章节">选择 IBC 章节</legend><div id="chapter-options"></div></fieldset>
+    <section id="compliance-view" class="compliance-view">
+      <div id="compliance-summary" aria-live="polite"></div>
+      <div class="compliance-filters">
+        <label><span data-i18n="规则">规则</span><select id="check-rule"></select></label>
+        <label><span data-i18n="状态">状态</span><select id="check-status"><option value="" data-i18n="全部状态">全部状态</option><option>PASS</option><option>FAIL</option><option>NOT CHECKABLE</option><option value="NOT_APPLICABLE" data-i18n="不适用">不适用</option></select></label>
+        <label><span data-i18n="楼层">楼层</span><select id="check-storey"></select></label>
+        <label><span data-i18n="主题">主题</span><select id="check-topic"><option value="" data-i18n="全部主题">全部主题</option><option>Accessibility</option><option>Egress</option></select></label>
+      </div>
+      <label class="check-object-filter"><input id="check-current-object" type="checkbox"><span data-i18n="仅当前构件的检查">仅当前构件的检查</span></label>
+      <div class="check-actions"><button id="run-checks" data-i18n="执行所选规则">执行所选规则</button><button id="load-check-facts" data-i18n="载入审核事实">载入审核事实</button><input id="check-facts-file" type="file" accept=".json" hidden><button id="export-checks" data-i18n="导出检查报告">导出检查报告</button></div>
+      <p id="check-input-note" class="evidence"></p>
+      <label class="check-history"><span data-i18n="运行历史">运行历史</span><select id="check-history"></select></label>
+      <div id="check-run-note" class="evidence" aria-live="polite"></div>
+      <div id="check-list" class="check-list"></div>
+    </section>
+    <section id="candidate-view" class="candidate-view" hidden>
+    <div class="panel-title"><h2><span data-i18n="法规条目">法规条目</span></h2><span id="law-total" class="count">—</span></div>
+    <div class="scope-note"><span data-i18n="关联待审核，不代表构件已满足法规。">关联待审核，不代表构件已满足法规。</span></div>
+    <div class="tabs" role="tablist" aria-label="法规查询范围" data-i18n-aria-label="法规查询范围"><button id="related-tab" role="tab" aria-selected="false"><span data-i18n="构件相关">构件相关</span> <span id="related-count">0</span></button><button id="all-tab" role="tab" aria-selected="true"><span data-i18n="全部条目">全部条目</span></button></div>
+    <input id="law-search" class="search" placeholder="条款编号、关键词或原文" data-i18n-placeholder="条款编号、关键词或原文" aria-label="搜索法规" data-i18n-aria-label="搜索法规">
+    <div class="law-options"><label><input id="direct-only" type="checkbox"> <span data-i18n="仅直接候选映射">仅直接候选映射</span></label><span id="law-result-count"></span></div>
+    <div id="law-list" class="law-list"></div>
+    <div class="reg-foot"><span id="chapter-scope-summary" aria-live="polite"></span><br><span data-i18n="未关联条目仍可检索；其他章节及外部标准不在当前范围内。">未关联条目仍可检索；其他章节及外部标准不在当前范围内。</span></div>
+    </section>
+  </aside>
+</main>
+<dialog id="law-dialog"><div class="dialog-top"><span class="eyebrow"><span data-i18n="REGULATION / 原文证据">REGULATION / 原文证据</span></span><div class="language-switch" role="group" aria-label="界面语言" data-i18n-aria-label="界面语言"><button type="button" data-language="zh" aria-pressed="true">中文</button><button type="button" data-language="en" aria-pressed="false">English</button></div><button id="close-law" aria-label="关闭法规详情" data-i18n-aria-label="关闭法规详情">✕</button></div><div id="law-detail"></div></dialog>
+<div id="toast" role="status" hidden></div>
+<dialog id="check-dialog"><div class="dialog-top"><b>Why · What · Where</b><button id="close-check" aria-label="关闭检查详情" data-i18n-aria-label="关闭检查详情">✕</button></div><div id="check-detail"></div></dialog>
+<script type="module" src="app.js"></script>
+</body></html>
