@@ -427,6 +427,19 @@
               "facts",
               "observations"
             ]
+          },
+          "rule_class": {
+            "type": "integer",
+            "enum": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          "class_basis": {
+            "type": "string",
+            "minLength": 1
           }
         },
         "required": [
@@ -445,6 +458,25 @@
           "run"
         ],
         "allOf": [
+          {
+            "if": {
+              "properties": {
+                "what": {
+                  "properties": {
+                    "check_function": {
+                      "const": "residential_check"
+                    }
+                  }
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "rule_class",
+                "class_basis"
+              ]
+            }
+          },
           {
             "if": {
               "properties": {

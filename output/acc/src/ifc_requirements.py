@@ -41,7 +41,15 @@ def extract_requirements(path, model_id):
         guid = entity.GlobalId
         pset = ifcopenshell.util.element.get_psets(entity, psets_only=True, should_inherit=False).get("ACC_Accessibility", {})
         try:
-            container = ifcopenshell.util.element.get_container(entity)
+            container = ifcopenshell.util.element.get_container(entity, ifc_class="IfcBuildingStorey")
+            if container is None and entity.is_a("IfcSpace"):
+                parent, seen = entity, set()
+                while parent and parent.id() not in seen:
+                    seen.add(parent.id())
+                    if parent.is_a("IfcBuildingStorey"):
+                        container = parent
+                        break
+                    parent = ifcopenshell.util.element.get_aggregate(parent)
         except (AttributeError, RuntimeError):
             container = None
         props = {}
@@ -71,6 +79,17 @@ def extract_requirements(path, model_id):
         if entity.is_a("IfcDoor"):
             props["overall_width"] = observation(entity.OverallWidth, "length", guid, "native_ifc_attribute", "IfcDoor.OverallWidth", "project_length")
             props["overall_width"]["usable_as_clear_width"] = False
+        if entity.is_a("IfcStairFlight"):
+            for field, attribute in (("riser_height", "RiserHeight"), ("tread_depth", "TreadLength")):
+                value = getattr(entity, attribute, None)
+                valid = isinstance(value, (int, float)) and not isinstance(value, bool) and math.isfinite(value) and value > 0 and scale is not None
+                props[field] = observation(value * scale if valid else None, "length", guid,
+                    "native_ifc_attribute", "IfcStairFlight." + attribute, "m", valid=valid)
+                props[field]["semantics_verified"] = False
+            for field, attribute in (("riser_count", "NumberOfRisers"), ("tread_count", "NumberOfTreads")):
+                value = getattr(entity, attribute, None)
+                props[field] = observation(value, "integer", guid, "native_ifc_attribute", "IfcStairFlight." + attribute,
+                    "count", valid=type(value) is int and value > 0)
         location = None
         try:
             placement = getattr(entity, "ObjectPlacement", None)
@@ -82,7 +101,7 @@ def extract_requirements(path, model_id):
         except (ValueError, TypeError, AttributeError, RuntimeError):
             pass
         records.append({"global_id": guid, "ifc_type": entity.is_a(), "name": entity.Name,
-            "entity_types": [t for t in ("IfcDoor", "IfcRamp", "IfcStair", "IfcSpace", "IfcZone", "IfcRampFlight", "IfcStairFlight") if entity.is_a(t)],
+            "entity_types": [t for t in ("IfcDoor", "IfcWindow", "IfcRamp", "IfcStair", "IfcSpace", "IfcZone", "IfcRampFlight", "IfcStairFlight") if entity.is_a(t)],
             "step_id": entity.id(), "storey": {"global_id": container.GlobalId, "name": container.Name} if container else None,
             "location": location, "observations": props})
     guids = [r.GlobalId for r in model.by_type("IfcRoot")]

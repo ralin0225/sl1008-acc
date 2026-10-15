@@ -1,5 +1,11 @@
 # ACC 数据与规则基础
 
+## 二层住宅六项检查（feature/residential-six-checks）
+
+新增住宅踢面高度（Class 1）、踏步深度（Class 1）、梯段一致性（Class 2）、逃生开口尺寸（Class 2）、连续净空（Class 3）、疏散路径连续性（Class 3）。现有 9 项加上新增 6 项，共 15 项契约；本节以后的历史数量保留当时状态。
+
+规则 Class、适用条件、精确阈值、事实输入和运行方式见 [RESIDENTIAL_CHECKS.md](RESIDENTIAL_CHECKS.md)。新增规则保持 PENDING；净空检查读取完整审核曲面，路径检查读取完整审核图，不从任意 IFC 几何自动证明完整住宅合规性。
+
 所有本阶段代码及成果位于本目录。原 PDF 和法规结构/RDF 文件仅作为输入读取。
 
 ## 当前状态

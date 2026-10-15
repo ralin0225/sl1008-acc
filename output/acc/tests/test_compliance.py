@@ -17,7 +17,8 @@ from test_precheck import make_model
 from test_inventory import add_pset
 
 
-RULES = {r["rule_id"]: r for r in load_contracts()["rules"]}
+ALL_RULES = {r["rule_id"]: r for r in load_contracts()["rules"]}
+RULES = {rid: r for rid, r in ALL_RULES.items() if r["check_function"] != "residential_check"}
 LEGACY = {r["rule_id"]: r for r in read(ACC / "mvp_rule_catalog.json")["rules"]}
 
 
@@ -197,7 +198,7 @@ class ComplianceAcceptance(unittest.TestCase):
         paths = {"ifcopenhouse": "ifcopenhouse/IfcOpenHouse_IFC4.ifc", "buildingsmart-simple-scene": "buildingsmart-simple-scene/Building-Architecture_IFC4.ifc"}
         for mid, suffix in paths.items():
             report = run(ACC / "models" / suffix, mid, persist=False)
-            self.assertEqual(report["summary"]["NOT CHECKABLE"], 9)
+            self.assertEqual(report["summary"]["NOT CHECKABLE"], len(ALL_RULES))
             self.assertEqual(report["summary"]["PASS"], 0)
             self.assertFalse(report["is_synthetic"])
             if mid == "ifcopenhouse":

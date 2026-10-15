@@ -39,7 +39,9 @@
               "count",
               "topology",
               "information",
-              "dimension"
+              "dimension",
+              "derived",
+              "geometry"
             ]
           },
           "evidence": {
@@ -197,7 +199,8 @@
               "legacy_count",
               "legacy_connectivity",
               "required_information",
-              "clear_width"
+              "clear_width",
+              "residential_check"
             ]
           },
           "parameters": {
@@ -260,6 +263,19 @@
           },
           "full_clause_compliance_evaluated": {
             "const": false
+          },
+          "rule_class": {
+            "type": "integer",
+            "enum": [
+              1,
+              2,
+              3,
+              4
+            ]
+          },
+          "class_basis": {
+            "type": "string",
+            "minLength": 1
           }
         },
         "required": [
@@ -283,6 +299,25 @@
           "test_cases",
           "contract_sha256",
           "full_clause_compliance_evaluated"
+        ],
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "check_function": {
+                  "const": "residential_check"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "rule_class",
+                "class_basis",
+                "dsl_sources",
+                "supporting_sources"
+              ]
+            }
+          }
         ]
       }
     }

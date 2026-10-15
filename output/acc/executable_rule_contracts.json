@@ -2327,6 +2327,1383 @@
       },
       "legacy_definition_sha256": null,
       "contract_sha256": "1f8b5ca7e5466b4a903273076d7810b4992093c70176d69258fcef9b13727e3e"
+    },
+    {
+      "rule_id": "residential-riser-height",
+      "rule_version": "1.0.0",
+      "name": "住宅楼梯踢面高度",
+      "chapter": 10,
+      "topic": "Egress",
+      "kind": "dimension",
+      "rule_class": 1,
+      "class_basis": "Explicit, reviewed flight riser-height attribute; uniformity is checked separately.",
+      "class_framework": "Solihin & Eastman (2015), computational checking method",
+      "source_node_id": "ibc2021-ch10-list_item-0526",
+      "evidence": {
+        "text": "3. In Group R-3 occupancies; within dwelling units in Group R-2 occupancies; and in Group U occupancies that are accessory to a Group R- 3 occupancy or accessory to individual dwelling units in Group R-2 occupancies; the maximum riser height shall be 73/4 inches (197 mm); the minimum tread depth shall be 10 inches (254 mm); the minimum winder tread depth at the walkline shall be 10 inches (254 mm); and the minimum winder tread depth shall be 6 inches (152 mm). A nosing projection not less than 3/4 inch (19.1 mm) but not more than 11/4 inches (32 mm) shall be provided on stairways with solid risers where the tread depth is less than 11 inches (279 mm).",
+        "sha256": "b5e9758008606a17b43c87e4762b0944ba990212587f366dcff3b5d8d11765e4",
+        "source_pdf": "IBC2021_10MeansOfEngress.pdf",
+        "pdf_file": "IBC2021_Chapter10.pdf",
+        "fragments": [
+          {
+            "pdf_page_number": 22,
+            "source_pdf_page": 325,
+            "column": "right",
+            "bbox": [
+              343.78,
+              670.674,
+              550.841,
+              738.455
+            ],
+            "line_ids": [
+              "p022-b026-l008",
+              "p022-b026-l009",
+              "p022-b026-l010",
+              "p022-b026-l011",
+              "p022-b026-l012",
+              "p022-b026-l013",
+              "p022-b026-l014"
+            ],
+            "block_ids": [
+              "p022-b026"
+            ]
+          },
+          {
+            "pdf_page_number": 23,
+            "source_pdf_page": 326,
+            "column": "left",
+            "bbox": [
+              115.194,
+              69.725,
+              304.207,
+              168.822
+            ],
+            "line_ids": [
+              "p023-b003-l001",
+              "p023-b003-l002",
+              "p023-b003-l003",
+              "p023-b003-l004",
+              "p023-b003-l005",
+              "p023-b003-l006",
+              "p023-b003-l007",
+              "p023-b003-l008",
+              "p023-b003-l009"
+            ],
+            "block_ids": [
+              "p023-b003"
+            ]
+          }
+        ],
+        "context": {
+          "source_node_id": "ibc2021-ch10-list_item-0526",
+          "evidence_node_ids": [
+            "ibc2021-ch10-list_item-0526",
+            "ibc2021-ch10-exception-0523",
+            "ibc2021-1011.5.2",
+            "ibc2021-1011.5",
+            "ibc2021-1011",
+            "ibc2021-ch10-chapter-0001"
+          ],
+          "structural_and_numbered_ancestor_ids": [
+            "ibc2021-ch10-exception-0523",
+            "ibc2021-1011.5.2",
+            "ibc2021-1011.5",
+            "ibc2021-1011",
+            "ibc2021-ch10-chapter-0001"
+          ],
+          "reference_node_ids": [],
+          "exception_node_ids": [],
+          "unresolved_references": [],
+          "applicability_decided": false
+        },
+        "tables": []
+      },
+      "supporting_sources": [
+        {
+          "source_node_id": "ibc2021-1011.5.2",
+          "text": "1011.5.2 Riser height and tread depth. Stair riser heights shall be 7 inches (178 mm) maximum and 4 inches (102 mm) minimum. The riser height shall be measured vertically between the nosings of adjacent treads or between the stairway landing and the adjacent tread. Rectangular tread depths shall be 11 inches (279 mm) minimum measured horizontally between the vertical planes of the foremost projection of adjacent treads and at a right angle to the tread’s nosing. Winder treads shall have a minimum tread depth of 11 inches (279 mm) between the vertical planes of the foremost projection of adjacent treads at the intersections with the walkline and a minimum tread depth of 10 inches (254 mm) within the clear width of the stair.",
+          "sha256": "e393c807c70e7ea211631e8e87fab84179bca0a951ede50848d8b329b51832c6",
+          "fragments": [
+            {
+              "pdf_page_number": 22,
+              "source_pdf_page": 325,
+              "column": "right",
+              "bbox": [
+                319.777,
+                433.148,
+                550.845,
+                587.04
+              ],
+              "line_ids": [
+                "p022-b024-l001",
+                "p022-b024-l002",
+                "p022-b024-l003",
+                "p022-b024-l004",
+                "p022-b024-l005",
+                "p022-b024-l006",
+                "p022-b024-l007",
+                "p022-b024-l008",
+                "p022-b024-l009",
+                "p022-b024-l010",
+                "p022-b024-l011",
+                "p022-b024-l012",
+                "p022-b024-l013",
+                "p022-b024-l014"
+              ],
+              "block_ids": [
+                "p022-b024"
+              ]
+            }
+          ],
+          "context": {
+            "source_node_id": "ibc2021-1011.5.2",
+            "evidence_node_ids": [
+              "ibc2021-1011.5.2",
+              "ibc2021-1011.5",
+              "ibc2021-1011",
+              "ibc2021-ch10-chapter-0001",
+              "ibc2021-ch10-exception-0523"
+            ],
+            "structural_and_numbered_ancestor_ids": [
+              "ibc2021-1011.5",
+              "ibc2021-1011",
+              "ibc2021-ch10-chapter-0001"
+            ],
+            "reference_node_ids": [],
+            "exception_node_ids": [
+              "ibc2021-ch10-exception-0523"
+            ],
+            "unresolved_references": [],
+            "applicability_decided": false
+          }
+        }
+      ],
+      "dsl_sources": [
+        {
+          "dsl_rule_id": "dsl-ibc2021-ch10-list_item-0526-1",
+          "source_node_id": "ibc2021-ch10-list_item-0526",
+          "text": "In Group R-3 occupancies; within dwelling units in Group R-2 occupancies; and in Group U occupancies that are accessory to a Group R- 3 occupancy or accessory to individual dwelling units in Group R-2 occupancies; the maximum riser height shall be 73/4 inches (197 mm); the minimum tread depth shall be 10 inches (254 mm); the minimum winder tread depth at the walkline shall be 10 inches (254 mm); and the minimum winder tread depth shall be 6 inches (152 mm).",
+          "sha256": "70c01f647c0ff211d72a21b7255a4f42d9612920a1a625fafcca7e7007bea923",
+          "atom_sha256": "563b04c1a4904c7ed2438e8fd0965a643a9623ac8f86a258d4cb8a03f59dacd8"
+        }
+      ],
+      "applicability": {
+        "method": "evidence_bound_manual_review",
+        "scope": "reviewed_two_storey_single_dwelling_R3_IBC2021",
+        "exceptions": [],
+        "conditions": {
+          "code_basis": "IBC2021",
+          "occupancy": "R-3",
+          "stories_above_grade": 2
+        },
+        "note": "Confirm IBC versus IRC, jurisdiction, residential exceptions, complete targets and measurement definitions. Never infer legal occupancy from names or geometry."
+      },
+      "required_ifc_data": [
+        {
+          "field": "riser_height",
+          "data_type": "reviewed_structured_measurement",
+          "unit": "m",
+          "methods": [
+            "reviewed_manual_input",
+            "native_ifc_attribute"
+          ],
+          "entities": [
+            "IfcStairFlight"
+          ],
+          "independent_verification_required": true
+        }
+      ],
+      "target_selector": {
+        "entities": [
+          "IfcStairFlight"
+        ],
+        "method": "reviewed_GlobalId_set",
+        "inventory_kind": "residential-riser-height",
+        "complete_inventory_required": true,
+        "zero_targets_result": "NOT_CHECKABLE",
+        "candidate_selection_only": true
+      },
+      "check_function": "residential_check",
+      "parameters": {
+        "comparison": "scoped_constraints",
+        "thresholds": {
+          "maximum": 0.19685
+        },
+        "threshold_source": "IBC 2021 original inch/foot values converted exactly using 0.0254 m/in; no rounded-mm relaxation",
+        "tolerance": 0,
+        "tolerance_basis": "No regulatory relaxation; Decimal arithmetic for dimensional comparisons"
+      },
+      "result_scope": "RESIDENTIAL_RISER_HEIGHT_ONLY",
+      "full_clause_compliance_evaluated": false,
+      "review_status": "PENDING",
+      "review_evidence": [],
+      "execution_ready": false,
+      "execution_gate": "source_and_contract_hash_bound_scope_review",
+      "legacy_definition_sha256": null,
+      "test_cases": {
+        "file": "tests/test_residential.py",
+        "states": [
+          "PASS",
+          "FAIL",
+          "MISSING_DATA",
+          "NOT_APPLICABLE"
+        ]
+      },
+      "contract_sha256": "9e5145ef1935a879c182eeaf0dc8e3f52619e565d4ea76063dbbca915e1db8cf"
+    },
+    {
+      "rule_id": "residential-tread-depth",
+      "rule_version": "1.0.0",
+      "name": "住宅矩形踏步深度",
+      "chapter": 10,
+      "topic": "Egress",
+      "kind": "dimension",
+      "rule_class": 1,
+      "class_basis": "Explicit, reviewed rectangular tread-depth attribute; winders are outside this subcheck.",
+      "class_framework": "Solihin & Eastman (2015), computational checking method",
+      "source_node_id": "ibc2021-ch10-list_item-0526",
+      "evidence": {
+        "text": "3. In Group R-3 occupancies; within dwelling units in Group R-2 occupancies; and in Group U occupancies that are accessory to a Group R- 3 occupancy or accessory to individual dwelling units in Group R-2 occupancies; the maximum riser height shall be 73/4 inches (197 mm); the minimum tread depth shall be 10 inches (254 mm); the minimum winder tread depth at the walkline shall be 10 inches (254 mm); and the minimum winder tread depth shall be 6 inches (152 mm). A nosing projection not less than 3/4 inch (19.1 mm) but not more than 11/4 inches (32 mm) shall be provided on stairways with solid risers where the tread depth is less than 11 inches (279 mm).",
+        "sha256": "b5e9758008606a17b43c87e4762b0944ba990212587f366dcff3b5d8d11765e4",
+        "source_pdf": "IBC2021_10MeansOfEngress.pdf",
+        "pdf_file": "IBC2021_Chapter10.pdf",
+        "fragments": [
+          {
+            "pdf_page_number": 22,
+            "source_pdf_page": 325,
+            "column": "right",
+            "bbox": [
+              343.78,
+              670.674,
+              550.841,
+              738.455
+            ],
+            "line_ids": [
+              "p022-b026-l008",
+              "p022-b026-l009",
+              "p022-b026-l010",
+              "p022-b026-l011",
+              "p022-b026-l012",
+              "p022-b026-l013",
+              "p022-b026-l014"
+            ],
+            "block_ids": [
+              "p022-b026"
+            ]
+          },
+          {
+            "pdf_page_number": 23,
+            "source_pdf_page": 326,
+            "column": "left",
+            "bbox": [
+              115.194,
+              69.725,
+              304.207,
+              168.822
+            ],
+            "line_ids": [
+              "p023-b003-l001",
+              "p023-b003-l002",
+              "p023-b003-l003",
+              "p023-b003-l004",
+              "p023-b003-l005",
+              "p023-b003-l006",
+              "p023-b003-l007",
+              "p023-b003-l008",
+              "p023-b003-l009"
+            ],
+            "block_ids": [
+              "p023-b003"
+            ]
+          }
+        ],
+        "context": {
+          "source_node_id": "ibc2021-ch10-list_item-0526",
+          "evidence_node_ids": [
+            "ibc2021-ch10-list_item-0526",
+            "ibc2021-ch10-exception-0523",
+            "ibc2021-1011.5.2",
+            "ibc2021-1011.5",
+            "ibc2021-1011",
+            "ibc2021-ch10-chapter-0001"
+          ],
+          "structural_and_numbered_ancestor_ids": [
+            "ibc2021-ch10-exception-0523",
+            "ibc2021-1011.5.2",
+            "ibc2021-1011.5",
+            "ibc2021-1011",
+            "ibc2021-ch10-chapter-0001"
+          ],
+          "reference_node_ids": [],
+          "exception_node_ids": [],
+          "unresolved_references": [],
+          "applicability_decided": false
+        },
+        "tables": []
+      },
+      "supporting_sources": [
+        {
+          "source_node_id": "ibc2021-1011.5.2",
+          "text": "1011.5.2 Riser height and tread depth. Stair riser heights shall be 7 inches (178 mm) maximum and 4 inches (102 mm) minimum. The riser height shall be measured vertically between the nosings of adjacent treads or between the stairway landing and the adjacent tread. Rectangular tread depths shall be 11 inches (279 mm) minimum measured horizontally between the vertical planes of the foremost projection of adjacent treads and at a right angle to the tread’s nosing. Winder treads shall have a minimum tread depth of 11 inches (279 mm) between the vertical planes of the foremost projection of adjacent treads at the intersections with the walkline and a minimum tread depth of 10 inches (254 mm) within the clear width of the stair.",
+          "sha256": "e393c807c70e7ea211631e8e87fab84179bca0a951ede50848d8b329b51832c6",
+          "fragments": [
+            {
+              "pdf_page_number": 22,
+              "source_pdf_page": 325,
+              "column": "right",
+              "bbox": [
+                319.777,
+                433.148,
+                550.845,
+                587.04
+              ],
+              "line_ids": [
+                "p022-b024-l001",
+                "p022-b024-l002",
+                "p022-b024-l003",
+                "p022-b024-l004",
+                "p022-b024-l005",
+                "p022-b024-l006",
+                "p022-b024-l007",
+                "p022-b024-l008",
+                "p022-b024-l009",
+                "p022-b024-l010",
+                "p022-b024-l011",
+                "p022-b024-l012",
+                "p022-b024-l013",
+                "p022-b024-l014"
+              ],
+              "block_ids": [
+                "p022-b024"
+              ]
+            }
+          ],
+          "context": {
+            "source_node_id": "ibc2021-1011.5.2",
+            "evidence_node_ids": [
+              "ibc2021-1011.5.2",
+              "ibc2021-1011.5",
+              "ibc2021-1011",
+              "ibc2021-ch10-chapter-0001",
+              "ibc2021-ch10-exception-0523"
+            ],
+            "structural_and_numbered_ancestor_ids": [
+              "ibc2021-1011.5",
+              "ibc2021-1011",
+              "ibc2021-ch10-chapter-0001"
+            ],
+            "reference_node_ids": [],
+            "exception_node_ids": [
+              "ibc2021-ch10-exception-0523"
+            ],
+            "unresolved_references": [],
+            "applicability_decided": false
+          }
+        }
+      ],
+      "dsl_sources": [
+        {
+          "dsl_rule_id": "dsl-ibc2021-ch10-list_item-0526-1",
+          "source_node_id": "ibc2021-ch10-list_item-0526",
+          "text": "In Group R-3 occupancies; within dwelling units in Group R-2 occupancies; and in Group U occupancies that are accessory to a Group R- 3 occupancy or accessory to individual dwelling units in Group R-2 occupancies; the maximum riser height shall be 73/4 inches (197 mm); the minimum tread depth shall be 10 inches (254 mm); the minimum winder tread depth at the walkline shall be 10 inches (254 mm); and the minimum winder tread depth shall be 6 inches (152 mm).",
+          "sha256": "70c01f647c0ff211d72a21b7255a4f42d9612920a1a625fafcca7e7007bea923",
+          "atom_sha256": "563b04c1a4904c7ed2438e8fd0965a643a9623ac8f86a258d4cb8a03f59dacd8"
+        }
+      ],
+      "applicability": {
+        "method": "evidence_bound_manual_review",
+        "scope": "reviewed_two_storey_single_dwelling_R3_IBC2021",
+        "exceptions": [],
+        "conditions": {
+          "code_basis": "IBC2021",
+          "occupancy": "R-3",
+          "stories_above_grade": 2
+        },
+        "note": "Confirm IBC versus IRC, jurisdiction, residential exceptions, complete targets and measurement definitions. Never infer legal occupancy from names or geometry."
+      },
+      "required_ifc_data": [
+        {
+          "field": "tread_depth",
+          "data_type": "reviewed_structured_measurement",
+          "unit": "m",
+          "methods": [
+            "reviewed_manual_input",
+            "native_ifc_attribute"
+          ],
+          "entities": [
+            "IfcStairFlight"
+          ],
+          "independent_verification_required": true
+        }
+      ],
+      "target_selector": {
+        "entities": [
+          "IfcStairFlight"
+        ],
+        "method": "reviewed_GlobalId_set",
+        "inventory_kind": "residential-tread-depth",
+        "complete_inventory_required": true,
+        "zero_targets_result": "NOT_CHECKABLE",
+        "candidate_selection_only": true
+      },
+      "check_function": "residential_check",
+      "parameters": {
+        "comparison": "scoped_constraints",
+        "thresholds": {
+          "minimum": 0.254
+        },
+        "threshold_source": "IBC 2021 original inch/foot values converted exactly using 0.0254 m/in; no rounded-mm relaxation",
+        "tolerance": 0,
+        "tolerance_basis": "No regulatory relaxation; Decimal arithmetic for dimensional comparisons"
+      },
+      "result_scope": "RESIDENTIAL_TREAD_DEPTH_ONLY",
+      "full_clause_compliance_evaluated": false,
+      "review_status": "PENDING",
+      "review_evidence": [],
+      "execution_ready": false,
+      "execution_gate": "source_and_contract_hash_bound_scope_review",
+      "legacy_definition_sha256": null,
+      "test_cases": {
+        "file": "tests/test_residential.py",
+        "states": [
+          "PASS",
+          "FAIL",
+          "MISSING_DATA",
+          "NOT_APPLICABLE"
+        ]
+      },
+      "contract_sha256": "2fef27532e3787e642a1ce71121814a4d34361f58a821baa4c93f1b251fa0783"
+    },
+    {
+      "rule_id": "residential-stair-uniformity",
+      "rule_version": "1.0.0",
+      "name": "住宅梯段尺寸一致性",
+      "chapter": 10,
+      "topic": "Egress",
+      "kind": "derived",
+      "rule_class": 2,
+      "class_basis": "Derives max-minus-min separately from complete per-flight riser and tread inventories.",
+      "class_framework": "Solihin & Eastman (2015), computational checking method",
+      "source_node_id": "ibc2021-1011.5.4",
+      "evidence": {
+        "text": "1011.5.4 Dimensional uniformity. Stair treads and risers shall be of uniform size and shape. The tolerance between the largest and smallest riser height or between the largest and smallest tread depth shall not exceed 3/8 inch (9.5 mm) in any flight of stairs. The greatest winder tread depth at the walkline within any flight of stairs shall not exceed the smallest by more than 3/8 inch (9.5 mm).",
+        "sha256": "90a81695533c254c7db1368ce1aa64b5bdc4100f39a8c124208d7020c859a567",
+        "source_pdf": "IBC2021_10MeansOfEngress.pdf",
+        "pdf_file": "IBC2021_Chapter10.pdf",
+        "fragments": [
+          {
+            "pdf_page_number": 23,
+            "source_pdf_page": 326,
+            "column": "left",
+            "bbox": [
+              73.188,
+              391.779,
+              304.317,
+              470.495
+            ],
+            "line_ids": [
+              "p023-b007-l001",
+              "p023-b007-l002",
+              "p023-b007-l003",
+              "p023-b007-l004",
+              "p023-b007-l005",
+              "p023-b007-l006",
+              "p023-b007-l007"
+            ],
+            "block_ids": [
+              "p023-b007"
+            ]
+          }
+        ],
+        "context": {
+          "source_node_id": "ibc2021-1011.5.4",
+          "evidence_node_ids": [
+            "ibc2021-1011.5.4",
+            "ibc2021-1011.5",
+            "ibc2021-1011",
+            "ibc2021-ch10-chapter-0001",
+            "ibc2021-ch10-exception-0534"
+          ],
+          "structural_and_numbered_ancestor_ids": [
+            "ibc2021-1011.5",
+            "ibc2021-1011",
+            "ibc2021-ch10-chapter-0001"
+          ],
+          "reference_node_ids": [],
+          "exception_node_ids": [
+            "ibc2021-ch10-exception-0534"
+          ],
+          "unresolved_references": [],
+          "applicability_decided": false
+        },
+        "tables": []
+      },
+      "supporting_sources": [
+        {
+          "source_node_id": "ibc2021-1011.5.4.1",
+          "text": "1011.5.4.1 Nonuniform height risers. Where the bottom or top riser adjoins a sloping public way, walkway or driveway having an established grade and serving as a landing, the bottom or top riser is permitted to be reduced along the slope to less than 4 inches (102 mm) in height, with the variation in height of the bottom or top riser not to exceed one unit vertical in 12 units horizontal (8-percent slope) of stair width. The nosings or leading edges of treads at such nonuniform height risers shall have a distinctive marking stripe, different from any other nosing marking provided on the stair flight. The distinctive marking stripe shall be visible in descent of the stair and shall have a slipresistant surface. Marking stripes shall have a width of not less than 1 inch (25 mm) but not more than 2 inches (51 mm).",
+          "sha256": "6b56b52702e7b266bb815745514f920be4c24ef058f502ede5138b28893873d4",
+          "fragments": [
+            {
+              "pdf_page_number": 23,
+              "source_pdf_page": 326,
+              "column": "left",
+              "bbox": [
+                85.19,
+                596.747,
+                304.225,
+                728.806
+              ],
+              "line_ids": [
+                "p023-b010-l001",
+                "p023-b010-l002",
+                "p023-b010-l003",
+                "p023-b010-l004",
+                "p023-b010-l005",
+                "p023-b010-l006",
+                "p023-b010-l007",
+                "p023-b010-l008",
+                "p023-b010-l009",
+                "p023-b010-l010",
+                "p023-b010-l011",
+                "p023-b010-l012"
+              ],
+              "block_ids": [
+                "p023-b010"
+              ]
+            },
+            {
+              "pdf_page_number": 23,
+              "source_pdf_page": 326,
+              "column": "right",
+              "bbox": [
+                346.182,
+                69.663,
+                565.123,
+                113.677
+              ],
+              "line_ids": [
+                "p023-b011-l001",
+                "p023-b011-l002",
+                "p023-b011-l003",
+                "p023-b011-l004"
+              ],
+              "block_ids": [
+                "p023-b011"
+              ]
+            }
+          ],
+          "context": {
+            "source_node_id": "ibc2021-1011.5.4.1",
+            "evidence_node_ids": [
+              "ibc2021-1011.5.4.1",
+              "ibc2021-1011.5.4",
+              "ibc2021-1011.5",
+              "ibc2021-1011",
+              "ibc2021-ch10-chapter-0001"
+            ],
+            "structural_and_numbered_ancestor_ids": [
+              "ibc2021-1011.5.4",
+              "ibc2021-1011.5",
+              "ibc2021-1011",
+              "ibc2021-ch10-chapter-0001"
+            ],
+            "reference_node_ids": [],
+            "exception_node_ids": [],
+            "unresolved_references": [],
+            "applicability_decided": false
+          }
+        }
+      ],
+      "dsl_sources": [
+        {
+          "dsl_rule_id": "dsl-ibc2021-1011.5.4-2",
+          "source_node_id": "ibc2021-1011.5.4",
+          "text": "The tolerance between the largest and smallest riser height or between the largest and smallest tread depth shall not exceed 3/8 inch (9.5 mm) in any flight of stairs.",
+          "sha256": "87fef0608a3252c8a78adb4c494665c193101d0c47aad4f395f324a5526c3223",
+          "atom_sha256": "7bea74280b244580fb44060fbd29afb45e5e3ff4f4205d69407de9b4426cf433"
+        }
+      ],
+      "applicability": {
+        "method": "evidence_bound_manual_review",
+        "scope": "reviewed_two_storey_single_dwelling_R3_IBC2021",
+        "exceptions": [
+          "ibc2021-ch10-exception-0534"
+        ],
+        "conditions": {
+          "code_basis": "IBC2021",
+          "occupancy": "R-3",
+          "stories_above_grade": 2
+        },
+        "note": "Confirm IBC versus IRC, jurisdiction, residential exceptions, complete targets and measurement definitions. Never infer legal occupancy from names or geometry."
+      },
+      "required_ifc_data": [
+        {
+          "field": "flight_dimensions",
+          "data_type": "reviewed_structured_measurement",
+          "unit": "m",
+          "methods": [
+            "reviewed_manual_input"
+          ],
+          "entities": [
+            "IfcStairFlight"
+          ],
+          "independent_verification_required": true
+        }
+      ],
+      "target_selector": {
+        "entities": [
+          "IfcStairFlight"
+        ],
+        "method": "reviewed_GlobalId_set",
+        "inventory_kind": "residential-stair-uniformity",
+        "complete_inventory_required": true,
+        "zero_targets_result": "NOT_CHECKABLE",
+        "candidate_selection_only": true
+      },
+      "check_function": "residential_check",
+      "parameters": {
+        "comparison": "scoped_constraints",
+        "thresholds": {
+          "maximum_variation": 0.009525
+        },
+        "threshold_source": "IBC 2021 original inch/foot values converted exactly using 0.0254 m/in; no rounded-mm relaxation",
+        "tolerance": 0,
+        "tolerance_basis": "No regulatory relaxation; Decimal arithmetic for dimensional comparisons"
+      },
+      "result_scope": "RESIDENTIAL_STAIR_UNIFORMITY_ONLY",
+      "full_clause_compliance_evaluated": false,
+      "review_status": "PENDING",
+      "review_evidence": [],
+      "execution_ready": false,
+      "execution_gate": "source_and_contract_hash_bound_scope_review",
+      "legacy_definition_sha256": null,
+      "test_cases": {
+        "file": "tests/test_residential.py",
+        "states": [
+          "PASS",
+          "FAIL",
+          "MISSING_DATA",
+          "NOT_APPLICABLE"
+        ]
+      },
+      "contract_sha256": "21d1bb0152d8223cc0c602feff0b34ec0934dd7afdd6f2c979615c8ae91778f1"
+    },
+    {
+      "rule_id": "residential-escape-opening",
+      "rule_version": "1.0.0",
+      "name": "住宅应急逃生开口尺寸",
+      "chapter": 10,
+      "topic": "Egress",
+      "kind": "derived",
+      "rule_class": 2,
+      "class_basis": "Derives rectangular NET clear area; independently checks width, height and sill height.",
+      "class_framework": "Solihin & Eastman (2015), computational checking method",
+      "source_node_id": "ibc2021-1031.3.1",
+      "evidence": {
+        "text": "1031.3.1 Minimum size. Emergency escape and rescue openings shall have a minimum net clear opening of 5.7 square feet (0.53 m2).",
+        "sha256": "7d3053cdfbe4e765aea54239b83b012b137fbdbf60713e7a7d0c3a17c63593c9",
+        "source_pdf": "IBC2021_10MeansOfEngress.pdf",
+        "pdf_file": "IBC2021_Chapter10.pdf",
+        "fragments": [
+          {
+            "pdf_page_number": 50,
+            "source_pdf_page": 353,
+            "column": "right",
+            "bbox": [
+              319.795,
+              536.696,
+              550.786,
+              569.87
+            ],
+            "line_ids": [
+              "p050-b020-l001",
+              "p050-b020-l002",
+              "p050-b020-l003"
+            ],
+            "block_ids": [
+              "p050-b020"
+            ]
+          }
+        ],
+        "context": {
+          "source_node_id": "ibc2021-1031.3.1",
+          "evidence_node_ids": [
+            "ibc2021-1031.3.1",
+            "ibc2021-1031.3",
+            "ibc2021-1031",
+            "ibc2021-ch10-chapter-0001",
+            "ibc2021-ch10-exception-1182"
+          ],
+          "structural_and_numbered_ancestor_ids": [
+            "ibc2021-1031.3",
+            "ibc2021-1031",
+            "ibc2021-ch10-chapter-0001"
+          ],
+          "reference_node_ids": [],
+          "exception_node_ids": [
+            "ibc2021-ch10-exception-1182"
+          ],
+          "unresolved_references": [],
+          "applicability_decided": false
+        },
+        "tables": []
+      },
+      "supporting_sources": [
+        {
+          "source_node_id": "ibc2021-1031.2",
+          "text": "1031.2 Where required. In addition to the means of egress required by this chapter, emergency escape and rescue openings shall be provided in the following occupancies:",
+          "sha256": "7d18e9683ba5ee6348aed807eafafa9427d9b3b0dd2d799aa245bfdb9ca83c02",
+          "fragments": [
+            {
+              "pdf_page_number": 50,
+              "source_pdf_page": 353,
+              "column": "left",
+              "bbox": [
+                46.836,
+                525.724,
+                289.885,
+                558.701
+              ],
+              "line_ids": [
+                "p050-b011-l001",
+                "p050-b011-l002",
+                "p050-b011-l003"
+              ],
+              "block_ids": [
+                "p050-b011"
+              ]
+            }
+          ],
+          "context": {
+            "source_node_id": "ibc2021-1031.2",
+            "evidence_node_ids": [
+              "ibc2021-1031.2",
+              "ibc2021-1031",
+              "ibc2021-ch10-chapter-0001",
+              "ibc2021-ch10-exception-1171"
+            ],
+            "structural_and_numbered_ancestor_ids": [
+              "ibc2021-1031",
+              "ibc2021-ch10-chapter-0001"
+            ],
+            "reference_node_ids": [],
+            "exception_node_ids": [
+              "ibc2021-ch10-exception-1171"
+            ],
+            "unresolved_references": [],
+            "applicability_decided": false
+          }
+        },
+        {
+          "source_node_id": "ibc2021-1031.3.2",
+          "text": "1031.3.2 Minimum dimensions. The minimum net clear opening height dimension shall be 24 inches (610 mm). The minimum net clear opening width dimension shall be 20 inches (508 mm). The net clear opening dimensions shall be the result of normal operation of the opening.",
+          "sha256": "bfbb11aaca08b40c122c5fd9ba3fa5a81de811348340dcaa66214b834359bda8",
+          "fragments": [
+            {
+              "pdf_page_number": 50,
+              "source_pdf_page": 353,
+              "column": "right",
+              "bbox": [
+                319.799,
+                610.804,
+                550.892,
+                665.853
+              ],
+              "line_ids": [
+                "p050-b022-l001",
+                "p050-b022-l002",
+                "p050-b022-l003",
+                "p050-b022-l004",
+                "p050-b022-l005"
+              ],
+              "block_ids": [
+                "p050-b022"
+              ]
+            }
+          ],
+          "context": {
+            "source_node_id": "ibc2021-1031.3.2",
+            "evidence_node_ids": [
+              "ibc2021-1031.3.2",
+              "ibc2021-1031.3",
+              "ibc2021-1031",
+              "ibc2021-ch10-chapter-0001"
+            ],
+            "structural_and_numbered_ancestor_ids": [
+              "ibc2021-1031.3",
+              "ibc2021-1031",
+              "ibc2021-ch10-chapter-0001"
+            ],
+            "reference_node_ids": [],
+            "exception_node_ids": [],
+            "unresolved_references": [],
+            "applicability_decided": false
+          }
+        },
+        {
+          "source_node_id": "ibc2021-1031.3.3",
+          "text": "1031.3.3 Maximum height from floor. Emergency escape and rescue openings shall have the bottom of the clear opening not greater than 44 inches (1118 mm) measured from the floor.",
+          "sha256": "cb8bf4b213e2807f309037eed873fbd54db74fc370c4ef00106804939d5ea337",
+          "fragments": [
+            {
+              "pdf_page_number": 51,
+              "source_pdf_page": 354,
+              "column": "left",
+              "bbox": [
+                73.199,
+                69.725,
+                304.196,
+                113.738
+              ],
+              "line_ids": [
+                "p051-b003-l001",
+                "p051-b003-l002",
+                "p051-b003-l003",
+                "p051-b003-l004"
+              ],
+              "block_ids": [
+                "p051-b003"
+              ]
+            }
+          ],
+          "context": {
+            "source_node_id": "ibc2021-1031.3.3",
+            "evidence_node_ids": [
+              "ibc2021-1031.3.3",
+              "ibc2021-1031.3",
+              "ibc2021-1031",
+              "ibc2021-ch10-chapter-0001"
+            ],
+            "structural_and_numbered_ancestor_ids": [
+              "ibc2021-1031.3",
+              "ibc2021-1031",
+              "ibc2021-ch10-chapter-0001"
+            ],
+            "reference_node_ids": [],
+            "exception_node_ids": [],
+            "unresolved_references": [],
+            "applicability_decided": false
+          }
+        },
+        {
+          "source_node_id": "ibc2021-ch10-exception-1182",
+          "text": "Exception: The minimum net clear opening for gradefloor emergency escape and rescue openings shall be 5 square feet (0.46 m2).",
+          "sha256": "a308945ca6fac77eb266df97122f2b6e8113a305d96544ffc0ecec3234850f9d",
+          "fragments": [
+            {
+              "pdf_page_number": 50,
+              "source_pdf_page": 353,
+              "column": "right",
+              "bbox": [
+                331.803,
+                573.844,
+                550.754,
+                606.83
+              ],
+              "line_ids": [
+                "p050-b021-l001",
+                "p050-b021-l002",
+                "p050-b021-l003"
+              ],
+              "block_ids": [
+                "p050-b021"
+              ]
+            }
+          ],
+          "context": {
+            "source_node_id": "ibc2021-ch10-exception-1182",
+            "evidence_node_ids": [
+              "ibc2021-ch10-exception-1182",
+              "ibc2021-1031.3.1",
+              "ibc2021-1031.3",
+              "ibc2021-1031",
+              "ibc2021-ch10-chapter-0001"
+            ],
+            "structural_and_numbered_ancestor_ids": [
+              "ibc2021-1031.3.1",
+              "ibc2021-1031.3",
+              "ibc2021-1031",
+              "ibc2021-ch10-chapter-0001"
+            ],
+            "reference_node_ids": [],
+            "exception_node_ids": [],
+            "unresolved_references": [],
+            "applicability_decided": false
+          }
+        }
+      ],
+      "dsl_sources": [
+        {
+          "dsl_rule_id": "dsl-ibc2021-1031.3.1-1",
+          "source_node_id": "ibc2021-1031.3.1",
+          "text": "Emergency escape and rescue openings shall have a minimum net clear opening of 5.7 square feet (0.53 m2).",
+          "sha256": "5bf14c3717fc9205db4a704d080db1727d847964acfa17cabfa3d4e93f167aac",
+          "atom_sha256": "94ccec1218f414a86b0f5bc8ee5511110e47195eacd0b6ba4b31435d45e5475a"
+        },
+        {
+          "dsl_rule_id": "dsl-ibc2021-ch10-exception-1182-1",
+          "source_node_id": "ibc2021-ch10-exception-1182",
+          "text": "The minimum net clear opening for gradefloor emergency escape and rescue openings shall be 5 square feet (0.46 m2).",
+          "sha256": "8c7c5a008a087dd98448a97ad22cf98cf10cc12b042c3095b2b75dd69d87d768",
+          "atom_sha256": "a42aa2e79941b4680d2f8402464547515115165a000f04e2260e4dc02eb4b2fb"
+        },
+        {
+          "dsl_rule_id": "dsl-ibc2021-1031.3.2-1",
+          "source_node_id": "ibc2021-1031.3.2",
+          "text": "The minimum net clear opening height dimension shall be 24 inches (610 mm).",
+          "sha256": "1bc9513503f15cc7ef36cf5a5e1a8d69c969edf4a2fa46f9927755826696d75b",
+          "atom_sha256": "93ecd685065c0c0a6801d669244ebe499fca0b471147d0d4909a7aa2dd636878"
+        },
+        {
+          "dsl_rule_id": "dsl-ibc2021-1031.3.2-2",
+          "source_node_id": "ibc2021-1031.3.2",
+          "text": "The minimum net clear opening width dimension shall be 20 inches (508 mm).",
+          "sha256": "62de00e12e82fc110c4e65a6753781d8de17aede6717fad47695e5818b7d29e1",
+          "atom_sha256": "17eaa1f23c9e0fb24534a696a15c1a7ff4094d636ac64b7f49b81a4e94e7dd3f"
+        },
+        {
+          "dsl_rule_id": "dsl-ibc2021-1031.3.3-1",
+          "source_node_id": "ibc2021-1031.3.3",
+          "text": "Emergency escape and rescue openings shall have the bottom of the clear opening not greater than 44 inches (1118 mm) measured from the floor.",
+          "sha256": "78ecfca59b3f40508c84617609f742ed912f34fa99177b4bfe05a55c28066a76",
+          "atom_sha256": "f0f42538c33d0415933db9e6c66bc070a2a97e017bc7c15cd2edde9f533d8ed2"
+        }
+      ],
+      "applicability": {
+        "method": "evidence_bound_manual_review",
+        "scope": "reviewed_two_storey_single_dwelling_R3_IBC2021",
+        "exceptions": [
+          "ibc2021-ch10-exception-1182"
+        ],
+        "conditions": {
+          "code_basis": "IBC2021",
+          "occupancy": "R-3",
+          "stories_above_grade": 2
+        },
+        "note": "Confirm IBC versus IRC, jurisdiction, residential exceptions, complete targets and measurement definitions. Never infer legal occupancy from names or geometry."
+      },
+      "required_ifc_data": [
+        {
+          "field": "opening_dimensions",
+          "data_type": "reviewed_structured_measurement",
+          "unit": "m",
+          "methods": [
+            "reviewed_manual_input"
+          ],
+          "entities": [
+            "IfcWindow",
+            "IfcDoor"
+          ],
+          "independent_verification_required": true
+        }
+      ],
+      "target_selector": {
+        "entities": [
+          "IfcWindow",
+          "IfcDoor"
+        ],
+        "method": "reviewed_GlobalId_set",
+        "inventory_kind": "residential-escape-opening",
+        "complete_inventory_required": true,
+        "zero_targets_result": "NOT_CHECKABLE",
+        "candidate_selection_only": true
+      },
+      "check_function": "residential_check",
+      "parameters": {
+        "comparison": "scoped_constraints",
+        "thresholds": {
+          "minimum_width": 0.508,
+          "minimum_height": 0.6096,
+          "minimum_area": 0.529547328,
+          "grade_floor_minimum_area": 0.4645152,
+          "maximum_sill_height": 1.1176
+        },
+        "threshold_source": "IBC 2021 original inch/foot values converted exactly using 0.0254 m/in; no rounded-mm relaxation",
+        "tolerance": 0,
+        "tolerance_basis": "No regulatory relaxation; Decimal arithmetic for dimensional comparisons"
+      },
+      "result_scope": "RESIDENTIAL_ESCAPE_OPENING_ONLY",
+      "full_clause_compliance_evaluated": false,
+      "review_status": "PENDING",
+      "review_evidence": [],
+      "execution_ready": false,
+      "execution_gate": "source_and_contract_hash_bound_scope_review",
+      "legacy_definition_sha256": null,
+      "test_cases": {
+        "file": "tests/test_residential.py",
+        "states": [
+          "PASS",
+          "FAIL",
+          "MISSING_DATA",
+          "NOT_APPLICABLE"
+        ]
+      },
+      "contract_sha256": "3a75a5d01586bd07c830f7a028f122d776d4189cdb1075765e6c8ebf4601729c"
+    },
+    {
+      "rule_id": "residential-stair-headroom",
+      "rule_version": "1.0.0",
+      "name": "住宅楼梯连续净空",
+      "chapter": 10,
+      "topic": "Egress",
+      "kind": "geometry",
+      "rule_class": 3,
+      "class_basis": "Uses a complete reviewed piecewise-planar clearance surface over the full required domain; point samples and bounding boxes cannot establish PASS.",
+      "class_framework": "Solihin & Eastman (2015), computational checking method",
+      "source_node_id": "ibc2021-1011.3",
+      "evidence": {
+        "text": "1011.3 Headroom. Stairways shall have a headroom clearance of not less than 80 inches (2032 mm) measured vertically from a line connecting the edge of the nosings. Such headroom shall be continuous above the stairway to the point where the line intersects the landing below, one tread depth beyond the bottom riser. The minimum clearance shall be maintained the full width of the stairway and landing.",
+        "sha256": "75cf60990fb3a2767a34b85c61b2cb71c19a3421874b77d54b30c1d715659892",
+        "source_pdf": "IBC2021_10MeansOfEngress.pdf",
+        "pdf_file": "IBC2021_Chapter10.pdf",
+        "fragments": [
+          {
+            "pdf_page_number": 22,
+            "source_pdf_page": 325,
+            "column": "left",
+            "bbox": [
+              46.778,
+              692.613,
+              289.767,
+              736.627
+            ],
+            "line_ids": [
+              "p022-b016-l001",
+              "p022-b016-l002",
+              "p022-b016-l003",
+              "p022-b016-l004"
+            ],
+            "block_ids": [
+              "p022-b016"
+            ]
+          },
+          {
+            "pdf_page_number": 22,
+            "source_pdf_page": 325,
+            "column": "right",
+            "bbox": [
+              307.78,
+              69.556,
+              550.811,
+              102.653
+            ],
+            "line_ids": [
+              "p022-b017-l001",
+              "p022-b017-l002",
+              "p022-b017-l003"
+            ],
+            "block_ids": [
+              "p022-b017"
+            ]
+          }
+        ],
+        "context": {
+          "source_node_id": "ibc2021-1011.3",
+          "evidence_node_ids": [
+            "ibc2021-1011.3",
+            "ibc2021-1011",
+            "ibc2021-ch10-chapter-0001",
+            "ibc2021-ch10-exception-0516"
+          ],
+          "structural_and_numbered_ancestor_ids": [
+            "ibc2021-1011",
+            "ibc2021-ch10-chapter-0001"
+          ],
+          "reference_node_ids": [],
+          "exception_node_ids": [
+            "ibc2021-ch10-exception-0516"
+          ],
+          "unresolved_references": [],
+          "applicability_decided": false
+        },
+        "tables": []
+      },
+      "supporting_sources": [
+        {
+          "source_node_id": "ibc2021-ch10-list_item-0518",
+          "text": "2. In Group R-3 occupancies; within dwelling units in Group R-2 occupancies; and in Group U occupancies that are accessory to a Group R-3 occupancy or accessory to individual dwelling units in Group R-2 occupancies; where the nosings of treads at the side of a flight extend under the edge of a floor opening through which the stair passes, the floor opening shall be allowed to project horizontally into the required headroom not more than 43/4 inches (121 mm).",
+          "sha256": "f42a0aa87e8af8402faefc1e53953816f46f90fa72d14bad071dc310a2d777b0",
+          "fragments": [
+            {
+              "pdf_page_number": 22,
+              "source_pdf_page": 325,
+              "column": "right",
+              "bbox": [
+                331.794,
+                160.381,
+                550.838,
+                272.135
+              ],
+              "line_ids": [
+                "p022-b020-l001",
+                "p022-b020-l002",
+                "p022-b020-l003",
+                "p022-b020-l004",
+                "p022-b020-l005",
+                "p022-b020-l006",
+                "p022-b020-l007",
+                "p022-b020-l008",
+                "p022-b020-l009",
+                "p022-b020-l010",
+                "p022-b020-l011"
+              ],
+              "block_ids": [
+                "p022-b020"
+              ]
+            }
+          ],
+          "context": {
+            "source_node_id": "ibc2021-ch10-list_item-0518",
+            "evidence_node_ids": [
+              "ibc2021-ch10-list_item-0518",
+              "ibc2021-ch10-exception-0516",
+              "ibc2021-1011.3",
+              "ibc2021-1011",
+              "ibc2021-ch10-chapter-0001"
+            ],
+            "structural_and_numbered_ancestor_ids": [
+              "ibc2021-ch10-exception-0516",
+              "ibc2021-1011.3",
+              "ibc2021-1011",
+              "ibc2021-ch10-chapter-0001"
+            ],
+            "reference_node_ids": [],
+            "exception_node_ids": [],
+            "unresolved_references": [],
+            "applicability_decided": false
+          }
+        }
+      ],
+      "dsl_sources": [
+        {
+          "dsl_rule_id": "dsl-ibc2021-1011.3-1",
+          "source_node_id": "ibc2021-1011.3",
+          "text": "Stairways shall have a headroom clearance of not less than 80 inches (2032 mm) measured vertically from a line connecting the edge of the nosings.",
+          "sha256": "b05e7d11f74c0a8620a70a83d34cf41cf3d1439c0201b48a1d97ccda76bc6c44",
+          "atom_sha256": "d56edf39b7f6b68b1de4b1422e5244f5b30bb7165be921434b3d718e6e577aa8"
+        },
+        {
+          "dsl_rule_id": "dsl-ibc2021-1011.3-2",
+          "source_node_id": "ibc2021-1011.3",
+          "text": "Such headroom shall be continuous above the stairway to the point where the line intersects the landing below, one tread depth beyond the bottom riser.",
+          "sha256": "94a184b84c66e1286f745fc20b90d91983c298b919e143c3a891401a2b23cb35",
+          "atom_sha256": "14e369acc3cc590f1f0bfcafb7076919f93d5fce83eccaf40e2b31450ca4427a"
+        },
+        {
+          "dsl_rule_id": "dsl-ibc2021-1011.3-3",
+          "source_node_id": "ibc2021-1011.3",
+          "text": "The minimum clearance shall be maintained the full width of the stairway and landing.",
+          "sha256": "87b93065ab01680d6d376ff63e12552b9133a1098fae30cad1709736358c64dd",
+          "atom_sha256": "166d9f3d3a42849a7612223414500700088fa55887c21da20f5aca6b4b98b0de"
+        }
+      ],
+      "applicability": {
+        "method": "evidence_bound_manual_review",
+        "scope": "reviewed_two_storey_single_dwelling_R3_IBC2021",
+        "exceptions": [
+          "ibc2021-ch10-exception-0516"
+        ],
+        "conditions": {
+          "code_basis": "IBC2021",
+          "occupancy": "R-3",
+          "stories_above_grade": 2
+        },
+        "note": "Confirm IBC versus IRC, jurisdiction, residential exceptions, complete targets and measurement definitions. Never infer legal occupancy from names or geometry."
+      },
+      "required_ifc_data": [
+        {
+          "field": "clearance_surface",
+          "data_type": "reviewed_structured_measurement",
+          "unit": null,
+          "methods": [
+            "reviewed_manual_input"
+          ],
+          "entities": [
+            "IfcStairFlight"
+          ],
+          "independent_verification_required": true
+        }
+      ],
+      "target_selector": {
+        "entities": [
+          "IfcStairFlight"
+        ],
+        "method": "reviewed_GlobalId_set",
+        "inventory_kind": "residential-stair-headroom",
+        "complete_inventory_required": true,
+        "zero_targets_result": "NOT_CHECKABLE",
+        "candidate_selection_only": true
+      },
+      "check_function": "residential_check",
+      "parameters": {
+        "comparison": "scoped_constraints",
+        "thresholds": {
+          "minimum_headroom": 2.032
+        },
+        "threshold_source": "IBC 2021 original inch/foot values converted exactly using 0.0254 m/in; no rounded-mm relaxation",
+        "tolerance": 0,
+        "tolerance_basis": "No regulatory relaxation; Decimal arithmetic for dimensional comparisons"
+      },
+      "result_scope": "RESIDENTIAL_STAIR_HEADROOM_ONLY",
+      "full_clause_compliance_evaluated": false,
+      "review_status": "PENDING",
+      "review_evidence": [],
+      "execution_ready": false,
+      "execution_gate": "source_and_contract_hash_bound_scope_review",
+      "legacy_definition_sha256": null,
+      "test_cases": {
+        "file": "tests/test_residential.py",
+        "states": [
+          "PASS",
+          "FAIL",
+          "MISSING_DATA",
+          "NOT_APPLICABLE"
+        ]
+      },
+      "contract_sha256": "94b8c4d7fa1e59f13a63a465c74167d2e5df225c8da860771b9d2cc1d616e4da"
+    },
+    {
+      "rule_id": "residential-egress-continuity",
+      "rule_version": "1.0.0",
+      "name": "住宅疏散路径连续性",
+      "chapter": 10,
+      "topic": "Egress",
+      "kind": "topology",
+      "rule_class": 3,
+      "class_basis": "Builds a directed, reviewed traversability graph and finds a witness path from every scoped room to a verified exit; not an accessible-route or complete egress certification.",
+      "class_framework": "Solihin & Eastman (2015), computational checking method",
+      "source_node_id": "ibc2021-1003.6",
+      "evidence": {
+        "text": "1003.6 Means of egress continuity. The path of egress travel along a means of egress shall not be interrupted by a building element other than a means of egress component as specified in this chapter. Obstructions shall not be placed in the minimum width or required capacity of a means of egress component except projections permitted by this chapter. The minimum width or required capacity of a means of egress system shall not be diminished along the path of egress travel.",
+        "sha256": "ddaef0ba68c710ca7af67520d51339d724e161aaaebe5f1d6f8c7a0d8af5f345",
+        "source_pdf": "IBC2021_10MeansOfEngress.pdf",
+        "pdf_file": "IBC2021_Chapter10.pdf",
+        "fragments": [
+          {
+            "pdf_page_number": 2,
+            "source_pdf_page": 305,
+            "column": "right",
+            "bbox": [
+              307.787,
+              223.692,
+              550.92,
+              322.645
+            ],
+            "line_ids": [
+              "p002-b017-l001",
+              "p002-b017-l002",
+              "p002-b017-l003",
+              "p002-b017-l004",
+              "p002-b017-l005",
+              "p002-b017-l006",
+              "p002-b017-l007",
+              "p002-b017-l008",
+              "p002-b017-l009"
+            ],
+            "block_ids": [
+              "p002-b017"
+            ]
+          }
+        ],
+        "context": {
+          "source_node_id": "ibc2021-1003.6",
+          "evidence_node_ids": [
+            "ibc2021-1003.6",
+            "ibc2021-1003",
+            "ibc2021-ch10-chapter-0001"
+          ],
+          "structural_and_numbered_ancestor_ids": [
+            "ibc2021-1003",
+            "ibc2021-ch10-chapter-0001"
+          ],
+          "reference_node_ids": [],
+          "exception_node_ids": [],
+          "unresolved_references": [],
+          "applicability_decided": false
+        },
+        "tables": []
+      },
+      "supporting_sources": [],
+      "dsl_sources": [
+        {
+          "dsl_rule_id": "dsl-ibc2021-1003.6-1",
+          "source_node_id": "ibc2021-1003.6",
+          "text": "The path of egress travel along a means of egress shall not be interrupted by a building element other than a means of egress component as specified in this chapter.",
+          "sha256": "d5ceb9f5b80d6768a6beafde02b3559c04b985499215d139b4f8257fb2145f40",
+          "atom_sha256": "d52c063d244da2ba3af32ca08d3b75f0ede42db5d73b020d1f085ea121ddaaa1"
+        }
+      ],
+      "applicability": {
+        "method": "evidence_bound_manual_review",
+        "scope": "reviewed_two_storey_single_dwelling_R3_IBC2021",
+        "exceptions": [],
+        "conditions": {
+          "code_basis": "IBC2021",
+          "occupancy": "R-3",
+          "stories_above_grade": 2
+        },
+        "note": "Confirm IBC versus IRC, jurisdiction, residential exceptions, complete targets and measurement definitions. Never infer legal occupancy from names or geometry."
+      },
+      "required_ifc_data": [
+        {
+          "field": "route_graph",
+          "data_type": "reviewed_structured_measurement",
+          "unit": null,
+          "methods": [
+            "reviewed_manual_input"
+          ],
+          "entities": [
+            "IfcSpace",
+            "IfcDoor",
+            "IfcStair",
+            "IfcStairFlight",
+            "IfcRamp",
+            "IfcRampFlight"
+          ],
+          "independent_verification_required": true
+        }
+      ],
+      "target_selector": {
+        "entities": [
+          "IfcSpace",
+          "IfcDoor",
+          "IfcStair",
+          "IfcStairFlight",
+          "IfcRamp",
+          "IfcRampFlight"
+        ],
+        "method": "reviewed_GlobalId_set",
+        "inventory_kind": "residential-egress-continuity",
+        "complete_inventory_required": true,
+        "zero_targets_result": "NOT_CHECKABLE",
+        "candidate_selection_only": true
+      },
+      "check_function": "residential_check",
+      "parameters": {
+        "comparison": "scoped_constraints",
+        "thresholds": {},
+        "threshold_source": "IBC 2021 original inch/foot values converted exactly using 0.0254 m/in; no rounded-mm relaxation",
+        "tolerance": 0,
+        "tolerance_basis": "No regulatory relaxation; Decimal arithmetic for dimensional comparisons"
+      },
+      "result_scope": "RESIDENTIAL_EGRESS_CONTINUITY_ONLY",
+      "full_clause_compliance_evaluated": false,
+      "review_status": "PENDING",
+      "review_evidence": [],
+      "execution_ready": false,
+      "execution_gate": "source_and_contract_hash_bound_scope_review",
+      "legacy_definition_sha256": null,
+      "test_cases": {
+        "file": "tests/test_residential.py",
+        "states": [
+          "PASS",
+          "FAIL",
+          "MISSING_DATA",
+          "NOT_APPLICABLE"
+        ]
+      },
+      "contract_sha256": "9f13eae91a915dd6fa46c541f0bfb4ab999c132347e0cbb466482f0424083852"
     }
   ],
   "note": "Draft contracts; no model or legal approval inferred. Project information results are not IBC compliance."

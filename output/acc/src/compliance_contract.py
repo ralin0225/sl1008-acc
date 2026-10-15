@@ -83,6 +83,8 @@ def build_contracts():
                 "prohibited_substitutes": ["IfcDoor.OverallWidth", "bounding_box_width"]})
         contract["contract_sha256"] = digest(contract)
         rules.append(contract)
+    from residential_contracts import build_residential_contracts
+    rules.extend(build_residential_contracts(ACC, laws, digest))
     return {"schema_version": VERSION, "rules": rules, "note": "Draft contracts; no model or legal approval inferred. Project information results are not IBC compliance."}
 
 
@@ -100,5 +102,6 @@ def load_contracts():
 
 
 if __name__ == "__main__":
-    save(ACC / "executable_rule_contracts.json", build_contracts())
-    print("Built 9 draft contracts; execution gates retained")
+    catalog = build_contracts()
+    save(ACC / "executable_rule_contracts.json", catalog)
+    print(f"Built {len(catalog['rules'])} draft contracts; execution gates retained")

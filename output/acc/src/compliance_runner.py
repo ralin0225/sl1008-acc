@@ -11,6 +11,7 @@ from pathlib import Path
 from acc_engine import evaluate
 from compliance_contract import ACC, VERSION, digest, read, save, load_contracts, build_contracts
 from ifc_requirements import extract_requirements
+from residential_checks import residential_check
 
 REASONS = {"MISSING_DATA", "INVALID_DATA", "INVALID_GEOMETRY", "UNKNOWN_APPLICABILITY",
            "INCOMPLETE_TARGET_SET", "UNRESOLVED_REFERENCE", "REQUIRES_MANUAL_REVIEW", "CHECK_ERROR"}
@@ -121,7 +122,7 @@ def clear_width_check(rule, facts, targets, catalog, extraction):
 
 
 FUNCTIONS.update(legacy_count=legacy_check, legacy_connectivity=legacy_check,
-                 required_information=information_check, clear_width=clear_width_check)
+                 required_information=information_check, clear_width=clear_width_check, residential_check=residential_check)
 
 
 def dispatch(rule, facts, extraction, catalog):
@@ -186,7 +187,7 @@ def run(model_path, model_id, inputs=None, rule_ids=None, persist=True):
     catalog = read(ACC / "mvp_rule_catalog.json")
     run_id = uuid.uuid4().hex
     timestamp = datetime.now(timezone.utc).isoformat()
-    checker_hash = digest({p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in (Path(__file__), ACC / "src/acc_engine.py", ACC / "src/ifc_requirements.py", ACC / "src/compliance_contract.py")})
+    checker_hash = digest({p.name: hashlib.sha256(p.read_bytes()).hexdigest() for p in (Path(__file__), ACC / "src/acc_engine.py", ACC / "src/ifc_requirements.py", ACC / "src/compliance_contract.py", ACC / "src/residential_checks.py", ACC / "src/residential_contracts.py")})
     input_hash = digest({"facts": inputs, "model_sha256": extraction["model_sha256"], "contracts": [r["contract_sha256"] for r in rules], "checker_sha256": checker_hash})
     results = []
     for rule in rules:
@@ -213,9 +214,11 @@ def run(model_path, model_id, inputs=None, rule_ids=None, persist=True):
                 "explanation": answer["reason"], "calculation": answer,
                 "remediation": "Review the source requirement and the measured scoped result, correct the IFC manually and rerun." if internal == "FAIL" else "Provide or review the missing evidence and rerun." if display == "NOT CHECKABLE" else None}
             results.append({"instance_id": f"{rule['rule_id']}:{number}", "rule_id": rule["rule_id"], "rule_version": rule["rule_version"],
+                **({"rule_class": rule["rule_class"], "class_basis": rule["class_basis"]} if "rule_class" in rule else {}),
                 "chapter": rule["chapter"], "topic": rule["topic"], "status": internal, "display_status": display,
                 "result_scope": rule["result_scope"], "full_clause_compliance_evaluated": False,
-                "why": {"source_node_id": rule["source_node_id"], "rule_version": rule["rule_version"], "contract_sha256": rule["contract_sha256"], **rule["evidence"], "applicability": rule["applicability"]},
+                "why": {"source_node_id": rule["source_node_id"], "rule_version": rule["rule_version"], "contract_sha256": rule["contract_sha256"], **rule["evidence"], "applicability": rule["applicability"],
+                        **({"supporting_sources": rule["supporting_sources"], "dsl_sources": rule["dsl_sources"]} if "dsl_sources" in rule else {})},
                 "what": what, "where": where,
                 "run": {"run_id": run_id, "timestamp": timestamp, "checker_version": VERSION, "checker_sha256": checker_hash,
                     "input_sha256": input_hash, "review": facts.get("scope_review") if isinstance(facts, dict) else None,

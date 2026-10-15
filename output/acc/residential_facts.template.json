@@ -1,0 +1,231 @@
+{
+  "schema_version": "1.0.0",
+  "is_synthetic": false,
+  "facts_by_rule": {
+    "residential-riser-height": {
+      "model_evidence": {
+        "ifc_sha256": "71c9466bf02306be58d45b77d738541a0e7410767960b5eed1cf85737dfa34c9",
+        "ifc_path": "D:\\00_SL1008\\output\\acc\\models\\ifcopenhouse\\IfcOpenHouse_IFC4.ifc"
+      },
+      "applicable": null,
+      "applicability_evidence": null,
+      "scope_id": null,
+      "inventory_complete": false,
+      "inventory_kind": "residential-riser-height",
+      "target_global_ids": [],
+      "residential_profile": {
+        "code_basis": null,
+        "occupancy": null,
+        "stories_above_grade": null,
+        "single_dwelling": null,
+        "evidence": null
+      },
+      "exceptions_reviewed": false,
+      "measurements": {},
+      "measurement_semantics_verified": false,
+      "measurement_definition_evidence": null,
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "b5e9758008606a17b43c87e4762b0944ba990212587f366dcff3b5d8d11765e4",
+        "contract_sha256": "9e5145ef1935a879c182eeaf0dc8e3f52619e565d4ea76063dbbca915e1db8cf",
+        "definition_sha256": null,
+        "facts_sha256": "2a0c536e7340bec223c3891e29058e174b0797f12f515ee65465bd14eb40f03b"
+      }
+    },
+    "residential-tread-depth": {
+      "model_evidence": {
+        "ifc_sha256": "71c9466bf02306be58d45b77d738541a0e7410767960b5eed1cf85737dfa34c9",
+        "ifc_path": "D:\\00_SL1008\\output\\acc\\models\\ifcopenhouse\\IfcOpenHouse_IFC4.ifc"
+      },
+      "applicable": null,
+      "applicability_evidence": null,
+      "scope_id": null,
+      "inventory_complete": false,
+      "inventory_kind": "residential-tread-depth",
+      "target_global_ids": [],
+      "residential_profile": {
+        "code_basis": null,
+        "occupancy": null,
+        "stories_above_grade": null,
+        "single_dwelling": null,
+        "evidence": null
+      },
+      "exceptions_reviewed": false,
+      "measurements": {},
+      "measurement_semantics_verified": false,
+      "measurement_definition_evidence": null,
+      "rectangular_treads_verified": false,
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "b5e9758008606a17b43c87e4762b0944ba990212587f366dcff3b5d8d11765e4",
+        "contract_sha256": "2fef27532e3787e642a1ce71121814a4d34361f58a821baa4c93f1b251fa0783",
+        "definition_sha256": null,
+        "facts_sha256": "b4c43e6ee4db824ada814fd5a82f3abeb499d01b1ce029ed339c8119b6b1f06f"
+      }
+    },
+    "residential-stair-uniformity": {
+      "model_evidence": {
+        "ifc_sha256": "71c9466bf02306be58d45b77d738541a0e7410767960b5eed1cf85737dfa34c9",
+        "ifc_path": "D:\\00_SL1008\\output\\acc\\models\\ifcopenhouse\\IfcOpenHouse_IFC4.ifc"
+      },
+      "applicable": null,
+      "applicability_evidence": null,
+      "scope_id": null,
+      "inventory_complete": false,
+      "inventory_kind": "residential-stair-uniformity",
+      "target_global_ids": [],
+      "residential_profile": {
+        "code_basis": null,
+        "occupancy": null,
+        "stories_above_grade": null,
+        "single_dwelling": null,
+        "evidence": null
+      },
+      "exceptions_reviewed": false,
+      "flight_dimensions": {
+        "inventory_complete": false,
+        "evidence": null,
+        "rectangular_treads_verified": false,
+        "riser_count": null,
+        "tread_count": null,
+        "riser_heights": [],
+        "tread_depths": []
+      },
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "90a81695533c254c7db1368ce1aa64b5bdc4100f39a8c124208d7020c859a567",
+        "contract_sha256": "21d1bb0152d8223cc0c602feff0b34ec0934dd7afdd6f2c979615c8ae91778f1",
+        "definition_sha256": null,
+        "facts_sha256": "ffc094e7993bb453315af0ea987532a47deb229846af9fa49ee125dbfcf43849"
+      }
+    },
+    "residential-escape-opening": {
+      "model_evidence": {
+        "ifc_sha256": "71c9466bf02306be58d45b77d738541a0e7410767960b5eed1cf85737dfa34c9",
+        "ifc_path": "D:\\00_SL1008\\output\\acc\\models\\ifcopenhouse\\IfcOpenHouse_IFC4.ifc"
+      },
+      "applicable": null,
+      "applicability_evidence": null,
+      "scope_id": null,
+      "inventory_complete": false,
+      "inventory_kind": "residential-escape-opening",
+      "target_global_ids": [],
+      "residential_profile": {
+        "code_basis": null,
+        "occupancy": null,
+        "stories_above_grade": null,
+        "single_dwelling": null,
+        "evidence": null
+      },
+      "exceptions_reviewed": false,
+      "opening_dimensions": {
+        "shape": null,
+        "normal_operation_verified": false,
+        "evidence": null,
+        "branch": null,
+        "branch_evidence": null,
+        "net_width": null,
+        "net_height": null,
+        "sill_height": null
+      },
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "7d3053cdfbe4e765aea54239b83b012b137fbdbf60713e7a7d0c3a17c63593c9",
+        "contract_sha256": "3a75a5d01586bd07c830f7a028f122d776d4189cdb1075765e6c8ebf4601729c",
+        "definition_sha256": null,
+        "facts_sha256": "7d8e25633b7ff0da62cbd3eec15083968df0d9677f6826e95b6d49b646b89fd1"
+      }
+    },
+    "residential-stair-headroom": {
+      "model_evidence": {
+        "ifc_sha256": "71c9466bf02306be58d45b77d738541a0e7410767960b5eed1cf85737dfa34c9",
+        "ifc_path": "D:\\00_SL1008\\output\\acc\\models\\ifcopenhouse\\IfcOpenHouse_IFC4.ifc"
+      },
+      "applicable": null,
+      "applicability_evidence": null,
+      "scope_id": null,
+      "inventory_complete": false,
+      "inventory_kind": "residential-stair-headroom",
+      "target_global_ids": [],
+      "residential_profile": {
+        "code_basis": null,
+        "occupancy": null,
+        "stories_above_grade": null,
+        "single_dwelling": null,
+        "evidence": null
+      },
+      "exceptions_reviewed": false,
+      "clearance_surface": {
+        "representation": "piecewise_planar_full_clearance",
+        "full_surface_verified": false,
+        "scope_covers_required_headroom": false,
+        "evidence": null,
+        "source_global_id": null,
+        "geometry_source_global_ids": [],
+        "unit": null,
+        "x": [],
+        "y": [],
+        "nosing_z": [],
+        "overhead_z": [],
+        "domain_length": null,
+        "domain_width": null
+      },
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "75cf60990fb3a2767a34b85c61b2cb71c19a3421874b77d54b30c1d715659892",
+        "contract_sha256": "94b8c4d7fa1e59f13a63a465c74167d2e5df225c8da860771b9d2cc1d616e4da",
+        "definition_sha256": null,
+        "facts_sha256": "6f226e36ea8c3b9b39d39d020ad2f2a94297f5be0fc29569aefc9f715bc5e3e7"
+      }
+    },
+    "residential-egress-continuity": {
+      "model_evidence": {
+        "ifc_sha256": "71c9466bf02306be58d45b77d738541a0e7410767960b5eed1cf85737dfa34c9",
+        "ifc_path": "D:\\00_SL1008\\output\\acc\\models\\ifcopenhouse\\IfcOpenHouse_IFC4.ifc"
+      },
+      "applicable": null,
+      "applicability_evidence": null,
+      "scope_id": null,
+      "inventory_complete": false,
+      "inventory_kind": "residential-egress-continuity",
+      "target_global_ids": [],
+      "route_graph": {
+        "inventory_complete": false,
+        "evidence": null,
+        "exit_discharge_verified": false,
+        "exit_evidence": null,
+        "nodes": [],
+        "edges": [],
+        "starts": [],
+        "exits": []
+      },
+      "residential_profile": {
+        "code_basis": null,
+        "occupancy": null,
+        "stories_above_grade": null,
+        "single_dwelling": null,
+        "evidence": null
+      },
+      "exceptions_reviewed": false,
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "ddaef0ba68c710ca7af67520d51339d724e161aaaebe5f1d6f8c7a0d8af5f345",
+        "contract_sha256": "9f13eae91a915dd6fa46c541f0bfb4ab999c132347e0cbb466482f0424083852",
+        "definition_sha256": null,
+        "facts_sha256": "86d460a7da9663b3e03fc8f58570ccdaf764fa58b2ace4e4835567849c9a029d"
+      }
+    }
+  }
+}

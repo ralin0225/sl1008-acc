@@ -16,17 +16,20 @@ def main():
             "bbox": {"type": "array", "minItems": 4, "maxItems": 4, "items": {"type": "number"}}})},
         "context": {"type": "object"}, "tables": {"type": "array"}})
     contract = obj({"rule_id": TEXT, "rule_version": {"const": "1.0.0"}, "source_node_id": TEXT,
-        "chapter": {"enum": [10, 11]}, "topic": {"enum": ["Accessibility", "Egress"]}, "kind": {"enum": ["count", "topology", "information", "dimension"]},
+        "chapter": {"enum": [10, 11]}, "topic": {"enum": ["Accessibility", "Egress"]}, "kind": {"enum": ["count", "topology", "information", "dimension", "derived", "geometry"]},
         "evidence": source, "applicability": obj({"method": TEXT, "scope": TEXT, "exceptions": {"type": "array"}}),
         "required_ifc_data": {"type": "array", "minItems": 1, "items": obj({"field": TEXT, "data_type": TEXT,
             "unit": {"type": ["string", "null"]}, "methods": {"type": "array", "minItems": 1}, "entities": {"type": "array", "minItems": 1}})},
         "target_selector": obj({"entities": {"type": "array", "minItems": 1}, "method": TEXT, "complete_inventory_required": {"const": True}, "zero_targets_result": {"const": "NOT_CHECKABLE"}}),
-        "check_function": {"enum": ["legacy_count", "legacy_connectivity", "required_information", "clear_width"]},
+        "check_function": {"enum": ["legacy_count", "legacy_connectivity", "required_information", "clear_width", "residential_check"]},
         "parameters": obj({"comparison": TEXT, "thresholds": {"type": "object"}, "threshold_source": TEXT,
             "tolerance": {"type": "number", "minimum": 0}, "tolerance_basis": TEXT}),
         "result_scope": TEXT, "review_status": {"enum": ["PENDING", "APPROVED"]}, "review_evidence": {"type": "array"},
         "execution_ready": {"type": "boolean"}, "execution_gate": TEXT, "test_cases": {"type": "object"},
         "contract_sha256": HASH, "full_clause_compliance_evaluated": {"const": False}})
+    contract["properties"].update(rule_class={"type": "integer", "enum": [1, 2, 3, 4]}, class_basis=TEXT)
+    contract["allOf"] = [{"if": {"properties": {"check_function": {"const": "residential_check"}}},
+                          "then": {"required": ["rule_class", "class_basis", "dsl_sources", "supporting_sources"]}}]
     result = obj({"instance_id": TEXT, "rule_id": TEXT, "rule_version": TEXT, "chapter": {"enum": [10, 11]},
         "topic": TEXT, "status": {"enum": ["PASS", "FAIL", "UNKNOWN", "MANUAL_REVIEW", "CHECK_ERROR", "NOT_APPLICABLE"]},
         "display_status": {"enum": ["PASS", "FAIL", "NOT CHECKABLE", "NOT_APPLICABLE"]},
@@ -41,7 +44,10 @@ def main():
             "scope_id": {"type": ["string", "null"]}, "target_binding": {"enum": ["reviewed", "candidate_unreviewed", "excluded_reviewed", "unavailable"]}, "camera": {"type": ["object", "null"]}}),
         "run": obj({"run_id": TEXT, "timestamp": TEXT, "checker_version": TEXT, "checker_sha256": HASH, "input_sha256": HASH,
             "review": {"type": ["object", "null"]}, "facts": {"type": ["object", "null"]}, "observations": {"type": "array"}})})
-    result["allOf"] = [{"if": {"properties": {"display_status": {"const": "NOT CHECKABLE"}}},
+    result["properties"].update(rule_class={"type": "integer", "enum": [1, 2, 3, 4]}, class_basis=TEXT)
+    result["allOf"] = [{"if": {"properties": {"what": {"properties": {"check_function": {"const": "residential_check"}}}}},
+                        "then": {"required": ["rule_class", "class_basis"]}},
+                       {"if": {"properties": {"display_status": {"const": "NOT CHECKABLE"}}},
         "then": {"properties": {"what": {"properties": {"reason_code": {"type": "string"}}}}}}]
     report = obj({"schema_version": {"const": "1.0.0"}, "run_id": TEXT, "timestamp": TEXT, "model_id": TEXT, "model_sha256": HASH,
         "input_sha256": HASH, "is_synthetic": {"type": "boolean"}, "full_clause_compliance_evaluated": {"const": False},
