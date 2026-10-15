@@ -1,0 +1,887 @@
+{
+  "schema_version": "0.1.0",
+  "rules": [
+    {
+      "rule_id": "parking-minimum",
+      "name": "Parking count per facility",
+      "source_node_id": "ibc2021-1106.2",
+      "kind": "count",
+      "expression": "table_1106_2",
+      "required_fields": [
+        "total",
+        "accessible"
+      ],
+      "inventory_kind": "parking_facility_total_and_accessible_spaces",
+      "result_scope": "COUNT_ONLY",
+      "origin": "IBC_candidate_subcheck",
+      "execution_gate": "requires_explicit_scope_review",
+      "source_review_required": true,
+      "exception_node_ids": [
+        "ibc2021-n0052"
+      ],
+      "evidence": {
+        "text": "1106.2 Required. Where parking is provided, accessible parking spaces shall be provided in compliance with Table 1106.2, except as required by Sections 1106.3 through 1106.5. Where more than one parking facility is provided on a site, the number of parking spaces required to be accessible shall be calculated separately for each parking facility.",
+        "source_fragments": [
+          {
+            "pdf_page_number": 4,
+            "source_pdf_page": 359,
+            "column": "left",
+            "bbox": [
+              46.797,
+              286.763,
+              289.893,
+              352.728
+            ],
+            "line_ids": [
+              "p004-b009-l001",
+              "p004-b009-l002",
+              "p004-b009-l003",
+              "p004-b009-l004",
+              "p004-b009-l005",
+              "p004-b009-l006"
+            ],
+            "block_ids": [
+              "p004-b009"
+            ]
+          }
+        ],
+        "sha256": "676409a003c7399d1ced1cadbfc2c9fd2298a8d01cfae5b5951ca40911f1098b"
+      },
+      "conditions_and_references": {
+        "conditions": [
+          {
+            "marker": "where",
+            "text": "Where parking is provided, accessible parking spaces shall be provided in compliance with Table 1106."
+          },
+          {
+            "marker": "where",
+            "text": "Where more than one parking facility is provided on a site, the number of parking spaces required to be accessible shall be calculated separately for each parking facility."
+          }
+        ],
+        "references": [
+          {
+            "kind": "table",
+            "expression": "1106.2, except",
+            "identifiers": [
+              "1106.2"
+            ],
+            "targets": [
+              {
+                "identifier": "1106.2",
+                "resolved": true,
+                "target_node_id": "ibc2021-1106.2"
+              }
+            ]
+          },
+          {
+            "kind": "section",
+            "expression": "1106.3 through 1106.5.",
+            "identifiers": [
+              "1106.3",
+              "1106.5"
+            ],
+            "targets": [
+              {
+                "identifier": "1106.3",
+                "resolved": true,
+                "target_node_id": "ibc2021-1106.3"
+              },
+              {
+                "identifier": "1106.5",
+                "resolved": true,
+                "target_node_id": "ibc2021-1106.5"
+              }
+            ]
+          }
+        ]
+      },
+      "interpretation_author": "AI-assisted implementation; pending scope review",
+      "full_clause_compliance_evaluated": false,
+      "review_context": {
+        "file": "rule_review_context.json",
+        "source_node_id": "ibc2021-1106.2",
+        "sha256": "656e7adefda6a60cae68daffab5f8394038803e4e6397c8a9b01cab4473e1a5e"
+      },
+      "definition_sha256": "289cf49985c166b445e7780823f4e55ea67fa8f3699ab10a7ff067238b149657"
+    },
+    {
+      "rule_id": "van-parking-minimum",
+      "name": "Van-accessible parking count",
+      "source_node_id": "ibc2021-1106.6",
+      "kind": "count",
+      "expression": "ceil_total_div_6",
+      "required_fields": [
+        "total",
+        "accessible"
+      ],
+      "inventory_kind": "accessible_parking_and_van_accessible_spaces",
+      "result_scope": "COUNT_ONLY",
+      "origin": "IBC_candidate_subcheck",
+      "execution_gate": "requires_explicit_scope_review",
+      "source_review_required": false,
+      "exception_node_ids": [
+        "ibc2021-n0057"
+      ],
+      "evidence": {
+        "text": "1106.6 Van spaces. For every six or fraction of six accessible parking spaces, at least one shall be a van-accessible parking space.",
+        "source_fragments": [
+          {
+            "pdf_page_number": 4,
+            "source_pdf_page": 359,
+            "column": "right",
+            "bbox": [
+              307.801,
+              332.684,
+              550.839,
+              365.781
+            ],
+            "line_ids": [
+              "p004-b017-l001",
+              "p004-b017-l002",
+              "p004-b017-l003"
+            ],
+            "block_ids": [
+              "p004-b017"
+            ]
+          }
+        ],
+        "sha256": "99bacb364ff1534162a95f91673367737465a9da09ea5a61bd0dc34a24c0a341"
+      },
+      "conditions_and_references": {
+        "conditions": [],
+        "references": []
+      },
+      "interpretation_author": "AI-assisted implementation; pending scope review",
+      "full_clause_compliance_evaluated": false,
+      "review_context": {
+        "file": "rule_review_context.json",
+        "source_node_id": "ibc2021-1106.6",
+        "sha256": "4e4fdccfc8e8f9ee070cb5ccefabb772699287ae2eeedba49d09e312d7752665"
+      },
+      "definition_sha256": "bf6867be1b1171bac5e3d05307d214ad043917a7d805d96d98af4b0efa0465dc"
+    },
+    {
+      "rule_id": "public-entrance-minimum",
+      "name": "Accessible public entrance count",
+      "source_node_id": "ibc2021-1105.1",
+      "kind": "count",
+      "expression": "ceil_total_times_60_percent",
+      "required_fields": [
+        "total",
+        "accessible"
+      ],
+      "inventory_kind": "public_entrances_and_accessible_public_entrances",
+      "result_scope": "COUNT_ONLY",
+      "origin": "IBC_candidate_subcheck",
+      "execution_gate": "requires_explicit_scope_review",
+      "source_review_required": true,
+      "exception_node_ids": [],
+      "evidence": {
+        "text": "1105.1 Public entrances. In addition to accessible entrances required by Sections 1105.1.2 through 1105.1.8, at least 60 percent of all public entrances shall be accessible. Exceptions: 1. An accessible entrance is not required to areas not required to be accessible. 2. Loading and service entrances that are not the only entrance to a tenant space.",
+        "source_fragments": [
+          {
+            "pdf_page_number": 3,
+            "source_pdf_page": 358,
+            "column": "right",
+            "bbox": [
+              322.197,
+              182.741,
+              565.318,
+              281.833
+            ],
+            "line_ids": [
+              "p003-b014-l001",
+              "p003-b014-l002",
+              "p003-b014-l003",
+              "p003-b015-l001",
+              "p003-b016-l001",
+              "p003-b016-l002",
+              "p003-b016-l003",
+              "p003-b016-l004",
+              "p003-b016-l005",
+              "p003-b016-l006"
+            ],
+            "block_ids": [
+              "p003-b014",
+              "p003-b015",
+              "p003-b016"
+            ]
+          }
+        ],
+        "sha256": "4af7ca4462c5f667a91a29f9d753a8a7a2f274760334b9928e37ce1fc2021402"
+      },
+      "conditions_and_references": {
+        "conditions": [],
+        "references": [
+          {
+            "kind": "section",
+            "expression": "1105.1.2 through 1105.1.8, at",
+            "identifiers": [
+              "1105.1.2",
+              "1105.1.8"
+            ],
+            "targets": [
+              {
+                "identifier": "1105.1.2",
+                "resolved": true,
+                "target_node_id": "ibc2021-1105.1.2"
+              },
+              {
+                "identifier": "1105.1.8",
+                "resolved": true,
+                "target_node_id": "ibc2021-1105.1.8"
+              }
+            ]
+          }
+        ]
+      },
+      "interpretation_author": "AI-assisted implementation; pending scope review",
+      "full_clause_compliance_evaluated": false,
+      "review_context": {
+        "file": "rule_review_context.json",
+        "source_node_id": "ibc2021-1105.1",
+        "sha256": "e057f849ecea72644cd3c852d0d0b30ca33e26bb9b971dd53a6b387e95d5fe24"
+      },
+      "definition_sha256": "d4e0fbe8666003d9f3b6618cf10c8cb007da404509b77250c7b79993f132907f"
+    },
+    {
+      "rule_id": "tenant-entrance-minimum",
+      "name": "Accessible entrance count for one tenant",
+      "source_node_id": "ibc2021-1105.1.7",
+      "kind": "count",
+      "expression": "at_least_one",
+      "required_fields": [
+        "accessible"
+      ],
+      "inventory_kind": "one_tenant_accessible_entrances",
+      "result_scope": "COUNT_ONLY",
+      "origin": "IBC_candidate_subcheck",
+      "execution_gate": "requires_explicit_scope_review",
+      "source_review_required": false,
+      "exception_node_ids": [
+        "ibc2021-n0046"
+      ],
+      "evidence": {
+        "text": "1105.1.7 Tenant spaces. At least one accessible entrance shall be provided to each tenant in a facility.",
+        "source_fragments": [
+          {
+            "pdf_page_number": 4,
+            "source_pdf_page": 359,
+            "column": "left",
+            "bbox": [
+              58.799,
+              69.725,
+              289.766,
+              91.786
+            ],
+            "line_ids": [
+              "p004-b003-l001",
+              "p004-b003-l002"
+            ],
+            "block_ids": [
+              "p004-b003"
+            ]
+          }
+        ],
+        "sha256": "864b618676ee4033dd6cfb871fc2cebfd48def72c7cd847e2c673c2904687566"
+      },
+      "conditions_and_references": {
+        "conditions": [],
+        "references": []
+      },
+      "interpretation_author": "AI-assisted implementation; pending scope review",
+      "full_clause_compliance_evaluated": false,
+      "review_context": {
+        "file": "rule_review_context.json",
+        "source_node_id": "ibc2021-1105.1.7",
+        "sha256": "5b8c49f44bc0e465d02d19e461eb185b33f42c90dc620805b743b44662f25bd3"
+      },
+      "definition_sha256": "3a139c8c5d30d5186f97fd6e1294ba1ad260c18a0c9d40323759b66604e54bd5"
+    },
+    {
+      "rule_id": "type-a-unit-minimum",
+      "name": "Type A unit count for approved site scope",
+      "source_node_id": "ibc2021-1108.6.2.2.1",
+      "kind": "count",
+      "expression": "ceil_total_times_2_percent_over_20",
+      "required_fields": [
+        "total",
+        "accessible"
+      ],
+      "inventory_kind": "reviewed_site_units_and_type_a_units",
+      "result_scope": "COUNT_ONLY",
+      "origin": "IBC_candidate_subcheck",
+      "execution_gate": "requires_explicit_scope_review",
+      "source_review_required": true,
+      "exception_node_ids": [],
+      "evidence": {
+        "text": "1108.6.2.2.1 Type A units. In Group R-2 occupancies containing more than 20 dwelling units or sleeping units, at least 2 percent but not less than one of the units shall be a Type A unit. All Group R-2 units on a site shall be considered to determine the total number of units and the required number of Type A units. Type A units shall be dispersed among the various classes of units. Exceptions: 1. The number of Type A units is permitted to be reduced in accordance with Section 1108.7. 2. Existing structures on a site shall not contribute to the total number of units on a site.",
+        "source_fragments": [
+          {
+            "pdf_page_number": 8,
+            "source_pdf_page": 363,
+            "column": "left",
+            "bbox": [
+              82.799,
+              69.725,
+              289.832,
+              246.784
+            ],
+            "line_ids": [
+              "p008-b003-l001",
+              "p008-b003-l002",
+              "p008-b003-l003",
+              "p008-b003-l004",
+              "p008-b003-l005",
+              "p008-b003-l006",
+              "p008-b003-l007",
+              "p008-b003-l008",
+              "p008-b004-l001",
+              "p008-b005-l001",
+              "p008-b005-l002",
+              "p008-b005-l003",
+              "p008-b005-l004",
+              "p008-b006-l001",
+              "p008-b006-l002",
+              "p008-b006-l003",
+              "p008-b006-l004"
+            ],
+            "block_ids": [
+              "p008-b003",
+              "p008-b004",
+              "p008-b005",
+              "p008-b006"
+            ]
+          }
+        ],
+        "sha256": "8083af70749f51f0f393c98168b25c8f817477f85c90b2779ece9a7f019f650d"
+      },
+      "conditions_and_references": {
+        "conditions": [],
+        "references": [
+          {
+            "kind": "section",
+            "expression": "1108.7.",
+            "identifiers": [
+              "1108.7"
+            ],
+            "targets": [
+              {
+                "identifier": "1108.7",
+                "resolved": true,
+                "target_node_id": "ibc2021-1108.7"
+              }
+            ]
+          }
+        ]
+      },
+      "interpretation_author": "AI-assisted implementation; pending scope review",
+      "full_clause_compliance_evaluated": false,
+      "review_context": {
+        "file": "rule_review_context.json",
+        "source_node_id": "ibc2021-1108.6.2.2.1",
+        "sha256": "4f1d96a05d3575df162f9acc46ebbf125d5fbbc20e93b8afac9359570ba1578f"
+      },
+      "definition_sha256": "6fd3e603f530b1a16a853d481ab664de229f3aa4dc1b8ddc0fecc1ed4ed06c1b"
+    },
+    {
+      "rule_id": "site-route-connectivity",
+      "name": "Verified accessible connectivity on one site",
+      "source_node_id": "ibc2021-1104.2",
+      "kind": "topology",
+      "expression": "verified_graph_connected",
+      "required_fields": [
+        "nodes",
+        "edges",
+        "targets"
+      ],
+      "inventory_kind": "reviewed_site_accessible_targets_and_routes",
+      "result_scope": "CONNECTIVITY_ONLY",
+      "origin": "IBC_candidate_subcheck",
+      "execution_gate": "requires_explicit_scope_review",
+      "source_review_required": true,
+      "exception_node_ids": [],
+      "evidence": {
+        "text": "1104.2 Within a site. At least one accessible route shall connect accessible buildings, accessible facilities, accessible elements and accessible spaces that are on the same site. Exceptions: 1. An accessible route is not required between accessible buildings, accessible facilities, accessible elements and accessible spaces that have, as the only means of access between them, a vehicular way not providing for pedestrian access. 2. An accessible route to recreational facilities shall only be required to the extent specified in Section 1111.",
+        "source_fragments": [
+          {
+            "pdf_page_number": 2,
+            "source_pdf_page": 357,
+            "column": "left",
+            "bbox": [
+              46.787,
+              529.688,
+              289.904,
+              672.683
+            ],
+            "line_ids": [
+              "p002-b012-l001",
+              "p002-b012-l002",
+              "p002-b012-l003",
+              "p002-b013-l001",
+              "p002-b014-l001",
+              "p002-b014-l002",
+              "p002-b014-l003",
+              "p002-b014-l004",
+              "p002-b014-l005",
+              "p002-b014-l006",
+              "p002-b014-l007",
+              "p002-b014-l008",
+              "p002-b014-l009",
+              "p002-b014-l010"
+            ],
+            "block_ids": [
+              "p002-b012",
+              "p002-b013",
+              "p002-b014"
+            ]
+          }
+        ],
+        "sha256": "69a03ec44fd123f8136232dbad9372f70d6f61fa7773c4ed13b55de8605d122a"
+      },
+      "conditions_and_references": {
+        "conditions": [],
+        "references": [
+          {
+            "kind": "section",
+            "expression": "1111.",
+            "identifiers": [
+              "1111"
+            ],
+            "targets": [
+              {
+                "identifier": "1111",
+                "resolved": true,
+                "target_node_id": "ibc2021-1111"
+              }
+            ]
+          }
+        ]
+      },
+      "interpretation_author": "AI-assisted implementation; pending scope review",
+      "full_clause_compliance_evaluated": false,
+      "review_context": {
+        "file": "rule_review_context.json",
+        "source_node_id": "ibc2021-1104.2",
+        "sha256": "af4d911bcf374d918198e1a8a4acd36ae3dde1f73cd8b7e1991e3ca051b0878d"
+      },
+      "definition_sha256": "958304d338140893e7a4388212c2bd5996e55997ad81fd8e374bebaec563eb00"
+    },
+    {
+      "rule_id": "required-accessibility-pset",
+      "name": "Project accessibility properties",
+      "source_node_id": "ibc2021-1102.1",
+      "kind": "information",
+      "expression": "ids_precheck",
+      "required_fields": [],
+      "inventory_kind": null,
+      "result_scope": "INFORMATION_ONLY",
+      "origin": "project_data_contract",
+      "execution_gate": "precheck_only",
+      "source_review_required": false,
+      "exception_node_ids": [],
+      "evidence": {
+        "text": "1102.1 Design. Buildings and facilities shall be designed and constructed to be accessible in accordance with this code and ICC A117.1.",
+        "source_fragments": [
+          {
+            "pdf_page_number": 1,
+            "source_pdf_page": 356,
+            "column": "left",
+            "bbox": [
+              61.188,
+              414.829,
+              304.144,
+              447.806
+            ],
+            "line_ids": [
+              "p001-b012-l001",
+              "p001-b012-l002",
+              "p001-b012-l003"
+            ],
+            "block_ids": [
+              "p001-b012"
+            ]
+          }
+        ],
+        "sha256": "97b9eebace0cf8c3a3456174f82c5dafd03ac33986685f24dfa2d3e6b62dc37e"
+      },
+      "conditions_and_references": {
+        "conditions": [],
+        "references": []
+      },
+      "interpretation_author": "AI-assisted implementation; pending scope review",
+      "full_clause_compliance_evaluated": false,
+      "review_context": {
+        "file": "rule_review_context.json",
+        "source_node_id": "ibc2021-1102.1",
+        "sha256": "74120c76723a77a3c5fa0e8296ad36ce8596d22f7a965af316f030a859b27b57"
+      },
+      "definition_sha256": "416a9222b74e5e7798693fb265e0c7eb4078f8f219bf36a429305f13eb5d9bac"
+    },
+    {
+      "rule_id": "space-use-classification",
+      "name": "Project space use classification",
+      "source_node_id": "ibc2021-1110.2",
+      "kind": "information",
+      "expression": "ids_precheck",
+      "required_fields": [],
+      "inventory_kind": null,
+      "result_scope": "INFORMATION_ONLY",
+      "origin": "project_data_contract",
+      "execution_gate": "precheck_only",
+      "source_review_required": true,
+      "exception_node_ids": [],
+      "evidence": {
+        "text": "1110.2 Toilet and bathing facilities. Each toilet room and bathing room shall be accessible. Where a floor level is not required to be connected by an accessible route, the only toilet rooms or bathing rooms provided within the facility shall not be located on the inaccessible floor. Except as provided for in Sections 1110.2.4 and 1110.2.5, at least one of each type of fixture, element, control or dispenser in each accessible toilet room and bathing room shall be accessible. Exceptions: 1. Toilet rooms or bathing rooms accessed only through a private office, not for common or public use and intended for use by a single occupant, shall be permitted to comply with the specific exceptions in ICC A117.1. 2. This section is not applicable to toilet and bathing rooms that serve dwelling units or sleeping units that are not required to be accessible by Section 1108. 3. Where multiple single-user toilet rooms or bathing rooms are clustered at a single location, at least 50 percent but not less than one room for each use at each cluster shall be accessible. 4. Where no more than one urinal is provided in a toilet room or bathing room, the urinal is not required to be accessible. 5. Toilet rooms or bathing rooms that are part of critical care or intensive care patient sleeping rooms serving Accessible units are not required to be accessible. 6. Toilet rooms or bathing rooms designed for bariatrics patients are not required to comply with the toilet room and bathing room requirement in ICC A117.1. The sleeping units served by bariatrics toilet or bathing rooms shall not count toward the required number of Accessible sleeping units. 7. Where permitted in Section 1108, in toilet rooms or bathrooms serving Accessible units, water closets designed for assisted toileting shall comply with Section 1110.2.2. 8. Where permitted in Section 1108, in bathrooms serving Accessible units, showers designed for assisted bathing shall comply with Section 1110.2.3. 9. Where toilet facilities are primarily for children’s use, required accessible water closets, toilet compartments and lavatories shall be permitted to comply with children’s provision of ICC A117.1.",
+        "source_fragments": [
+          {
+            "pdf_page_number": 11,
+            "source_pdf_page": 366,
+            "column": "right",
+            "bbox": [
+              322.201,
+              551.761,
+              565.231,
+              713.82
+            ],
+            "line_ids": [
+              "p011-b023-l001",
+              "p011-b023-l002",
+              "p011-b023-l003",
+              "p011-b023-l004",
+              "p011-b023-l005",
+              "p011-b023-l006",
+              "p011-b023-l007",
+              "p011-b023-l008",
+              "p011-b024-l001",
+              "p011-b025-l001",
+              "p011-b025-l002",
+              "p011-b025-l003",
+              "p011-b025-l004",
+              "p011-b025-l005",
+              "p011-b025-l006"
+            ],
+            "block_ids": [
+              "p011-b023",
+              "p011-b024",
+              "p011-b025"
+            ]
+          },
+          {
+            "pdf_page_number": 12,
+            "source_pdf_page": 367,
+            "column": "left",
+            "bbox": [
+              70.769,
+              69.725,
+              289.859,
+              453.753
+            ],
+            "line_ids": [
+              "p012-b003-l001",
+              "p012-b003-l002",
+              "p012-b003-l003",
+              "p012-b003-l004",
+              "p012-b003-l005",
+              "p012-b003-l006",
+              "p012-b003-l007",
+              "p012-b003-l008",
+              "p012-b003-l009",
+              "p012-b003-l010",
+              "p012-b003-l011",
+              "p012-b003-l012",
+              "p012-b003-l013",
+              "p012-b003-l014",
+              "p012-b003-l015",
+              "p012-b003-l016",
+              "p012-b003-l017",
+              "p012-b003-l018",
+              "p012-b003-l019",
+              "p012-b003-l020",
+              "p012-b003-l021",
+              "p012-b003-l022",
+              "p012-b003-l023",
+              "p012-b003-l024",
+              "p012-b003-l025",
+              "p012-b003-l026",
+              "p012-b003-l027",
+              "p012-b003-l028",
+              "p012-b003-l029",
+              "p012-b003-l030",
+              "p012-b003-l031",
+              "p012-b003-l032",
+              "p012-b003-l033",
+              "p012-b003-l034",
+              "p012-b003-l035",
+              "p012-b003-l036",
+              "p012-b003-l037",
+              "p012-b003-l038",
+              "p012-b003-l039",
+              "p012-b003-l040",
+              "p012-b003-l041"
+            ],
+            "block_ids": [
+              "p012-b003"
+            ]
+          }
+        ],
+        "sha256": "81b83000beb0585a9240cffe3ba1dfeb6a460b3fcd3075f17cf0e53240b0e71c"
+      },
+      "conditions_and_references": {
+        "conditions": [
+          {
+            "marker": "where",
+            "text": "Where a floor level is not required to be connected by an accessible route, the only toilet rooms or bathing rooms provided within the facility shall not be located on the inaccessible floor."
+          },
+          {
+            "marker": "where",
+            "text": "Where multiple single-user toilet rooms or bathing rooms are clustered at a single location, at least 50 percent but not less than one room for each use at each cluster shall be accessible."
+          },
+          {
+            "marker": "where",
+            "text": "Where no more than one urinal is provided in a toilet room or bathing room, the urinal is not required to be accessible."
+          },
+          {
+            "marker": "where",
+            "text": "Where permitted in Section 1108, in toilet rooms or bathrooms serving Accessible units, water closets designed for assisted toileting shall comply with Section 1110."
+          },
+          {
+            "marker": "where",
+            "text": "Where permitted in Section 1108, in bathrooms serving Accessible units, showers designed for assisted bathing shall comply with Section 1110."
+          },
+          {
+            "marker": "where",
+            "text": "Where toilet facilities are primarily for children’s use, required accessible water closets, toilet compartments and lavatories shall be permitted to comply with children’s provision of ICC A117."
+          }
+        ],
+        "references": [
+          {
+            "kind": "section",
+            "expression": "1110.2.4 and 1110.2.5, at",
+            "identifiers": [
+              "1110.2.4",
+              "1110.2.5"
+            ],
+            "targets": [
+              {
+                "identifier": "1110.2.4",
+                "resolved": true,
+                "target_node_id": "ibc2021-1110.2.4"
+              },
+              {
+                "identifier": "1110.2.5",
+                "resolved": true,
+                "target_node_id": "ibc2021-1110.2.5"
+              }
+            ]
+          },
+          {
+            "kind": "section",
+            "expression": "is",
+            "identifiers": [],
+            "targets": []
+          },
+          {
+            "kind": "section",
+            "expression": "1108.",
+            "identifiers": [
+              "1108"
+            ],
+            "targets": [
+              {
+                "identifier": "1108",
+                "resolved": true,
+                "target_node_id": "ibc2021-1108"
+              }
+            ]
+          },
+          {
+            "kind": "section",
+            "expression": "1108, in",
+            "identifiers": [
+              "1108"
+            ],
+            "targets": [
+              {
+                "identifier": "1108",
+                "resolved": true,
+                "target_node_id": "ibc2021-1108"
+              }
+            ]
+          },
+          {
+            "kind": "section",
+            "expression": "1110.2.2.",
+            "identifiers": [
+              "1110.2.2"
+            ],
+            "targets": [
+              {
+                "identifier": "1110.2.2",
+                "resolved": true,
+                "target_node_id": "ibc2021-1110.2.2"
+              }
+            ]
+          },
+          {
+            "kind": "section",
+            "expression": "1108, in",
+            "identifiers": [
+              "1108"
+            ],
+            "targets": [
+              {
+                "identifier": "1108",
+                "resolved": true,
+                "target_node_id": "ibc2021-1108"
+              }
+            ]
+          },
+          {
+            "kind": "section",
+            "expression": "1110.2.3.",
+            "identifiers": [
+              "1110.2.3"
+            ],
+            "targets": [
+              {
+                "identifier": "1110.2.3",
+                "resolved": true,
+                "target_node_id": "ibc2021-1110.2.3"
+              }
+            ]
+          }
+        ]
+      },
+      "interpretation_author": "AI-assisted implementation; pending scope review",
+      "full_clause_compliance_evaluated": false,
+      "review_context": {
+        "file": "rule_review_context.json",
+        "source_node_id": "ibc2021-1110.2",
+        "sha256": "a8b93bc0e456ef02b74d55c66b2e690632d4f39e7d75ed720fc7a83dcae3112f"
+      },
+      "definition_sha256": "43a204373c74269e47898f8e7e02720ed7e3bbf6b970d912c3b1c3afc60690a5"
+    }
+  ],
+  "parking_table": {
+    "id": "table-p004-01",
+    "pdf_page_number": 4,
+    "source_pdf_page": 359,
+    "bbox": [
+      46.919,
+      441.839,
+      289.679,
+      634.079
+    ],
+    "row_count": 12,
+    "column_count": 2,
+    "header_names": [
+      "TOTAL PARKING\nSPACES PROVIDED\nIN PARKING FACILITIES",
+      "REQUIRED\nMINIMUM NUMBER OF\nACCESSIBLE SPACES"
+    ],
+    "header_external": false,
+    "cells": [
+      [
+        "TOTAL PARKING\nSPACES PROVIDED\nIN PARKING FACILITIES",
+        "REQUIRED\nMINIMUM NUMBER OF\nACCESSIBLE SPACES"
+      ],
+      [
+        "1 to 25",
+        "1"
+      ],
+      [
+        "26 to 50",
+        "2"
+      ],
+      [
+        "51 to 75",
+        "3"
+      ],
+      [
+        "76 to 100",
+        "4"
+      ],
+      [
+        "101 to 150",
+        "5"
+      ],
+      [
+        "151 to 200",
+        "6"
+      ],
+      [
+        "201 to 300",
+        "7"
+      ],
+      [
+        "301 to 400",
+        "8"
+      ],
+      [
+        "401 to 500",
+        "9"
+      ],
+      [
+        "501 to 1,000",
+        "2% of total"
+      ],
+      [
+        "1,001 and over",
+        "20, plus one for each 100, or\nfraction thereof, over 1,000"
+      ]
+    ],
+    "source_line_ids": [
+      "p004-b025-l001",
+      "p004-b025-l002",
+      "p004-b025-l003",
+      "p004-b026-l001",
+      "p004-b026-l002",
+      "p004-b027-l001",
+      "p004-b027-l002",
+      "p004-b027-l003",
+      "p004-b028-l001",
+      "p004-b028-l002",
+      "p004-b029-l001",
+      "p004-b029-l002",
+      "p004-b030-l001",
+      "p004-b030-l002",
+      "p004-b031-l001",
+      "p004-b031-l002",
+      "p004-b032-l001",
+      "p004-b032-l002",
+      "p004-b033-l001",
+      "p004-b033-l002",
+      "p004-b034-l001",
+      "p004-b034-l002",
+      "p004-b035-l001",
+      "p004-b035-l002",
+      "p004-b036-l001",
+      "p004-b036-l002",
+      "p004-b037-l001",
+      "p004-b037-l002",
+      "p004-b037-l003"
+    ],
+    "source_node_id": "ibc2021-1106.2",
+    "caption_node_ids": [
+      "ibc2021-n0052"
+    ],
+    "sha256": "2a547e2a4eae56e60d89b346bce738b32b09ec71fc2ac480de45d241725056a9",
+    "source_pdf": "IBE2021_11Accessibility.pdf",
+    "binding_method": "Table number in clause and caption plus source page; scope review required"
+  },
+  "external_standard_deferrals": [
+    {
+      "concept": "Door clear opening width",
+      "source_node_id": "ibc2021-1102.1",
+      "status": "requires_external_standard",
+      "threshold": null
+    },
+    {
+      "concept": "Ramp slope",
+      "source_node_id": "ibc2021-1102.1",
+      "status": "requires_external_standard",
+      "threshold": null
+    }
+  ],
+  "note": "PASS applies only to result_scope. Accessible declarations cannot establish compliant design."
+}

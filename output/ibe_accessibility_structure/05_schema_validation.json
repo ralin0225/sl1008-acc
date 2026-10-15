@@ -1,0 +1,8 @@
+{
+  "schema": "structured_document.schema.json",
+  "instance": "03_structured_document.json",
+  "validator": "jsonschema Draft 2020-12",
+  "status": "pass",
+  "error_count": 0,
+  "errors": []
+}

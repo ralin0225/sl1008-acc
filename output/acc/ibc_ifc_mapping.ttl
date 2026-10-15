@@ -1,0 +1,104 @@
+@prefix acc: <https://example.org/acc/ibc2021/mapping/> .
+@prefix ibc: <https://example.org/ibc/2021/> .
+@prefix ifc: <https://standards.buildingsmart.org/IFC/DEV/IFC4/ADD2/OWL#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+acc:m01 a acc:ConceptMapping ;
+  acc:ibcConcept "Building" ;
+  prov:wasDerivedFrom ibc:ibc2021-1101.1 ;
+  acc:sourceNodeId "ibc2021-1101.1" ;
+  acc:sourceSha256 "be5cfe68793f257fbc7f70cbba3f95b073d9ec0b6e3067ea72318ad90dae9a4b" ;
+  acc:mappingMethod "object" ;
+  acc:status "proposed_requires_review" ;
+  acc:ifcEntity ifc:IfcBuilding .
+
+acc:m02 a acc:ConceptMapping ;
+  acc:ibcConcept "Storey" ;
+  prov:wasDerivedFrom ibc:ibc2021-1104.4 ;
+  acc:sourceNodeId "ibc2021-1104.4" ;
+  acc:sourceSha256 "40efd01114a60c5b317fc9e56e30659d247ef85eb83cdaec6b729f5bbe9ea840" ;
+  acc:mappingMethod "object" ;
+  acc:status "proposed_requires_review" ;
+  acc:ifcEntity ifc:IfcBuildingStorey .
+
+acc:m03 a acc:ConceptMapping ;
+  acc:ibcConcept "Door/Entrance" ;
+  prov:wasDerivedFrom ibc:ibc2021-1105.1 ;
+  acc:sourceNodeId "ibc2021-1105.1" ;
+  acc:sourceSha256 "4af7ca4462c5f667a91a29f9d753a8a7a2f274760334b9928e37ce1fc2021402" ;
+  acc:mappingMethod "object_plus_entrance_classification" ;
+  acc:status "proposed_requires_review" ;
+  acc:ifcEntity ifc:IfcDoor .
+
+acc:m04 a acc:ConceptMapping ;
+  acc:ibcConcept "Ramp" ;
+  prov:wasDerivedFrom ibc:ibc2021-1104.4 ;
+  acc:sourceNodeId "ibc2021-1104.4" ;
+  acc:sourceSha256 "40efd01114a60c5b317fc9e56e30659d247ef85eb83cdaec6b729f5bbe9ea840" ;
+  acc:mappingMethod "object_plus_geometry" ;
+  acc:status "proposed_requires_review" ;
+  acc:ifcEntity ifc:IfcRamp .
+
+acc:m05 a acc:ConceptMapping ;
+  acc:ibcConcept "Stair" ;
+  prov:wasDerivedFrom ibc:ibc2021-1104.4 ;
+  acc:sourceNodeId "ibc2021-1104.4" ;
+  acc:sourceSha256 "40efd01114a60c5b317fc9e56e30659d247ef85eb83cdaec6b729f5bbe9ea840" ;
+  acc:mappingMethod "object_plus_route_context" ;
+  acc:status "proposed_requires_review" ;
+  acc:ifcEntity ifc:IfcStair .
+
+acc:m06 a acc:ConceptMapping ;
+  acc:ibcConcept "Toilet Room" ;
+  prov:wasDerivedFrom ibc:ibc2021-1110.2 ;
+  acc:sourceNodeId "ibc2021-1110.2" ;
+  acc:sourceSha256 "81b83000beb0585a9240cffe3ba1dfeb6a460b3fcd3075f17cf0e53240b0e71c" ;
+  acc:mappingMethod "classification_UseCode_TOILET_ROOM" ;
+  acc:status "proposed_requires_review" ;
+  acc:ifcEntity ifc:IfcSpace .
+
+acc:m07 a acc:ConceptMapping ;
+  acc:ibcConcept "Parking Space" ;
+  prov:wasDerivedFrom ibc:ibc2021-1106.2 ;
+  acc:sourceNodeId "ibc2021-1106.2" ;
+  acc:sourceSha256 "676409a003c7399d1ced1cadbfc2c9fd2298a8d01cfae5b5951ca40911f1098b" ;
+  acc:mappingMethod "classification_plus_facility_grouping" ;
+  acc:status "proposed_requires_review" ;
+  acc:ifcEntity ifc:IfcSpace, ifc:IfcZone .
+
+acc:m08 a acc:ConceptMapping ;
+  acc:ibcConcept "Dwelling Unit" ;
+  prov:wasDerivedFrom ibc:ibc2021-1108.6.2.2.1 ;
+  acc:sourceNodeId "ibc2021-1108.6.2.2.1" ;
+  acc:sourceSha256 "8083af70749f51f0f393c98168b25c8f817477f85c90b2779ece9a7f019f650d" ;
+  acc:mappingMethod "space_aggregation_plus_UnitType" ;
+  acc:status "proposed_requires_review" ;
+  acc:ifcEntity ifc:IfcSpace, ifc:IfcZone .
+
+acc:m09 a acc:ConceptMapping ;
+  acc:ibcConcept "Accessible Route" ;
+  prov:wasDerivedFrom ibc:ibc2021-1104.2 ;
+  acc:sourceNodeId "ibc2021-1104.2" ;
+  acc:sourceSha256 "69a03ec44fd123f8136232dbad9372f70d6f61fa7773c4ed13b55de8605d122a" ;
+  acc:mappingMethod "verified_topology_graph" ;
+  acc:status "proposed_requires_review" ;
+  acc:ifcEntity ifc:IfcSpace, ifc:IfcDoor, ifc:IfcRamp, ifc:IfcStair .
+
+acc:m10 a acc:ConceptMapping ;
+  acc:ibcConcept "Clear Width" ;
+  prov:wasDerivedFrom ibc:ibc2021-1102.1 ;
+  acc:sourceNodeId "ibc2021-1102.1" ;
+  acc:sourceSha256 "97b9eebace0cf8c3a3456174f82c5dafd03ac33986685f24dfa2d3e6b62dc37e" ;
+  acc:mappingMethod "proposed_property_or_geometry; threshold_requires_ICC_A117.1" ;
+  acc:status "proposed_requires_review" ;
+  acc:ifcEntity ifc:IfcDoor .
+
+acc:m11 a acc:ConceptMapping ;
+  acc:ibcConcept "Slope" ;
+  prov:wasDerivedFrom ibc:ibc2021-1102.1 ;
+  acc:sourceNodeId "ibc2021-1102.1" ;
+  acc:sourceSha256 "97b9eebace0cf8c3a3456174f82c5dafd03ac33986685f24dfa2d3e6b62dc37e" ;
+  acc:mappingMethod "proposed_property_or_geometry; threshold_requires_ICC_A117.1" ;
+  acc:status "proposed_requires_review" ;
+  acc:ifcEntity ifc:IfcRamp .

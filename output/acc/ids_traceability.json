@@ -1,0 +1,406 @@
+{
+  "schema_version": "0.1.0",
+  "origin": "proposed project information contract",
+  "specifications": [
+    {
+      "name": "Door accessibility declaration",
+      "source_node_id": "ibc2021-1105.1",
+      "evidence": {
+        "text": "1105.1 Public entrances. In addition to accessible entrances required by Sections 1105.1.2 through 1105.1.8, at least 60 percent of all public entrances shall be accessible. Exceptions: 1. An accessible entrance is not required to areas not required to be accessible. 2. Loading and service entrances that are not the only entrance to a tenant space.",
+        "source_fragments": [
+          {
+            "pdf_page_number": 3,
+            "source_pdf_page": 358,
+            "column": "right",
+            "bbox": [
+              322.197,
+              182.741,
+              565.318,
+              281.833
+            ],
+            "line_ids": [
+              "p003-b014-l001",
+              "p003-b014-l002",
+              "p003-b014-l003",
+              "p003-b015-l001",
+              "p003-b016-l001",
+              "p003-b016-l002",
+              "p003-b016-l003",
+              "p003-b016-l004",
+              "p003-b016-l005",
+              "p003-b016-l006"
+            ],
+            "block_ids": [
+              "p003-b014",
+              "p003-b015",
+              "p003-b016"
+            ]
+          }
+        ],
+        "sha256": "4af7ca4462c5f667a91a29f9d753a8a7a2f274760334b9928e37ce1fc2021402"
+      },
+      "requires_profile_agreement": true,
+      "regulatory_compliance_check": false
+    },
+    {
+      "name": "Space use classification",
+      "source_node_id": "ibc2021-1110.2",
+      "evidence": {
+        "text": "1110.2 Toilet and bathing facilities. Each toilet room and bathing room shall be accessible. Where a floor level is not required to be connected by an accessible route, the only toilet rooms or bathing rooms provided within the facility shall not be located on the inaccessible floor. Except as provided for in Sections 1110.2.4 and 1110.2.5, at least one of each type of fixture, element, control or dispenser in each accessible toilet room and bathing room shall be accessible. Exceptions: 1. Toilet rooms or bathing rooms accessed only through a private office, not for common or public use and intended for use by a single occupant, shall be permitted to comply with the specific exceptions in ICC A117.1. 2. This section is not applicable to toilet and bathing rooms that serve dwelling units or sleeping units that are not required to be accessible by Section 1108. 3. Where multiple single-user toilet rooms or bathing rooms are clustered at a single location, at least 50 percent but not less than one room for each use at each cluster shall be accessible. 4. Where no more than one urinal is provided in a toilet room or bathing room, the urinal is not required to be accessible. 5. Toilet rooms or bathing rooms that are part of critical care or intensive care patient sleeping rooms serving Accessible units are not required to be accessible. 6. Toilet rooms or bathing rooms designed for bariatrics patients are not required to comply with the toilet room and bathing room requirement in ICC A117.1. The sleeping units served by bariatrics toilet or bathing rooms shall not count toward the required number of Accessible sleeping units. 7. Where permitted in Section 1108, in toilet rooms or bathrooms serving Accessible units, water closets designed for assisted toileting shall comply with Section 1110.2.2. 8. Where permitted in Section 1108, in bathrooms serving Accessible units, showers designed for assisted bathing shall comply with Section 1110.2.3. 9. Where toilet facilities are primarily for children’s use, required accessible water closets, toilet compartments and lavatories shall be permitted to comply with children’s provision of ICC A117.1.",
+        "source_fragments": [
+          {
+            "pdf_page_number": 11,
+            "source_pdf_page": 366,
+            "column": "right",
+            "bbox": [
+              322.201,
+              551.761,
+              565.231,
+              713.82
+            ],
+            "line_ids": [
+              "p011-b023-l001",
+              "p011-b023-l002",
+              "p011-b023-l003",
+              "p011-b023-l004",
+              "p011-b023-l005",
+              "p011-b023-l006",
+              "p011-b023-l007",
+              "p011-b023-l008",
+              "p011-b024-l001",
+              "p011-b025-l001",
+              "p011-b025-l002",
+              "p011-b025-l003",
+              "p011-b025-l004",
+              "p011-b025-l005",
+              "p011-b025-l006"
+            ],
+            "block_ids": [
+              "p011-b023",
+              "p011-b024",
+              "p011-b025"
+            ]
+          },
+          {
+            "pdf_page_number": 12,
+            "source_pdf_page": 367,
+            "column": "left",
+            "bbox": [
+              70.769,
+              69.725,
+              289.859,
+              453.753
+            ],
+            "line_ids": [
+              "p012-b003-l001",
+              "p012-b003-l002",
+              "p012-b003-l003",
+              "p012-b003-l004",
+              "p012-b003-l005",
+              "p012-b003-l006",
+              "p012-b003-l007",
+              "p012-b003-l008",
+              "p012-b003-l009",
+              "p012-b003-l010",
+              "p012-b003-l011",
+              "p012-b003-l012",
+              "p012-b003-l013",
+              "p012-b003-l014",
+              "p012-b003-l015",
+              "p012-b003-l016",
+              "p012-b003-l017",
+              "p012-b003-l018",
+              "p012-b003-l019",
+              "p012-b003-l020",
+              "p012-b003-l021",
+              "p012-b003-l022",
+              "p012-b003-l023",
+              "p012-b003-l024",
+              "p012-b003-l025",
+              "p012-b003-l026",
+              "p012-b003-l027",
+              "p012-b003-l028",
+              "p012-b003-l029",
+              "p012-b003-l030",
+              "p012-b003-l031",
+              "p012-b003-l032",
+              "p012-b003-l033",
+              "p012-b003-l034",
+              "p012-b003-l035",
+              "p012-b003-l036",
+              "p012-b003-l037",
+              "p012-b003-l038",
+              "p012-b003-l039",
+              "p012-b003-l040",
+              "p012-b003-l041"
+            ],
+            "block_ids": [
+              "p012-b003"
+            ]
+          }
+        ],
+        "sha256": "81b83000beb0585a9240cffe3ba1dfeb6a460b3fcd3075f17cf0e53240b0e71c"
+      },
+      "requires_profile_agreement": true,
+      "regulatory_compliance_check": false
+    },
+    {
+      "name": "Parking space information",
+      "source_node_id": "ibc2021-1106.2",
+      "evidence": {
+        "text": "1106.2 Required. Where parking is provided, accessible parking spaces shall be provided in compliance with Table 1106.2, except as required by Sections 1106.3 through 1106.5. Where more than one parking facility is provided on a site, the number of parking spaces required to be accessible shall be calculated separately for each parking facility.",
+        "source_fragments": [
+          {
+            "pdf_page_number": 4,
+            "source_pdf_page": 359,
+            "column": "left",
+            "bbox": [
+              46.797,
+              286.763,
+              289.893,
+              352.728
+            ],
+            "line_ids": [
+              "p004-b009-l001",
+              "p004-b009-l002",
+              "p004-b009-l003",
+              "p004-b009-l004",
+              "p004-b009-l005",
+              "p004-b009-l006"
+            ],
+            "block_ids": [
+              "p004-b009"
+            ]
+          }
+        ],
+        "sha256": "676409a003c7399d1ced1cadbfc2c9fd2298a8d01cfae5b5951ca40911f1098b"
+      },
+      "requires_profile_agreement": true,
+      "regulatory_compliance_check": false
+    },
+    {
+      "name": "Dwelling unit information",
+      "source_node_id": "ibc2021-1108.6.2.2.1",
+      "evidence": {
+        "text": "1108.6.2.2.1 Type A units. In Group R-2 occupancies containing more than 20 dwelling units or sleeping units, at least 2 percent but not less than one of the units shall be a Type A unit. All Group R-2 units on a site shall be considered to determine the total number of units and the required number of Type A units. Type A units shall be dispersed among the various classes of units. Exceptions: 1. The number of Type A units is permitted to be reduced in accordance with Section 1108.7. 2. Existing structures on a site shall not contribute to the total number of units on a site.",
+        "source_fragments": [
+          {
+            "pdf_page_number": 8,
+            "source_pdf_page": 363,
+            "column": "left",
+            "bbox": [
+              82.799,
+              69.725,
+              289.832,
+              246.784
+            ],
+            "line_ids": [
+              "p008-b003-l001",
+              "p008-b003-l002",
+              "p008-b003-l003",
+              "p008-b003-l004",
+              "p008-b003-l005",
+              "p008-b003-l006",
+              "p008-b003-l007",
+              "p008-b003-l008",
+              "p008-b004-l001",
+              "p008-b005-l001",
+              "p008-b005-l002",
+              "p008-b005-l003",
+              "p008-b005-l004",
+              "p008-b006-l001",
+              "p008-b006-l002",
+              "p008-b006-l003",
+              "p008-b006-l004"
+            ],
+            "block_ids": [
+              "p008-b003",
+              "p008-b004",
+              "p008-b005",
+              "p008-b006"
+            ]
+          }
+        ],
+        "sha256": "8083af70749f51f0f393c98168b25c8f817477f85c90b2779ece9a7f019f650d"
+      },
+      "requires_profile_agreement": true,
+      "regulatory_compliance_check": false
+    },
+    {
+      "name": "Ramp accessibility declaration",
+      "source_node_id": "ibc2021-1104.4",
+      "evidence": {
+        "text": "1104.4 Multistory buildings and facilities. At least one accessible route shall connect each accessible story, mezzanine and occupied roofs in multilevel buildings and facilities. Exceptions: 1. An accessible route is not required to stories, mezzanines and occupied roofs that have an aggregate area of not more than 3,000 square feet (278.7 m2) and are located above and below accessible levels. This exception shall not apply to: 1.1. Multiple tenant facilities of Group M occupancies containing five or more tenant spaces used for the sales or rental of goods and where at least one such tenant space is located on a floor level above or below the accessible levels. 1.2. Stories or mezzanines containing offices of health care providers (Group B or I). 1.3. Passenger transportation facilities and airports (Group A-3 or B). 1.4. Government buildings. 1.5. Structures with four or more dwelling units. 2. Stories, mezzanines or occupied roofs that do not contain accessible elements or other spaces as determined by Section 1108 or 1109 are not required to be served by an accessible route from an accessible level. 3. In air traffic control towers, an accessible route is not required to serve the cab and the floor immediately below the cab. 4. Where a two-story building or facility has one story or mezzanine with an occupant load of five or fewer persons that does not contain public use space, that story or mezzanine shall not be required to be connected by an accessible route to the story above or below.",
+        "source_fragments": [
+          {
+            "pdf_page_number": 2,
+            "source_pdf_page": 357,
+            "column": "right",
+            "bbox": [
+              307.799,
+              673.804,
+              550.916,
+              695.866
+            ],
+            "line_ids": [
+              "p002-b025-l001",
+              "p002-b025-l002"
+            ],
+            "block_ids": [
+              "p002-b025"
+            ]
+          },
+          {
+            "pdf_page_number": 3,
+            "source_pdf_page": 358,
+            "column": "left",
+            "bbox": [
+              61.199,
+              69.725,
+              304.302,
+              486.777
+            ],
+            "line_ids": [
+              "p003-b003-l001",
+              "p003-b003-l002",
+              "p003-b004-l001",
+              "p003-b005-l001",
+              "p003-b005-l002",
+              "p003-b005-l003",
+              "p003-b005-l004",
+              "p003-b005-l005",
+              "p003-b005-l006",
+              "p003-b006-l001",
+              "p003-b006-l002",
+              "p003-b006-l003",
+              "p003-b006-l004",
+              "p003-b006-l005",
+              "p003-b006-l006",
+              "p003-b006-l007",
+              "p003-b006-l008",
+              "p003-b006-l009",
+              "p003-b006-l010",
+              "p003-b006-l011",
+              "p003-b006-l012",
+              "p003-b006-l013",
+              "p003-b006-l014",
+              "p003-b006-l015",
+              "p003-b006-l016",
+              "p003-b006-l017",
+              "p003-b006-l018",
+              "p003-b006-l019",
+              "p003-b006-l020",
+              "p003-b006-l021",
+              "p003-b006-l022",
+              "p003-b006-l023",
+              "p003-b006-l024",
+              "p003-b006-l025",
+              "p003-b006-l026",
+              "p003-b006-l027",
+              "p003-b006-l028",
+              "p003-b006-l029",
+              "p003-b006-l030"
+            ],
+            "block_ids": [
+              "p003-b003",
+              "p003-b004",
+              "p003-b005",
+              "p003-b006"
+            ]
+          }
+        ],
+        "sha256": "40efd01114a60c5b317fc9e56e30659d247ef85eb83cdaec6b729f5bbe9ea840"
+      },
+      "requires_profile_agreement": true,
+      "regulatory_compliance_check": false
+    },
+    {
+      "name": "Stair accessibility declaration",
+      "source_node_id": "ibc2021-1104.4",
+      "evidence": {
+        "text": "1104.4 Multistory buildings and facilities. At least one accessible route shall connect each accessible story, mezzanine and occupied roofs in multilevel buildings and facilities. Exceptions: 1. An accessible route is not required to stories, mezzanines and occupied roofs that have an aggregate area of not more than 3,000 square feet (278.7 m2) and are located above and below accessible levels. This exception shall not apply to: 1.1. Multiple tenant facilities of Group M occupancies containing five or more tenant spaces used for the sales or rental of goods and where at least one such tenant space is located on a floor level above or below the accessible levels. 1.2. Stories or mezzanines containing offices of health care providers (Group B or I). 1.3. Passenger transportation facilities and airports (Group A-3 or B). 1.4. Government buildings. 1.5. Structures with four or more dwelling units. 2. Stories, mezzanines or occupied roofs that do not contain accessible elements or other spaces as determined by Section 1108 or 1109 are not required to be served by an accessible route from an accessible level. 3. In air traffic control towers, an accessible route is not required to serve the cab and the floor immediately below the cab. 4. Where a two-story building or facility has one story or mezzanine with an occupant load of five or fewer persons that does not contain public use space, that story or mezzanine shall not be required to be connected by an accessible route to the story above or below.",
+        "source_fragments": [
+          {
+            "pdf_page_number": 2,
+            "source_pdf_page": 357,
+            "column": "right",
+            "bbox": [
+              307.799,
+              673.804,
+              550.916,
+              695.866
+            ],
+            "line_ids": [
+              "p002-b025-l001",
+              "p002-b025-l002"
+            ],
+            "block_ids": [
+              "p002-b025"
+            ]
+          },
+          {
+            "pdf_page_number": 3,
+            "source_pdf_page": 358,
+            "column": "left",
+            "bbox": [
+              61.199,
+              69.725,
+              304.302,
+              486.777
+            ],
+            "line_ids": [
+              "p003-b003-l001",
+              "p003-b003-l002",
+              "p003-b004-l001",
+              "p003-b005-l001",
+              "p003-b005-l002",
+              "p003-b005-l003",
+              "p003-b005-l004",
+              "p003-b005-l005",
+              "p003-b005-l006",
+              "p003-b006-l001",
+              "p003-b006-l002",
+              "p003-b006-l003",
+              "p003-b006-l004",
+              "p003-b006-l005",
+              "p003-b006-l006",
+              "p003-b006-l007",
+              "p003-b006-l008",
+              "p003-b006-l009",
+              "p003-b006-l010",
+              "p003-b006-l011",
+              "p003-b006-l012",
+              "p003-b006-l013",
+              "p003-b006-l014",
+              "p003-b006-l015",
+              "p003-b006-l016",
+              "p003-b006-l017",
+              "p003-b006-l018",
+              "p003-b006-l019",
+              "p003-b006-l020",
+              "p003-b006-l021",
+              "p003-b006-l022",
+              "p003-b006-l023",
+              "p003-b006-l024",
+              "p003-b006-l025",
+              "p003-b006-l026",
+              "p003-b006-l027",
+              "p003-b006-l028",
+              "p003-b006-l029",
+              "p003-b006-l030"
+            ],
+            "block_ids": [
+              "p003-b003",
+              "p003-b004",
+              "p003-b005",
+              "p003-b006"
+            ]
+          }
+        ],
+        "sha256": "40efd01114a60c5b317fc9e56e30659d247ef85eb83cdaec6b729f5bbe9ea840"
+      },
+      "requires_profile_agreement": true,
+      "regulatory_compliance_check": false
+    }
+  ]
+}

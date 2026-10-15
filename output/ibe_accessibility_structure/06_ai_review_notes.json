@@ -1,0 +1,32 @@
+{
+  "review_scope": "Visual and structural QA only; no legal semantic parsing performed",
+  "ai_token_used": true,
+  "observations": [
+    {
+      "finding": "Page 1 has a single-column chapter introduction above a two-column regulatory body.",
+      "action": "Added a page-1 top-band rule that assigns the title and user note to the spanning column."
+    },
+    {
+      "finding": "Pages 2 through 18 use a two-column body layout.",
+      "action": "Retained coordinate-based left-column then right-column reading order."
+    },
+    {
+      "finding": "Eight automatically detected table candidates correspond to visible tables.",
+      "action": "Separated 189 table-region source lines from ordinary paragraph nodes and retained their line provenance."
+    },
+    {
+      "finding": "The first structural pass treated some ordinary lines beginning with cross-reference numbers as new provisions.",
+      "action": "Restricted provision starts to numbered lines whose first meaningful span is bold."
+    },
+    {
+      "finding": "The first structural pass duplicated section heading text and did not attach sections to the chapter root.",
+      "action": "Removed duplicate heading concatenation and made Sections 1101 through 1112 children of Chapter 11."
+    }
+  ],
+  "final_visual_assessment": "The retained page images and contact sheets show one mixed-layout opening page, seventeen two-column pages, consistent running headers and footers, decorative margin bars, and eight tables. No OCR was required.",
+  "limitations": [
+    "Stage 10 legal semantic interpretation was intentionally excluded.",
+    "Node boundaries are deterministic layout/typographic results and should receive targeted human review before authoritative RDF publication.",
+    "Cross-reference relationships are not yet resolved into graph edges."
+  ]
+}

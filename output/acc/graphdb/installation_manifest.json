@@ -1,0 +1,23 @@
+[
+  {
+    "name": "graphdb",
+    "url": "https://maven.ontotext.com/repository/owlim-releases/com/ontotext/graphdb/graphdb/10.6.4/graphdb-10.6.4-dist.zip",
+    "archive": "D:\\00_SL1008\\output\\acc\\graphdb\\downloads\\graphdb.zip",
+    "bytes": 271396855,
+    "sha256": "cb94688eac9fcdb2eebcb94a02f4e94ad642ba829fb2e871eb5e4c786b22e960",
+    "publisher_checksum_verified": true,
+    "destination": "C:\\Users\\dyp\\AppData\\Local\\Programs\\GraphDB-10.6.4\\graphdb",
+    "archive_crc_verified": true,
+    "publisher_sha1": "4c24fdf95d89308004a235a05e46ebb02f9b82e9"
+  },
+  {
+    "name": "java",
+    "url": "https://github.com/adoptium/temurin17-binaries/releases/download/jdk-17.0.20.1%2B1/OpenJDK17U-jre_x64_windows_hotspot_17.0.20.1_1.zip",
+    "archive": "D:\\00_SL1008\\output\\acc\\graphdb\\downloads\\java.zip",
+    "bytes": 43780109,
+    "sha256": "bc21a93923103cdaac93ee337b0ae4365e739fde36df823dd456bc67c8a9d352",
+    "publisher_checksum_verified": true,
+    "destination": "C:\\Users\\dyp\\AppData\\Local\\Programs\\GraphDB-10.6.4\\java",
+    "archive_crc_verified": true
+  }
+]

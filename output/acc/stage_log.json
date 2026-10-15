@@ -1,0 +1,13 @@
+{
+  "schema_version": "0.1.0",
+  "ai_usage": {"ai_assisted_authoring": true, "runtime_llm_calls": 0, "exact_authoring_tokens": null, "reason": "Per-stage token metering is unavailable"},
+  "stages": [
+    {"stage": "scope", "tools": ["Python"], "inputs": ["10_semantic_validated.json", "10_dsl_rules.json", "10_manual_review_queue.json"], "outputs": ["acc_scope.json", "computable_rules.json", "deferred_rules.json"], "failures": [], "review_items": "All triage is candidate-only; original complex semantic review flags retained"},
+    {"stage": "profile", "tools": ["Python"], "inputs": ["handoff requirements", "source clauses"], "outputs": ["ifc_profile.json", "ifc_property_conventions.json"], "failures": [], "review_items": "Model author agreement; IFC4.3 compatibility"},
+    {"stage": "mapping", "tools": ["Python", "RDFLib", "IfcOpenShell"], "inputs": ["source clauses", "ifc_profile.json"], "outputs": ["ibc_ifc_mapping.json", "ibc_ifc_mapping.ttl", "mapping_review_queue.json"], "failures": [], "review_items": 11},
+    {"stage": "ids", "tools": ["IfcTester", "defusedxml"], "inputs": ["IFC property convention", "source clauses"], "outputs": ["ibc_accessibility.ids", "ids_traceability.json", "ids_validation_report.json"], "failures": [{"issue": "IfcTester 0.9.0 drops Specification.identifier on parse", "resolution": "XML identifier restoration and regression test", "status": "fixed"}], "review_items": "Proposed project information requirements"},
+    {"stage": "precheck_mvp", "tools": ["IfcOpenShell", "IfcTester", "Python unittest"], "inputs": ["mvp_rule_catalog.json", "temporary synthetic fixtures"], "outputs": ["src/precheck_ifc.py", "src/ifc_inventory.py", "src/acc_engine.py", "test_report.json"], "failures": [], "review_items": "6 regulatory subchecks require scope review; 2 information checks route to precheck; no user IFC supplied"},
+    {"stage": "review_context", "tools": ["Python"], "inputs": ["03_structured_document.json", "10_semantic_validated.json"], "outputs": ["rule_review_context.json"], "failures": [], "review_items": "289 deterministic context records; no legal applicability decided"}
+  ],
+  "actual_model_compliance_evaluated": false
+}

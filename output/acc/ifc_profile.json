@@ -1,0 +1,67 @@
+{
+  "schema_version": "0.1.0",
+  "target_schema": "IFC4",
+  "compatible_schema_for_reading": [
+    "IFC4",
+    "IFC4X3"
+  ],
+  "ifc4x3_execution_status": "mapping_review_required",
+  "units": {
+    "source": "IfcUnitAssignment",
+    "internal_length": "m",
+    "internal_area": "m2",
+    "internal_slope": "ratio",
+    "missing_or_ambiguous": "UNKNOWN"
+  },
+  "required_spatial_hierarchy": [
+    "IfcProject",
+    "IfcSite",
+    "IfcBuilding",
+    "IfcBuildingStorey"
+  ],
+  "object_types": [
+    "IfcDoor",
+    "IfcRamp",
+    "IfcStair",
+    "IfcSpace",
+    "IfcZone",
+    "IfcOpeningElement",
+    "IfcRelSpaceBoundary"
+  ],
+  "classification": {
+    "system": "project_defined",
+    "required_codes": [
+      "TOILET_ROOM",
+      "PARKING_SPACE",
+      "DWELLING_UNIT",
+      "SLEEPING_UNIT",
+      "PUBLIC_ENTRANCE"
+    ],
+    "absence": "UNKNOWN"
+  },
+  "space_boundary": {
+    "preferred": "IfcRelSpaceBoundary2ndLevel",
+    "fallback": "IfcRelSpaceBoundary",
+    "absence_for_topology": "UNKNOWN"
+  },
+  "identity": {
+    "guid": "IfcRoot.GlobalId required and unique",
+    "accessible_route": "explicit project convention plus verified graph",
+    "no_inference_from_name_alone": true
+  },
+  "geometry": {
+    "required_for_geometry_checks": true,
+    "generation_failure": "UNKNOWN",
+    "bounding_box_alone_sufficient_for_clear_width": false
+  },
+  "missing_data_result": "UNKNOWN",
+  "manual_review_result": "MANUAL_REVIEW",
+  "result_states": [
+    "PASS",
+    "FAIL",
+    "UNKNOWN",
+    "NOT_APPLICABLE",
+    "MANUAL_REVIEW"
+  ],
+  "not_applicable_requires_evidence": true
+}

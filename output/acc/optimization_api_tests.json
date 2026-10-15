@@ -1,0 +1,23 @@
+[
+  {
+    "case": "invalid model/origin/rule set",
+    "status": 400
+  },
+  {
+    "case": "invalid model/origin/rule set",
+    "status": 403
+  },
+  {
+    "case": "invalid model/origin/rule set",
+    "status": 400
+  },
+  {
+    "case": "repeatable real model runs and retained history",
+    "status": 200,
+    "run_ids": [
+      "a2b0124a7b97482c907849fe2f7474ad",
+      "a81734d072ee4472b9832c00ed9ef187"
+    ],
+    "input_sha256": "2a13eec2637ff06d462b3bad110526f5c4e3412c8a9363283bed24d3b6936702"
+  }
+]

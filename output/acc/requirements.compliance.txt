@@ -1,0 +1,2 @@
+# Install alongside requirements.lock.txt. Used only for data structure validation.
+jsonschema==4.26.0

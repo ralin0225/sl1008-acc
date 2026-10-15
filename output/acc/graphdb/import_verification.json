@@ -1,0 +1,39 @@
+{
+  "verified_at": "2026-10-10T11:02:43.540277+00:00",
+  "version_response": "{\"productType\":\"free\",\"productVersion\":\"10.6.4\",\"connectors\":\"16.2.7\",\"sesame\":\"4.3.10\",\"Workbench\":\"2.6.4\"}",
+  "repository": "ibc2021-accessibility",
+  "server": "http://localhost:7200",
+  "source": "D:\\00_SL1008\\output\\ibe_accessibility_structure\\semantic_rdf\\11_combined_graph.trig",
+  "source_sha256": "ab1233676113f627623b66bd277b7407bef070d0e2dfcfd2431c1101fed2b0c2",
+  "explicit_quad_count": 9648,
+  "all_explicit_quads_match": true,
+  "missing_quad_count": 0,
+  "extra_quad_count": 0,
+  "graph_counts": [
+    {
+      "g": {
+        "type": "uri",
+        "value": "https://example.org/ibc/2021/documentGraph"
+      },
+      "count": {
+        "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+        "type": "literal",
+        "value": "2664"
+      }
+    },
+    {
+      "g": {
+        "type": "uri",
+        "value": "https://example.org/ibc/2021/entityGraph"
+      },
+      "count": {
+        "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+        "type": "literal",
+        "value": "6984"
+      }
+    }
+  ],
+  "license_info": null,
+  "ruleset": "empty",
+  "model_compliance_results_generated": false
+}

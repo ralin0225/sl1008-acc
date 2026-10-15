@@ -1,0 +1,43 @@
+{
+  "version": {
+    "id": "appgprj_6aca1daf0104819195fa213f404c8e78~appgver_a549602108cc8191ac0448a877decb26",
+    "project_id": "appgprj_6aca1daf0104819195fa213f404c8e78",
+    "version_number": 4,
+    "source": {
+      "commit_sha": "39c352769e663c32ec5c122d3624f6b503b9ca45"
+    },
+    "archive_storage": {
+      "archive_format": "tar",
+      "sediment_file_id": "file_000000003ec882108671374c4f1342ee",
+      "content_hash": "sha256:140bf75ad5fc3221891b4a987c7178a25c8d389f00a6a8f36ba1b92cda695ce4",
+      "size_bytes": 6369280,
+      "file_count": 16
+    },
+    "screenshot_url": null,
+    "deployment_id": null
+  },
+  "deployment": {
+    "id": "appgdep_6aca4674359c819185f644b227e156d0",
+    "project_id": "appgprj_6aca1daf0104819195fa213f404c8e78",
+    "title": "IFC · 法规双向查询",
+    "version_id": "appgprj_6aca1daf0104819195fa213f404c8e78~appgver_a549602108cc8191ac0448a877decb26",
+    "type": "publish",
+    "status": "succeeded",
+    "url": "https://ifc-regulation-workbench.airyjoy32.chatgpt.site",
+    "has_mcp": false,
+    "screenshot_asset_pointer": null,
+    "provider_deployment_id": "site---6aca1daf0104819195fa213f404c8e78",
+    "failure_message": null,
+    "env_set_revision": 0,
+    "updated_at": "2026-10-10T14:06:57.054788+00:00"
+  },
+  "packaging": {
+    "tool": "Sites package-site.sh via bundled sh.exe",
+    "recovered_failure": "Windows wrapper passed backslash path to bash",
+    "archive": "D:\\00_SL1008\\output\\acc\\viewer-chapters-deploy.tar.gz"
+  },
+  "browser_qa": {
+    "completed": false,
+    "reason": "Computer Use stopped: current browser URL could not be reliably determined on Windows"
+  }
+}

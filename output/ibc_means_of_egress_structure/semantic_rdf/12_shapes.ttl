@@ -1,0 +1,46 @@
+@prefix ibco: <https://example.org/ibc/ontology/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ibco:AtomicRuleShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:path ibco:statementType ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:path ibco:text ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:path ibco:modality ] ;
+    sh:targetClass ibco:AtomicRule .
+
+ibco:MeasurementShape a sh:NodeShape ;
+    sh:property [ sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:path ibco:unitCode ],
+        [ sh:datatype xsd:decimal ;
+            sh:minCount 1 ;
+            sh:path ibco:value ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:path ibco:operator ] ;
+    sh:targetClass ibco:Measurement .
+
+ibco:RequirementShape a sh:NodeShape ;
+    sh:property [ sh:class ibco:BuildingCodeEntity ;
+            sh:minCount 1 ;
+            sh:path ibco:sourceNode ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:path ibco:modality ],
+        [ sh:datatype xsd:decimal ;
+            sh:minCount 1 ;
+            sh:path ibco:confidence ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:path ibco:text ],
+        [ sh:datatype xsd:string ;
+            sh:minCount 1 ;
+            sh:path ibco:statementType ] ;
+    sh:targetClass ibco:Requirement .
+

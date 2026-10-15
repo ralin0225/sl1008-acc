@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.local/schemas/ibc-accessibility-structure-1.0.0.json",
+  "title": "IBC Accessibility Structured Document",
+  "type": "object",
+  "required": ["schema_version", "document", "pages", "structure", "nodes", "tables", "references"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "document": {
+      "type": "object",
+      "required": ["document_id", "title", "edition", "source_file", "source_pdf_page_range", "extraction"]
+    },
+    "pages": {
+      "type": "array",
+      "minItems": 18,
+      "maxItems": 18,
+      "items": {
+        "type": "object",
+        "required": ["page_id", "pdf_page_number", "source_pdf_page", "layout", "reading_order_line_ids"]
+      }
+    },
+    "structure": {
+      "type": "object",
+      "required": ["root_node_ids"],
+      "properties": {"root_node_ids": {"type": "array", "minItems": 1, "items": {"type": "string"}}}
+    },
+    "nodes": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": ["id", "type", "parent_id", "child_ids", "order", "text_verbatim", "text_normalized", "source_fragments", "quality"],
+        "properties": {
+          "id": {"type": "string"},
+          "type": {"enum": ["chapter", "section", "provision", "list_item", "exception", "note", "heading", "front_matter"]},
+          "label": {"type": ["string", "null"]},
+          "heading": {"type": ["string", "null"]},
+          "parent_id": {"type": ["string", "null"]},
+          "child_ids": {"type": "array", "items": {"type": "string"}},
+          "order": {"type": "integer", "minimum": 1},
+          "text_verbatim": {"type": "string"},
+          "text_normalized": {"type": "string"},
+          "source_fragments": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": ["pdf_page_number", "source_pdf_page", "column", "bbox", "line_ids", "block_ids"]
+            }
+          },
+          "quality": {"type": "object"}
+        }
+      }
+    },
+    "tables": {"type": "object"},
+    "references": {"type": "array"}
+  }
+}

@@ -1,0 +1,225 @@
+{
+  "schema_version": "1.0.0",
+  "is_synthetic": false,
+  "facts_by_rule": {
+    "parking-minimum": {
+      "model_evidence": {
+        "ifc_sha256": "71c9466bf02306be58d45b77d738541a0e7410767960b5eed1cf85737dfa34c9",
+        "ifc_path": "D:\\00_SL1008\\output\\acc\\models\\ifcopenhouse\\IfcOpenHouse_IFC4.ifc"
+      },
+      "applicable": null,
+      "applicability_evidence": null,
+      "scope_id": null,
+      "inventory_complete": false,
+      "inventory_kind": "parking_facility_total_and_accessible_spaces",
+      "target_global_ids": [],
+      "total": null,
+      "accessible": null,
+      "accessible_global_ids": null,
+      "accessible_design_verified": false,
+      "accessible_design_evidence": null,
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "676409a003c7399d1ced1cadbfc2c9fd2298a8d01cfae5b5951ca40911f1098b",
+        "contract_sha256": "bd8d8b5550b33fb1be6130ed2d2cb5da80677f243ea74801bcdf4a61565e7eb3",
+        "definition_sha256": "289cf49985c166b445e7780823f4e55ea67fa8f3699ab10a7ff067238b149657",
+        "facts_sha256": "d620c90ce69a2bb3648be47efbd574ec40b954b47222843a57993fb77dca8d38"
+      }
+    },
+    "van-parking-minimum": {
+      "model_evidence": {
+        "ifc_sha256": "71c9466bf02306be58d45b77d738541a0e7410767960b5eed1cf85737dfa34c9",
+        "ifc_path": "D:\\00_SL1008\\output\\acc\\models\\ifcopenhouse\\IfcOpenHouse_IFC4.ifc"
+      },
+      "applicable": null,
+      "applicability_evidence": null,
+      "scope_id": null,
+      "inventory_complete": false,
+      "inventory_kind": "accessible_parking_and_van_accessible_spaces",
+      "target_global_ids": [],
+      "total": null,
+      "accessible": null,
+      "accessible_global_ids": null,
+      "accessible_design_verified": false,
+      "accessible_design_evidence": null,
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "99bacb364ff1534162a95f91673367737465a9da09ea5a61bd0dc34a24c0a341",
+        "contract_sha256": "e58a240b5ca7281f80dc46b4670e883f3777037b629fe57692262d87f086d97e",
+        "definition_sha256": "bf6867be1b1171bac5e3d05307d214ad043917a7d805d96d98af4b0efa0465dc",
+        "facts_sha256": "7349463f7312fc4dd37421dd28134333dd9f62cf5035f28382375b99cad25bb6"
+      }
+    },
+    "public-entrance-minimum": {
+      "model_evidence": {
+        "ifc_sha256": "71c9466bf02306be58d45b77d738541a0e7410767960b5eed1cf85737dfa34c9",
+        "ifc_path": "D:\\00_SL1008\\output\\acc\\models\\ifcopenhouse\\IfcOpenHouse_IFC4.ifc"
+      },
+      "applicable": null,
+      "applicability_evidence": null,
+      "scope_id": null,
+      "inventory_complete": false,
+      "inventory_kind": "public_entrances_and_accessible_public_entrances",
+      "target_global_ids": [],
+      "total": null,
+      "accessible": null,
+      "accessible_global_ids": null,
+      "accessible_design_verified": false,
+      "accessible_design_evidence": null,
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "4af7ca4462c5f667a91a29f9d753a8a7a2f274760334b9928e37ce1fc2021402",
+        "contract_sha256": "d76255d3b41484a349998d5103bf9ab8bc1173508d075cf95015e3bb12e34647",
+        "definition_sha256": "d4e0fbe8666003d9f3b6618cf10c8cb007da404509b77250c7b79993f132907f",
+        "facts_sha256": "b7487408eb80ad8d3c421f8fb2279d5d7975033443b001362504a203122c4d8b"
+      }
+    },
+    "tenant-entrance-minimum": {
+      "model_evidence": {
+        "ifc_sha256": "71c9466bf02306be58d45b77d738541a0e7410767960b5eed1cf85737dfa34c9",
+        "ifc_path": "D:\\00_SL1008\\output\\acc\\models\\ifcopenhouse\\IfcOpenHouse_IFC4.ifc"
+      },
+      "applicable": null,
+      "applicability_evidence": null,
+      "scope_id": null,
+      "inventory_complete": false,
+      "inventory_kind": "one_tenant_accessible_entrances",
+      "target_global_ids": [],
+      "accessible": null,
+      "accessible_global_ids": null,
+      "accessible_design_verified": false,
+      "accessible_design_evidence": null,
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "864b618676ee4033dd6cfb871fc2cebfd48def72c7cd847e2c673c2904687566",
+        "contract_sha256": "8ce734a622144e3b53d1ef98928e91f75b0756905368e6a4a2ad934fd29e58bd",
+        "definition_sha256": "3a139c8c5d30d5186f97fd6e1294ba1ad260c18a0c9d40323759b66604e54bd5",
+        "facts_sha256": "a41e287c68fa69f911fa60b00505033271eb9c0a7379ec1f2e80a5c9d7b5a0a1"
+      }
+    },
+    "type-a-unit-minimum": {
+      "model_evidence": {
+        "ifc_sha256": "71c9466bf02306be58d45b77d738541a0e7410767960b5eed1cf85737dfa34c9",
+        "ifc_path": "D:\\00_SL1008\\output\\acc\\models\\ifcopenhouse\\IfcOpenHouse_IFC4.ifc"
+      },
+      "applicable": null,
+      "applicability_evidence": null,
+      "scope_id": null,
+      "inventory_complete": false,
+      "inventory_kind": "reviewed_site_units_and_type_a_units",
+      "target_global_ids": [],
+      "total": null,
+      "accessible": null,
+      "accessible_global_ids": null,
+      "accessible_design_verified": false,
+      "accessible_design_evidence": null,
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "8083af70749f51f0f393c98168b25c8f817477f85c90b2779ece9a7f019f650d",
+        "contract_sha256": "d690022aea808e43c215c3b41e587fbf945017462b24d052871d8743a418f1ac",
+        "definition_sha256": "6fd3e603f530b1a16a853d481ab664de229f3aa4dc1b8ddc0fecc1ed4ed06c1b",
+        "facts_sha256": "b6eb6092de546cc40a6e5f4186b1b78a9d2155e60338d56bd8119d2855f67c0b"
+      }
+    },
+    "site-route-connectivity": {
+      "model_evidence": {
+        "ifc_sha256": "71c9466bf02306be58d45b77d738541a0e7410767960b5eed1cf85737dfa34c9",
+        "ifc_path": "D:\\00_SL1008\\output\\acc\\models\\ifcopenhouse\\IfcOpenHouse_IFC4.ifc"
+      },
+      "applicable": null,
+      "applicability_evidence": null,
+      "scope_id": null,
+      "inventory_complete": false,
+      "inventory_kind": "reviewed_site_accessible_targets_and_routes",
+      "target_global_ids": [],
+      "nodes": null,
+      "edges": null,
+      "targets": null,
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "69a03ec44fd123f8136232dbad9372f70d6f61fa7773c4ed13b55de8605d122a",
+        "contract_sha256": "ed76b381788204325397c2346c17bf8445287a3239c96ea4be7799fa94af3ba2",
+        "definition_sha256": "958304d338140893e7a4388212c2bd5996e55997ad81fd8e374bebaec563eb00",
+        "facts_sha256": "8d52177071dcaed543a3f36a5a470ce6a11fa4fa1561ca37be817da1252955d3"
+      }
+    },
+    "required-accessibility-pset": {
+      "model_evidence": {
+        "ifc_sha256": "71c9466bf02306be58d45b77d738541a0e7410767960b5eed1cf85737dfa34c9",
+        "ifc_path": "D:\\00_SL1008\\output\\acc\\models\\ifcopenhouse\\IfcOpenHouse_IFC4.ifc"
+      },
+      "applicable": null,
+      "applicability_evidence": null,
+      "scope_id": null,
+      "inventory_complete": false,
+      "inventory_kind": null,
+      "target_global_ids": [],
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "97b9eebace0cf8c3a3456174f82c5dafd03ac33986685f24dfa2d3e6b62dc37e",
+        "contract_sha256": "dea9b9ced6bc216dbc886c9569b19863a1fbcbc262873312f452c9f6ac377bd2",
+        "definition_sha256": "416a9222b74e5e7798693fb265e0c7eb4078f8f219bf36a429305f13eb5d9bac",
+        "facts_sha256": "429eb17b934edc276d5617741078a01674ad7c863230c29619aa333d376657cf"
+      }
+    },
+    "space-use-classification": {
+      "model_evidence": {
+        "ifc_sha256": "71c9466bf02306be58d45b77d738541a0e7410767960b5eed1cf85737dfa34c9",
+        "ifc_path": "D:\\00_SL1008\\output\\acc\\models\\ifcopenhouse\\IfcOpenHouse_IFC4.ifc"
+      },
+      "applicable": null,
+      "applicability_evidence": null,
+      "scope_id": null,
+      "inventory_complete": false,
+      "inventory_kind": null,
+      "target_global_ids": [],
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "81b83000beb0585a9240cffe3ba1dfeb6a460b3fcd3075f17cf0e53240b0e71c",
+        "contract_sha256": "72eec476bbcd46d54ea6727314c48fce747bde486812407f69e7ac2e4d672f41",
+        "definition_sha256": "43a204373c74269e47898f8e7e02720ed7e3bbf6b970d912c3b1c3afc60690a5",
+        "facts_sha256": "429eb17b934edc276d5617741078a01674ad7c863230c29619aa333d376657cf"
+      }
+    },
+    "egress-door-clear-width": {
+      "model_evidence": {
+        "ifc_sha256": "71c9466bf02306be58d45b77d738541a0e7410767960b5eed1cf85737dfa34c9",
+        "ifc_path": "D:\\00_SL1008\\output\\acc\\models\\ifcopenhouse\\IfcOpenHouse_IFC4.ifc"
+      },
+      "applicable": null,
+      "applicability_evidence": null,
+      "scope_id": null,
+      "inventory_complete": false,
+      "inventory_kind": "reviewed_egress_doors",
+      "target_global_ids": [],
+      "width_branch": null,
+      "clear_width_semantics_verified": false,
+      "measurement_definition_evidence": null,
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "457931ce8a4fd6afabe328ff13e9de5d92dd9d6c05f3464d890dbe7e7fa0d493",
+        "contract_sha256": "1f8b5ca7e5466b4a903273076d7810b4992093c70176d69258fcef9b13727e3e",
+        "definition_sha256": null,
+        "facts_sha256": "7648063245b75b74b6f2fa0840459a53b2292d49416cd3a47f4db30162a0b519"
+      }
+    }
+  }
+}

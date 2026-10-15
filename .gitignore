@@ -1,0 +1,34 @@
+# Local runtimes and dependencies
+**/.python_deps/
+**/.semantic_deps/
+**/node_modules/
+**/__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Source documents, downloaded models and binary previews stay on disk.
+*.pdf
+*.ifc
+*.ifczip
+*.png
+*.jpg
+*.jpeg
+*.tar.gz
+*.zip
+tmp/
+output/chapter_processing_history/
+output/acc/graphdb/home/
+output/acc/runs/
+output/acc/reviewed_facts/
+output/acc/model_tests/
+# Viewer has its own existing Git repository and is versioned separately.
+output/acc/viewer/
+*.pid
+*.log
+
+# Local credentials and editor settings
+.env
+.env.*
+!.env.example
+.vscode/

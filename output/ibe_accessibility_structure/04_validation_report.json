@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "status": "pass",
+  "checks": {
+    "page_count": {
+      "expected": 18,
+      "actual": 18,
+      "pass": true
+    },
+    "content_line_count": 2166,
+    "reading_order_line_count": 2166,
+    "structured_source_line_count": 2166,
+    "node_source_line_count": 1977,
+    "table_source_line_count": 189,
+    "unassigned_content_line_ids": [],
+    "duplicate_structured_line_ids": [],
+    "unknown_structured_line_ids": [],
+    "duplicate_reading_order_line_ids": [],
+    "node_count": 305,
+    "table_count": 8,
+    "low_confidence_node_ids": []
+  },
+  "warnings": [],
+  "manual_review_recommendations": [
+    "Review the QA contact sheets for page-region and reading-order errors.",
+    "Review all low-confidence nodes before RDF conversion.",
+    "Confirm table candidates against the page images."
+  ]
+}

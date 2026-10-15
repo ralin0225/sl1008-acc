@@ -1,0 +1,9 @@
+{
+  "repository": "https://github.com/aothms/IfcOpenHouse",
+  "commit": "f1de8b04e37803113a11e8b9c4f598863b6d2785",
+  "path": "IfcOpenHouse_IFC4.ifc",
+  "license_note": "No explicit license file found in the source snapshot; retained for local testing.",
+  "bytes": 113264,
+  "sha256": "71c9466bf02306be58d45b77d738541a0e7410767960b5eed1cf85737dfa34c9",
+  "model_modified": false
+}

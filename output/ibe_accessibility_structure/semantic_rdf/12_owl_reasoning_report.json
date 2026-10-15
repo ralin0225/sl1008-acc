@@ -1,0 +1,10 @@
+{
+  "profile": "OWL 2 RL",
+  "input_triples": 9739,
+  "inferred_graph_triples": 17983,
+  "inferred_triples_added": 8244,
+  "owl_nothing_instance_count": 0,
+  "owl_nothing_instances": [],
+  "status": "pass",
+  "note": "This is an OWL-RL consistency sanity check, not full first-order legal rule verification."
+}

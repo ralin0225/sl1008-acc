@@ -1,0 +1,8 @@
+{
+  "models": [
+    {"id": "buildingsmart-simple-scene", "filename": "Building-Architecture_IFC4.ifc", "name": "buildingSMART · 建筑样例"},
+    {"id": "ifcopenhouse", "filename": "IfcOpenHouse_IFC4.ifc", "name": "IfcOpenHouse · 住宅样例"},
+    {"id": "duplex", "filename": "Duplex.ifc", "name": "Duplex · 双拼住宅"},
+    {"id": "villa-patio", "filename": "AC29_Villa-Patio_GRAPHISOFT-Sample.ifc", "name": "Villa Patio · GRAPHISOFT 样例"}
+  ]
+}

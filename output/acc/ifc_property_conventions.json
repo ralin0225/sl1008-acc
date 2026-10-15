@@ -1,0 +1,96 @@
+{
+  "schema_version": "0.1.0",
+  "status": "proposed_project_convention; requires_model_author_agreement",
+  "pset_name": "ACC_Accessibility",
+  "properties": {
+    "Accessible": {
+      "type": "IfcBoolean",
+      "applies_to": [
+        "IfcDoor",
+        "IfcRamp",
+        "IfcStair",
+        "IfcSpace"
+      ],
+      "meaning": "declared accessible; requires independent verification"
+    },
+    "UseCode": {
+      "type": "IfcLabel",
+      "applies_to": [
+        "IfcSpace"
+      ],
+      "allowed": [
+        "TOILET_ROOM",
+        "PARKING_SPACE",
+        "DWELLING_UNIT",
+        "SLEEPING_UNIT",
+        "OTHER"
+      ]
+    },
+    "UnitType": {
+      "type": "IfcLabel",
+      "applies_to": [
+        "IfcSpace",
+        "IfcZone"
+      ],
+      "allowed": [
+        "ACCESSIBLE",
+        "TYPE_A",
+        "TYPE_B",
+        "NONE"
+      ]
+    },
+    "EntranceType": {
+      "type": "IfcLabel",
+      "applies_to": [
+        "IfcDoor"
+      ],
+      "allowed": [
+        "PUBLIC",
+        "TENANT",
+        "SERVICE",
+        "OTHER"
+      ]
+    },
+    "ParkingFacilityId": {
+      "type": "IfcIdentifier",
+      "applies_to": [
+        "IfcSpace",
+        "IfcZone"
+      ],
+      "meaning": "count parking separately by facility"
+    },
+    "ParkingIsVanAccessible": {
+      "type": "IfcBoolean",
+      "applies_to": [
+        "IfcSpace"
+      ],
+      "meaning": "van accessible declaration"
+    },
+    "RouteNodeId": {
+      "type": "IfcIdentifier",
+      "applies_to": [
+        "IfcSpace",
+        "IfcDoor",
+        "IfcRamp",
+        "IfcStair"
+      ],
+      "meaning": "project route graph reference"
+    },
+    "ClearOpeningWidth": {
+      "type": "IfcPositiveLengthMeasure",
+      "applies_to": [
+        "IfcDoor"
+      ],
+      "meaning": "verified clear opening width in IFC project length unit"
+    },
+    "RunningSlope": {
+      "type": "IfcRatioMeasure",
+      "applies_to": [
+        "IfcRamp"
+      ],
+      "meaning": "rise divided by horizontal run"
+    }
+  },
+  "missing_property_status": "UNKNOWN",
+  "ids_failure_is_information_gap": true
+}

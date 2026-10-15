@@ -1,0 +1,171 @@
+{
+  "created_at_utc": "2026-10-08T18:51:16.334745+00:00",
+  "python": "3.12.10",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "packages": {
+    "ifctester": "0.9.0",
+    "ifcopenshell": "0.9.0",
+    "rdflib": "7.6.0",
+    "xmlschema": "4.3.2"
+  },
+  "inputs": [
+    {
+      "path": "output\\ibe_accessibility_structure\\03_structured_document.json",
+      "sha256": "4a2d64a6e150c42c4472d502a9950187101191ed0b71898f3819e6b96a53112b"
+    },
+    {
+      "path": "output\\ibe_accessibility_structure\\semantic_rdf\\10_semantic_validated.json",
+      "sha256": "6ffffa795f90fa774ee6ba300041c1e007eb0115f2d40ae867da3f007507c1ee"
+    },
+    {
+      "path": "output\\ibe_accessibility_structure\\semantic_rdf\\10_dsl_rules.json",
+      "sha256": "8912b24e606112f4190006314b421fccace60c6ced0ce718c3e8d98b182fa71e"
+    },
+    {
+      "path": "output\\ibe_accessibility_structure\\semantic_rdf\\10_manual_review_queue.json",
+      "sha256": "466d00ac099936b28f13a78eb6a8f8e3daab20c96907e86baa833e9bd3fc579e"
+    },
+    {
+      "path": "IBE2021_11Accessibility.pdf",
+      "sha256": "70cac1ed10f412a0db0e0470a6f0a48a7c85b1759d60acc82ddd5e74fbc89c3f"
+    }
+  ],
+  "outputs": [
+    {
+      "path": "output\\acc\\acc_scope.json",
+      "sha256": "8ff547ee7d2b3f93a07b85c958dbe8606229ec7d2e3a7caf60ce4d942b60f8ea"
+    },
+    {
+      "path": "output\\acc\\computable_rules.json",
+      "sha256": "c0fcc3c70abcd3281bcac9f4fde0c6337d841387bcb5ba57e1b232100fd1f1b1"
+    },
+    {
+      "path": "output\\acc\\deferred_rules.json",
+      "sha256": "7413ffc46a663bc33689d19ff84946786d90cec3643aa11ba67eb372bbbc014d"
+    },
+    {
+      "path": "output\\acc\\execution_report.md",
+      "sha256": "ec36b9bc73b2dc339af490e8f2dd4e2f55f494bef2f08170235c4f45a3abd3a5"
+    },
+    {
+      "path": "output\\acc\\foundation_validation_report.json",
+      "sha256": "b74cc8feb6f14d6cddedf6d15ef1b88de6f53882051b620f44f1cad1e5618633"
+    },
+    {
+      "path": "output\\acc\\ibc_accessibility.ids",
+      "sha256": "fb1e720bfc244b73068a05c31866483b06a4ae765b07e55f00c252695a2b7790"
+    },
+    {
+      "path": "output\\acc\\ibc_ifc_mapping.json",
+      "sha256": "3f3a39ebce9f4028ab01e638c68a1436908e80c942eefbb24b3c097ab2f0add6"
+    },
+    {
+      "path": "output\\acc\\ibc_ifc_mapping.ttl",
+      "sha256": "b390783cc78b8b1e30d5fb1de98ceeb5a78a73c33326f66bcf0572b2f929c82a"
+    },
+    {
+      "path": "output\\acc\\ids_traceability.json",
+      "sha256": "32a4ffabc445c2e01fb0305a8b38ea873b2859c90ea26db420069e33e599890d"
+    },
+    {
+      "path": "output\\acc\\ids_validation_report.json",
+      "sha256": "9d100955ab384fec3639f55791c2cd8551c56cf6983cd92a98d39f484502bd8a"
+    },
+    {
+      "path": "output\\acc\\ifc_profile.json",
+      "sha256": "ad1ffdda4436bfadf9a607bc4217c845c5df08d8d9cd68e2dfe2135a7b46f482"
+    },
+    {
+      "path": "output\\acc\\ifc_property_conventions.json",
+      "sha256": "61534262db503966d3315c4c7d58e8c72124522a0c39d7c5406ecf3cb3241baf"
+    },
+    {
+      "path": "output\\acc\\mapping_review_queue.json",
+      "sha256": "8dc0e91892bd7f18e93c09672088859265c348d3c79f7b2e6403c66d964738c1"
+    },
+    {
+      "path": "output\\acc\\mvp_rule_catalog.json",
+      "sha256": "d5644bab30296bea946ae44ae16c123b9aaaf4e0c440fecbf8ee5aeef7dbd55b"
+    },
+    {
+      "path": "output\\acc\\normalized_facts.template.json",
+      "sha256": "5b72bc84628753e4a0fa9612d71b5ff032648020da91a8046c0f3b73c3d503d7"
+    },
+    {
+      "path": "output\\acc\\README.md",
+      "sha256": "8c976290d35d03f21d16125927dfda148fd3ee2469642a04b5920424b5b66ab0"
+    },
+    {
+      "path": "output\\acc\\requirements.lock.txt",
+      "sha256": "61486405fc4c3c5429a1c2de18842142db9d0a5a492eb8a562c2154028b5f248"
+    },
+    {
+      "path": "output\\acc\\rule_review_context.json",
+      "sha256": "c854ccc3a7940a10da0c476cd2e90cd3dd49086564ab3c7affa59e16babf94bb"
+    },
+    {
+      "path": "output\\acc\\src\\acc_engine.py",
+      "sha256": "0285453a2bf6ea3a49fdaf70930cdea74046d3c5ebac0c7950fd7ba320ddcd43"
+    },
+    {
+      "path": "output\\acc\\src\\build_acc_foundation.py",
+      "sha256": "5e786b70764e5ecad5c3fc404695a768a83fca1d4701d5c0e80338e32ce30bcb"
+    },
+    {
+      "path": "output\\acc\\src\\build_mvp_catalog.py",
+      "sha256": "da31217c3131a60f60453b9dedf65a2bdae60aeba4b6cbc87dce13505702cf59"
+    },
+    {
+      "path": "output\\acc\\src\\build_rule_context.py",
+      "sha256": "2850c27e46a5cba8011c8d91e5b47376778cd1937c61257ed7553ec14dea70c1"
+    },
+    {
+      "path": "output\\acc\\src\\generate_acc_ids.py",
+      "sha256": "fc2f317d0ff8e6d546555d2bd36a711937ea784ce3ad721278dc2725a8485944"
+    },
+    {
+      "path": "output\\acc\\src\\ids_support.py",
+      "sha256": "7d7fde3630ddedb1d4ec01f4c70c1b2c0bfd61ccb9e8732ed6cbdbdce4351d5a"
+    },
+    {
+      "path": "output\\acc\\src\\ifc_inventory.py",
+      "sha256": "242a60e71ee61cc210ffe03e54fbdf8a9c937cce4f705ad45744da7f891a74ca"
+    },
+    {
+      "path": "output\\acc\\src\\precheck_ifc.py",
+      "sha256": "0089e04f963cce26bfc4de54ab33f7246d2beb406dc8f6e3bd028c42ea3b536b"
+    },
+    {
+      "path": "output\\acc\\src\\run_foundation.py",
+      "sha256": "c7b782590341755c42804c22d8d6a19fc33106f666e036045e40d85e50dd20ae"
+    },
+    {
+      "path": "output\\acc\\src\\validate_acc_foundation.py",
+      "sha256": "191a34c51d36dbbe61dfb7d3e4b6a99d209a2793b5d2d1f6bf87d48603db6421"
+    },
+    {
+      "path": "output\\acc\\stage_log.json",
+      "sha256": "07983a1346e8a3cd0e1d14ad220f386fdbef0ceb252286d238f02f79889bf97e"
+    },
+    {
+      "path": "output\\acc\\test_report.json",
+      "sha256": "27220b0b69d28de19c89961f8e7530d9c60a9b1a14527728b2f17d9febf8e162"
+    },
+    {
+      "path": "output\\acc\\tests\\test_acc_engine.py",
+      "sha256": "62a2c11d22a7ef5f2ab50ed9af2274018bdbf74936aaa14ad6fbf4086323fc91"
+    },
+    {
+      "path": "output\\acc\\tests\\test_context.py",
+      "sha256": "4600b96060aa10446b2784b109caadf3ce52b2c22fd3d49cfb3fe79890645f82"
+    },
+    {
+      "path": "output\\acc\\tests\\test_inventory.py",
+      "sha256": "ba6fea5209f44f5baa648f2f74852270e6cc7c19d728b2d1d6e546dc4d4daa0e"
+    },
+    {
+      "path": "output\\acc\\tests\\test_precheck.py",
+      "sha256": "7b8ad78c5d6e9f8912c754de0e8ac96d886ce862bdf30ca90fbea731efff6ea6"
+    }
+  ]
+}

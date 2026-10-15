@@ -1,0 +1,196 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ids xmlns="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+    <info>
+        <title>IBC 2021 Chapter 11 ACC project information requirements</title>
+        <version>0.1.0</version>
+        <description>Proposed IFC4 data contract. Geometric, topological and legal checks are outside IDS.</description>
+        <purpose>Identify missing data before ACC evaluation.</purpose>
+    </info>
+    <specifications>
+        <specification name="Door accessibility declaration" ifcVersion="IFC4" identifier="ibc2021-1105.1" description="Proposed project information requirement; evidence: ibc2021-1105.1" instructions="A missing property is an information gap (UNKNOWN) for ACC; IDS does not prove regulatory compliance.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCDOOR</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <property dataType="IFCBOOLEAN" cardinality="required">
+                    <propertySet>
+                        <simpleValue>ACC_Accessibility</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>Accessible</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCLABEL" cardinality="required">
+                    <propertySet>
+                        <simpleValue>ACC_Accessibility</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>EntranceType</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="PUBLIC" />
+                            <xs:enumeration value="TENANT" />
+                            <xs:enumeration value="SERVICE" />
+                            <xs:enumeration value="OTHER" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="Space use classification" ifcVersion="IFC4" identifier="ibc2021-1110.2" description="Proposed project information requirement; evidence: ibc2021-1110.2" instructions="A missing property is an information gap (UNKNOWN) for ACC; IDS does not prove regulatory compliance.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL" cardinality="required">
+                    <propertySet>
+                        <simpleValue>ACC_Accessibility</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>UseCode</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="TOILET_ROOM" />
+                            <xs:enumeration value="PARKING_SPACE" />
+                            <xs:enumeration value="DWELLING_UNIT" />
+                            <xs:enumeration value="SLEEPING_UNIT" />
+                            <xs:enumeration value="OTHER" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="Parking space information" ifcVersion="IFC4" identifier="ibc2021-1106.2" description="Proposed project information requirement; evidence: ibc2021-1106.2" instructions="A missing property is an information gap (UNKNOWN) for ACC; IDS does not prove regulatory compliance.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+                <property>
+                    <propertySet>
+                        <simpleValue>ACC_Accessibility</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>UseCode</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>PARKING_SPACE</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+                <property dataType="IFCIDENTIFIER" cardinality="required">
+                    <propertySet>
+                        <simpleValue>ACC_Accessibility</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>ParkingFacilityId</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCBOOLEAN" cardinality="required">
+                    <propertySet>
+                        <simpleValue>ACC_Accessibility</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>Accessible</simpleValue>
+                    </baseName>
+                </property>
+                <property dataType="IFCBOOLEAN" cardinality="required">
+                    <propertySet>
+                        <simpleValue>ACC_Accessibility</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>ParkingIsVanAccessible</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="Dwelling unit information" ifcVersion="IFC4" identifier="ibc2021-1108.6.2.2.1" description="Proposed project information requirement; evidence: ibc2021-1108.6.2.2.1" instructions="A missing property is an information gap (UNKNOWN) for ACC; IDS does not prove regulatory compliance.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSPACE</simpleValue>
+                    </name>
+                </entity>
+                <property>
+                    <propertySet>
+                        <simpleValue>ACC_Accessibility</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>UseCode</simpleValue>
+                    </baseName>
+                    <value>
+                        <simpleValue>DWELLING_UNIT</simpleValue>
+                    </value>
+                </property>
+            </applicability>
+            <requirements>
+                <property dataType="IFCLABEL" cardinality="required">
+                    <propertySet>
+                        <simpleValue>ACC_Accessibility</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>UnitType</simpleValue>
+                    </baseName>
+                    <value>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="ACCESSIBLE" />
+                            <xs:enumeration value="TYPE_A" />
+                            <xs:enumeration value="TYPE_B" />
+                            <xs:enumeration value="NONE" />
+                        </xs:restriction>
+                    </value>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="Ramp accessibility declaration" ifcVersion="IFC4" identifier="ibc2021-1104.4" description="Proposed project information requirement; evidence: ibc2021-1104.4" instructions="A missing property is an information gap (UNKNOWN) for ACC; IDS does not prove regulatory compliance.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCRAMP</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <property dataType="IFCBOOLEAN" cardinality="required">
+                    <propertySet>
+                        <simpleValue>ACC_Accessibility</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>Accessible</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+        <specification name="Stair accessibility declaration" ifcVersion="IFC4" identifier="ibc2021-1104.4" description="Proposed project information requirement; evidence: ibc2021-1104.4" instructions="A missing property is an information gap (UNKNOWN) for ACC; IDS does not prove regulatory compliance.">
+            <applicability minOccurs="0" maxOccurs="unbounded">
+                <entity>
+                    <name>
+                        <simpleValue>IFCSTAIR</simpleValue>
+                    </name>
+                </entity>
+            </applicability>
+            <requirements>
+                <property dataType="IFCBOOLEAN" cardinality="required">
+                    <propertySet>
+                        <simpleValue>ACC_Accessibility</simpleValue>
+                    </propertySet>
+                    <baseName>
+                        <simpleValue>Accessible</simpleValue>
+                    </baseName>
+                </property>
+            </requirements>
+        </specification>
+    </specifications>
+</ids>

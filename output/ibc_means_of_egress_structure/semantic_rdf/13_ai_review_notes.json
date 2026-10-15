@@ -1,0 +1,12 @@
+{
+  "status": "deterministic_validation_complete_expert_review_required",
+  "ai_tokens_used": true,
+  "token_count": null,
+  "legal_expert_approved": false,
+  "review_queue_count": 855,
+  "limitations": [
+    "Lexical numeric values are candidates, not executable thresholds.",
+    "Tables, nested lists, conditions and exceptions need human semantic review.",
+    "OWL-RL sanity checks do not certify legal consistency."
+  ]
+}

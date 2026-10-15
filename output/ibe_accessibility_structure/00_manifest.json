@@ -1,0 +1,25 @@
+{
+  "pipeline": "IBC Accessibility PDF structure extraction, stages 1-9",
+  "created_at_utc": "2026-10-08T14:35:59.816903+00:00",
+  "input": "D:\\00_SL1008\\IBE2021_11Accessibility.pdf",
+  "output": "D:\\00_SL1008\\output\\ibe_accessibility_structure",
+  "ai_usage_policy": {
+    "stages_1_to_9_extraction": "No external AI API; deterministic local Python/PyMuPDF",
+    "visual_qa": "AI-assisted only after deterministic extraction, recorded separately in execution report",
+    "semantic_parsing": "Not performed (stage 10 excluded)"
+  },
+  "artifacts": [
+    "01_raw_layout.json",
+    "02_layout_analysis.json",
+    "03_structured_document.json",
+    "04_validation_report.json",
+    "05_schema_validation.json",
+    "06_ai_review_notes.json",
+    "07_execution_report.md",
+    "structured_document.schema.json",
+    "qa_contact_sheet_1.png",
+    "qa_contact_sheet_2.png",
+    "qa_contact_sheet_3.png",
+    "qa_pages/"
+  ]
+}

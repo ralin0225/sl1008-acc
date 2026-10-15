@@ -1,0 +1,155 @@
+{
+  "schema_version": "0.1.0",
+  "is_synthetic": false,
+  "note": "Blank review template; does not contain model facts or approvals",
+  "facts_by_rule": {
+    "parking-minimum": {
+      "model_evidence": null,
+      "scope_id": null,
+      "inventory_kind": "parking_facility_total_and_accessible_spaces",
+      "applicable": null,
+      "applicability_evidence": null,
+      "inventory_complete": null,
+      "accessible_design_verified": null,
+      "accessible_design_evidence": null,
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "676409a003c7399d1ced1cadbfc2c9fd2298a8d01cfae5b5951ca40911f1098b",
+        "definition_sha256": "289cf49985c166b445e7780823f4e55ea67fa8f3699ab10a7ff067238b149657"
+      },
+      "total": null,
+      "accessible": null
+    },
+    "van-parking-minimum": {
+      "model_evidence": null,
+      "scope_id": null,
+      "inventory_kind": "accessible_parking_and_van_accessible_spaces",
+      "applicable": null,
+      "applicability_evidence": null,
+      "inventory_complete": null,
+      "accessible_design_verified": null,
+      "accessible_design_evidence": null,
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "99bacb364ff1534162a95f91673367737465a9da09ea5a61bd0dc34a24c0a341",
+        "definition_sha256": "bf6867be1b1171bac5e3d05307d214ad043917a7d805d96d98af4b0efa0465dc"
+      },
+      "total": null,
+      "accessible": null
+    },
+    "public-entrance-minimum": {
+      "model_evidence": null,
+      "scope_id": null,
+      "inventory_kind": "public_entrances_and_accessible_public_entrances",
+      "applicable": null,
+      "applicability_evidence": null,
+      "inventory_complete": null,
+      "accessible_design_verified": null,
+      "accessible_design_evidence": null,
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "4af7ca4462c5f667a91a29f9d753a8a7a2f274760334b9928e37ce1fc2021402",
+        "definition_sha256": "d4e0fbe8666003d9f3b6618cf10c8cb007da404509b77250c7b79993f132907f"
+      },
+      "total": null,
+      "accessible": null
+    },
+    "tenant-entrance-minimum": {
+      "model_evidence": null,
+      "scope_id": null,
+      "inventory_kind": "one_tenant_accessible_entrances",
+      "applicable": null,
+      "applicability_evidence": null,
+      "inventory_complete": null,
+      "accessible_design_verified": null,
+      "accessible_design_evidence": null,
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "864b618676ee4033dd6cfb871fc2cebfd48def72c7cd847e2c673c2904687566",
+        "definition_sha256": "3a139c8c5d30d5186f97fd6e1294ba1ad260c18a0c9d40323759b66604e54bd5"
+      },
+      "accessible": null
+    },
+    "type-a-unit-minimum": {
+      "model_evidence": null,
+      "scope_id": null,
+      "inventory_kind": "reviewed_site_units_and_type_a_units",
+      "applicable": null,
+      "applicability_evidence": null,
+      "inventory_complete": null,
+      "accessible_design_verified": null,
+      "accessible_design_evidence": null,
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "8083af70749f51f0f393c98168b25c8f817477f85c90b2779ece9a7f019f650d",
+        "definition_sha256": "6fd3e603f530b1a16a853d481ab664de229f3aa4dc1b8ddc0fecc1ed4ed06c1b"
+      },
+      "total": null,
+      "accessible": null
+    },
+    "site-route-connectivity": {
+      "model_evidence": null,
+      "scope_id": null,
+      "inventory_kind": "reviewed_site_accessible_targets_and_routes",
+      "applicable": null,
+      "applicability_evidence": null,
+      "inventory_complete": null,
+      "accessible_design_verified": null,
+      "accessible_design_evidence": null,
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "69a03ec44fd123f8136232dbad9372f70d6f61fa7773c4ed13b55de8605d122a",
+        "definition_sha256": "958304d338140893e7a4388212c2bd5996e55997ad81fd8e374bebaec563eb00"
+      },
+      "nodes": null,
+      "edges": null,
+      "targets": null
+    },
+    "required-accessibility-pset": {
+      "model_evidence": null,
+      "scope_id": null,
+      "inventory_kind": null,
+      "applicable": null,
+      "applicability_evidence": null,
+      "inventory_complete": null,
+      "accessible_design_verified": null,
+      "accessible_design_evidence": null,
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "97b9eebace0cf8c3a3456174f82c5dafd03ac33986685f24dfa2d3e6b62dc37e",
+        "definition_sha256": "416a9222b74e5e7798693fb265e0c7eb4078f8f219bf36a429305f13eb5d9bac"
+      }
+    },
+    "space-use-classification": {
+      "model_evidence": null,
+      "scope_id": null,
+      "inventory_kind": null,
+      "applicable": null,
+      "applicability_evidence": null,
+      "inventory_complete": null,
+      "accessible_design_verified": null,
+      "accessible_design_evidence": null,
+      "scope_review": {
+        "resolution": "PENDING",
+        "reviewer": null,
+        "rationale": null,
+        "source_sha256": "81b83000beb0585a9240cffe3ba1dfeb6a460b3fcd3075f17cf0e53240b0e71c",
+        "definition_sha256": "43a204373c74269e47898f8e7e02720ed7e3bbf6b970d912c3b1c3afc60690a5"
+      }
+    }
+  }
+}

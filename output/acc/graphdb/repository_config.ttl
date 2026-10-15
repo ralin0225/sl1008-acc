@@ -1,0 +1,23 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rep: <http://www.openrdf.org/config/repository#> .
+@prefix sr: <http://www.openrdf.org/config/repository/sail#> .
+@prefix sail: <http://www.openrdf.org/config/sail#> .
+@prefix graphdb: <http://www.ontotext.com/config/graphdb#> .
+[] a rep:Repository ;
+    rep:repositoryID "ibc2021-accessibility" ;
+    rdfs:label "IBC 2021 Chapter 11 Accessibility - auditable candidate knowledge graph" ;
+    rep:repositoryImpl [
+        rep:repositoryType "graphdb:SailRepository" ;
+        sr:sailImpl [
+            sail:sailType "graphdb:Sail" ;
+            graphdb:ruleset "empty" ;
+            graphdb:disable-sameAs "true" ;
+            graphdb:enable-context-index "true" ;
+            graphdb:enablePredicateList "true" ;
+            graphdb:enable-literal-index "true" ;
+            graphdb:repository-type "file-repository" ;
+            graphdb:storage-folder "storage" ;
+            graphdb:entity-index-size "100000" ;
+            graphdb:read-only "false"
+        ]
+    ] .

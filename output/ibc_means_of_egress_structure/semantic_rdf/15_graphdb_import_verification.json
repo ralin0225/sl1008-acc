@@ -1,0 +1,55 @@
+{
+  "source_file": "D:\\00_SL1008\\output\\ibc_means_of_egress_structure\\semantic_rdf\\11_combined_graph.trig",
+  "source_sha256": "34c149ffda53bf140e24e98378396700aaeabe28f879519f3faf1304587b889b",
+  "repository": "ibc2021-accessibility",
+  "chapter": 10,
+  "quad_count": 33518,
+  "exact_quad_match": true,
+  "chapter11_counts_preserved": true,
+  "graph_counts": [
+    {
+      "g": {
+        "type": "uri",
+        "value": "https://example.org/ibc/2021/documentGraph"
+      },
+      "n": {
+        "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+        "type": "literal",
+        "value": "2664"
+      }
+    },
+    {
+      "g": {
+        "type": "uri",
+        "value": "https://example.org/ibc/2021/entityGraph"
+      },
+      "n": {
+        "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+        "type": "literal",
+        "value": "6984"
+      }
+    },
+    {
+      "g": {
+        "type": "uri",
+        "value": "https://example.org/ibc/2021/chapter10/entityGraph"
+      },
+      "n": {
+        "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+        "type": "literal",
+        "value": "23592"
+      }
+    },
+    {
+      "g": {
+        "type": "uri",
+        "value": "https://example.org/ibc/2021/chapter10/documentGraph"
+      },
+      "n": {
+        "datatype": "http://www.w3.org/2001/XMLSchema#integer",
+        "type": "literal",
+        "value": "9926"
+      }
+    }
+  ]
+}

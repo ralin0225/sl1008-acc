@@ -1,0 +1,9 @@
+{
+  "repository": "User-provided local file",
+  "path": "C:\\Users\\dyp\\Downloads\\Duplex.ifc",
+  "bytes": 2380763,
+  "sha256": "b347a2c8aa8fff6db896a4417a9c50c22ac0ccd7c5cfc22b99b8d29336c606ed",
+  "schema": "IFC2X3",
+  "model_modified": false,
+  "license_note": "User-provided test input; no upstream license or source inferred."
+}

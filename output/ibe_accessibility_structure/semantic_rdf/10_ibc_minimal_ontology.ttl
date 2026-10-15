@@ -1,0 +1,147 @@
+@prefix ibco: <https://example.org/ibc/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ibco:AccessibleEntrance a owl:Class ;
+    rdfs:subClassOf ibco:DomainConcept .
+
+ibco:AccessibleRoute a owl:Class ;
+    rdfs:subClassOf ibco:DomainConcept .
+
+ibco:AccessibleUnit a owl:Class ;
+    rdfs:subClassOf ibco:DomainConcept .
+
+ibco:AssistiveListeningSystem a owl:Class ;
+    rdfs:subClassOf ibco:DomainConcept .
+
+ibco:AtomicRule a owl:Class ;
+    rdfs:subClassOf ibco:BuildingCodeEntity .
+
+ibco:BathingRoom a owl:Class ;
+    rdfs:subClassOf ibco:DomainConcept .
+
+ibco:BuildingOrFacility a owl:Class ;
+    rdfs:subClassOf ibco:DomainConcept .
+
+ibco:Chapter a owl:Class ;
+    rdfs:subClassOf ibco:BuildingCodeEntity .
+
+ibco:Condition a owl:Class ;
+    rdfs:subClassOf ibco:BuildingCodeEntity .
+
+ibco:Document a owl:Class ;
+    rdfs:subClassOf ibco:BuildingCodeEntity .
+
+ibco:DwellingUnit a owl:Class ;
+    rdfs:subClassOf ibco:DomainConcept .
+
+ibco:Exception a owl:Class ;
+    rdfs:subClassOf ibco:BuildingCodeEntity .
+
+ibco:ListItem a owl:Class ;
+    rdfs:subClassOf ibco:BuildingCodeEntity .
+
+ibco:Measurement a owl:Class ;
+    rdfs:subClassOf ibco:BuildingCodeEntity .
+
+ibco:ParkingSpace a owl:Class ;
+    rdfs:subClassOf ibco:DomainConcept .
+
+ibco:PassengerLoadingZone a owl:Class ;
+    rdfs:subClassOf ibco:DomainConcept .
+
+ibco:Provision a owl:Class ;
+    rdfs:subClassOf ibco:BuildingCodeEntity .
+
+ibco:Requirement a owl:Class ;
+    rdfs:subClassOf ibco:BuildingCodeEntity .
+
+ibco:Section a owl:Class ;
+    rdfs:subClassOf ibco:BuildingCodeEntity .
+
+ibco:Signage a owl:Class ;
+    rdfs:subClassOf ibco:DomainConcept .
+
+ibco:SleepingUnit a owl:Class ;
+    rdfs:subClassOf ibco:DomainConcept .
+
+ibco:Table a owl:Class ;
+    rdfs:subClassOf ibco:BuildingCodeEntity .
+
+ibco:ToiletRoom a owl:Class ;
+    rdfs:subClassOf ibco:DomainConcept .
+
+ibco:TypeAUnit a owl:Class ;
+    rdfs:subClassOf ibco:DomainConcept .
+
+ibco:TypeBUnit a owl:Class ;
+    rdfs:subClassOf ibco:DomainConcept .
+
+ibco:WheelchairSpace a owl:Class ;
+    rdfs:subClassOf ibco:DomainConcept .
+
+ibco:appliesTo a owl:ObjectProperty .
+
+ibco:bbox a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+ibco:confidence a owl:DatatypeProperty ;
+    rdfs:range xsd:decimal .
+
+ibco:hasAtomicRule a owl:ObjectProperty .
+
+ibco:hasChild a owl:ObjectProperty .
+
+ibco:hasCondition a owl:ObjectProperty .
+
+ibco:hasException a owl:ObjectProperty .
+
+ibco:hasMeasurement a owl:ObjectProperty .
+
+ibco:heading a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+ibco:label a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+ibco:modality a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+ibco:operator a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+ibco:partOf a owl:ObjectProperty .
+
+ibco:precedes a owl:ObjectProperty .
+
+ibco:references a owl:ObjectProperty .
+
+ibco:reviewStatus a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+ibco:ruleType a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+ibco:sourceNode a owl:ObjectProperty .
+
+ibco:sourcePage a owl:DatatypeProperty ;
+    rdfs:range xsd:integer .
+
+ibco:statementType a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+ibco:text a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+ibco:unitCode a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+ibco:value a owl:DatatypeProperty ;
+    rdfs:range xsd:decimal .
+
+ibco:BuildingCodeEntity a owl:Class .
+
+ibco:DomainConcept a owl:Class ;
+    rdfs:subClassOf ibco:BuildingCodeEntity .
+

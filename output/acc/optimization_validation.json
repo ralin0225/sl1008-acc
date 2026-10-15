@@ -1,0 +1,108 @@
+{
+  "timestamp_utc": "2026-10-13T11:11:29.548041+00:00",
+  "python_tests": {
+    "passed": 35,
+    "log": "optimization_python_tests.log"
+  },
+  "node_tests": {
+    "passed": 18,
+    "log": "optimization_node_tests.log"
+  },
+  "api_smoke_tests": [
+    {
+      "case": "invalid model/origin/rule set",
+      "status": 400
+    },
+    {
+      "case": "invalid model/origin/rule set",
+      "status": 403
+    },
+    {
+      "case": "invalid model/origin/rule set",
+      "status": 400
+    },
+    {
+      "case": "repeatable real model runs and retained history",
+      "status": 200,
+      "run_ids": [
+        "a2b0124a7b97482c907849fe2f7474ad",
+        "a81734d072ee4472b9832c00ed9ef187"
+      ],
+      "input_sha256": "2a13eec2637ff06d462b3bad110526f5c4e3412c8a9363283bed24d3b6936702"
+    }
+  ],
+  "browser_verified": [
+    "model switching",
+    "element -> all results",
+    "result -> GlobalId highlight and Why/What/Where",
+    "source PDF excerpt 13/original 316",
+    "English/Chinese labels",
+    "candidate chapter filters",
+    "geometry failure metadata",
+    "Python rerun",
+    "history and current run switching",
+    "narrow layout and 1440x1000 desktop layout"
+  ],
+  "models": [
+    {
+      "id": "ifcopenhouse",
+      "sha256": "71c9466bf02306be58d45b77d738541a0e7410767960b5eed1cf85737dfa34c9",
+      "matches_fixed_source": true,
+      "records": 48,
+      "meshes": 37,
+      "geometry_failures": [
+        "3g46_woBL6sugXeY5_WP6n",
+        "3xUPAVO39FGgNkCUQqf4JV"
+      ],
+      "report_summary": {
+        "rule_count": 9,
+        "instance_count": 9,
+        "PASS": 0,
+        "FAIL": 0,
+        "NOT CHECKABLE": 9,
+        "NOT_APPLICABLE": 0,
+        "completed_determination_rate": 0.0,
+        "determined_pass_rate": null
+      },
+      "latest_run_id": "812d16df05e2416296d28c721227aae4"
+    },
+    {
+      "id": "buildingsmart-simple-scene",
+      "sha256": "8790a1e193e82b8e7e7f337ec2633cd40f2120590317a1443503a25b079e2e80",
+      "matches_fixed_source": true,
+      "records": 22,
+      "meshes": 14,
+      "geometry_failures": [],
+      "report_summary": {
+        "rule_count": 9,
+        "instance_count": 9,
+        "PASS": 0,
+        "FAIL": 0,
+        "NOT CHECKABLE": 9,
+        "NOT_APPLICABLE": 0,
+        "completed_determination_rate": 0.0,
+        "determined_pass_rate": null
+      },
+      "latest_run_id": "c95635260b1b42e582e9f1f43ae35c4d"
+    }
+  ],
+  "chapter_entries": 1499,
+  "atomic_rule_execution_ready_count": 0,
+  "global_contract_approved_count": 0,
+  "ai_tokens_per_stage": "not measurable",
+  "limitations": [
+    "No real project approvals",
+    "No BCF exporter in this phase",
+    "No derived clear-width or route geometry algorithm",
+    "No calibrated precision/recall claim"
+  ],
+  "preview_file": "optimization_viewer_preview.jpg",
+  "local_viewer_url": "http://127.0.0.1:8766/",
+  "implementation_hashes": {
+    "src\\compliance_runner.py": "df49b72b022e00cd775ebeb10aa593953f29b3609e2f9fdfaf601e15c55e34d0",
+    "src\\ifc_requirements.py": "720710c58b1eb9fc37c52578b813cb44cbf54855054c32e6cf7eb12324a34378",
+    "executable_rule_contracts.json": "7cb555d83584f89ec8d7177434cc8acec71f215fcb0f0d9aca3bb8e9795fa710",
+    "viewer\\dist\\app.js": "67b8e8894aa389034726d43481627d53c7c1ab20e69359513af3a46cc177023b",
+    "viewer\\dist\\compliance-panel.js": "469a26bd7da67cc1ff4353671bb4329c33c23c5fa0582ab682285202a52a8c4f"
+  }
+}

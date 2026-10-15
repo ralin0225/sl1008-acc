@@ -1,0 +1,33 @@
+{
+  "scope": "AI-assisted architecture and targeted semantic QA for stages 10-12",
+  "ai_token_used": true,
+  "decisions": [
+    {
+      "finding": "A provision-level modality can be corrupted when the same structural node also contains exception text with a different modality.",
+      "action": "Added atomic-rule decomposition and stored modality, statement type, conditions, measurements and references separately for each atomic rule."
+    },
+    {
+      "finding": "Standalone enumerator fragments such as '1.' were initially emitted as empty exception rules.",
+      "action": "Filtered enumerator-only fragments from the atomic-rule layer."
+    },
+    {
+      "finding": "Free-text subjects would create excessive one-off entity URIs.",
+      "action": "Added an auditable concept-mapping layer for common accessibility concepts while retaining original subject text."
+    },
+    {
+      "finding": "SHACL initially failed because validation used only the entity graph while source-node types are defined in the document graph, and the Shape allowed only Provision sources.",
+      "action": "Validated the union of document and entity graphs and constrained sourceNode to BuildingCodeEntity, allowing provisions, list items and exceptions."
+    }
+  ],
+  "sampled_high_risk_nodes": [
+    "ibc2021-1108.4",
+    "ibc2021-1108.7.1.2",
+    "ibc2021-1108.7.4",
+    "ibc2021-1109.2.7.1",
+    "ibc2021-1110.2",
+    "ibc2021-1110.2.5",
+    "ibc2021-1110.5.2",
+    "ibc2021-1112.3"
+  ],
+  "important_boundary": "AI was used to diagnose representation errors and review samples. It did not certify legal correctness, and 86 complex semantic objects remain in the manual review queue."
+}

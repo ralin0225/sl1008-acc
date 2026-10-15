@@ -1,0 +1,318 @@
+{
+  "stages": [
+    {
+      "stage": 1,
+      "name": "原始 PDF 对齐及版面提取",
+      "tools": [
+        "PyMuPDF",
+        "Python"
+      ],
+      "ai_token_usage": {
+        "used": false,
+        "note": "AI assisted implementation across stages; no external per-stage AI API calls; exact token count unavailable"
+      },
+      "inputs": [
+        "D:\\00_SL1008\\IBC2021_10MeansOfEngress.pdf"
+      ],
+      "outputs": [
+        "00_manifest.json",
+        "01_raw_layout.json"
+      ],
+      "status": "pass",
+      "failures": [],
+      "manual_review_items": {}
+    },
+    {
+      "stage": 2,
+      "name": "页面与边栏分类",
+      "tools": [
+        "PyMuPDF",
+        "Python"
+      ],
+      "ai_token_usage": {
+        "used": false,
+        "note": "AI assisted implementation across stages; no external per-stage AI API calls; exact token count unavailable"
+      },
+      "inputs": [
+        "D:\\00_SL1008\\IBC2021_10MeansOfEngress.pdf"
+      ],
+      "outputs": [
+        "02_layout_analysis.json"
+      ],
+      "status": "pass",
+      "failures": [],
+      "manual_review_items": {}
+    },
+    {
+      "stage": 3,
+      "name": "分栏阅读顺序",
+      "tools": [
+        "PyMuPDF",
+        "Python"
+      ],
+      "ai_token_usage": {
+        "used": false,
+        "note": "AI assisted implementation across stages; no external per-stage AI API calls; exact token count unavailable"
+      },
+      "inputs": [
+        "D:\\00_SL1008\\IBC2021_10MeansOfEngress.pdf"
+      ],
+      "outputs": [
+        "02_layout_analysis.json"
+      ],
+      "status": "pass",
+      "failures": [],
+      "manual_review_items": {}
+    },
+    {
+      "stage": 4,
+      "name": "章节条款层级",
+      "tools": [
+        "PyMuPDF",
+        "Python"
+      ],
+      "ai_token_usage": {
+        "used": false,
+        "note": "AI assisted implementation across stages; no external per-stage AI API calls; exact token count unavailable"
+      },
+      "inputs": [
+        "D:\\00_SL1008\\IBC2021_10MeansOfEngress.pdf"
+      ],
+      "outputs": [
+        "03_structured_document.json"
+      ],
+      "status": "pass_with_manual_review",
+      "failures": [],
+      "manual_review_items": {
+        "structure_nodes": 577,
+        "table_candidates": 12,
+        "semantic_candidates": 855
+      }
+    },
+    {
+      "stage": 5,
+      "name": "表格候选与来源归属",
+      "tools": [
+        "PyMuPDF",
+        "Python"
+      ],
+      "ai_token_usage": {
+        "used": false,
+        "note": "AI assisted implementation across stages; no external per-stage AI API calls; exact token count unavailable"
+      },
+      "inputs": [
+        "D:\\00_SL1008\\IBC2021_10MeansOfEngress.pdf"
+      ],
+      "outputs": [
+        "03_structured_document.json"
+      ],
+      "status": "pass_with_manual_review",
+      "failures": [],
+      "manual_review_items": {
+        "structure_nodes": 577,
+        "table_candidates": 12,
+        "semantic_candidates": 855
+      }
+    },
+    {
+      "stage": 6,
+      "name": "来源行完整性验证",
+      "tools": [
+        "PyMuPDF",
+        "Python"
+      ],
+      "ai_token_usage": {
+        "used": false,
+        "note": "AI assisted implementation across stages; no external per-stage AI API calls; exact token count unavailable"
+      },
+      "inputs": [
+        "D:\\00_SL1008\\IBC2021_10MeansOfEngress.pdf"
+      ],
+      "outputs": [
+        "04_validation_report.json"
+      ],
+      "status": "pass",
+      "failures": [],
+      "manual_review_items": {}
+    },
+    {
+      "stage": 7,
+      "name": "JSON Schema 验证",
+      "tools": [
+        "PyMuPDF",
+        "Python"
+      ],
+      "ai_token_usage": {
+        "used": false,
+        "note": "AI assisted implementation across stages; no external per-stage AI API calls; exact token count unavailable"
+      },
+      "inputs": [
+        "D:\\00_SL1008\\IBC2021_10MeansOfEngress.pdf"
+      ],
+      "outputs": [
+        "05_schema_validation.json",
+        "structured_document.schema.json"
+      ],
+      "status": "pass",
+      "failures": [],
+      "manual_review_items": {}
+    },
+    {
+      "stage": 8,
+      "name": "页面渲染和联系表",
+      "tools": [
+        "PyMuPDF",
+        "Pillow",
+        "AI visual review"
+      ],
+      "ai_token_usage": {
+        "used": true,
+        "note": "AI assisted implementation across stages; no external per-stage AI API calls; exact token count unavailable"
+      },
+      "inputs": [
+        "D:\\00_SL1008\\IBC2021_10MeansOfEngress.pdf"
+      ],
+      "outputs": [
+        "qa_pages/",
+        "qa_contact_sheet_1.png",
+        "qa_contact_sheet_2.png",
+        "qa_contact_sheet_3.png",
+        "qa_contact_sheet_4.png",
+        "qa_contact_sheet_5.png",
+        "qa_contact_sheet_6.png"
+      ],
+      "status": "pass_with_manual_review",
+      "failures": [],
+      "manual_review_items": {
+        "structure_nodes": 577,
+        "table_candidates": 12,
+        "semantic_candidates": 855
+      }
+    },
+    {
+      "stage": 9,
+      "name": "AI 版面审查及记录",
+      "tools": [
+        "PyMuPDF",
+        "Pillow",
+        "AI visual review"
+      ],
+      "ai_token_usage": {
+        "used": true,
+        "note": "AI assisted implementation across stages; no external per-stage AI API calls; exact token count unavailable"
+      },
+      "inputs": [
+        "D:\\00_SL1008\\IBC2021_10MeansOfEngress.pdf"
+      ],
+      "outputs": [
+        "06_ai_review_notes.json",
+        "07_execution_report.md"
+      ],
+      "status": "pass_with_manual_review",
+      "failures": [],
+      "manual_review_items": {
+        "structure_nodes": 577,
+        "table_candidates": 12,
+        "semantic_candidates": 855
+      }
+    },
+    {
+      "stage": 10,
+      "name": "语义候选及人工复核队列",
+      "tools": [
+        "RDFLib",
+        "pySHACL",
+        "OWL-RL",
+        "Python"
+      ],
+      "ai_token_usage": {
+        "used": false,
+        "note": "AI assisted implementation across stages; no external per-stage AI API calls; exact token count unavailable"
+      },
+      "inputs": [
+        "D:\\00_SL1008\\output\\ibc_means_of_egress_structure\\03_structured_document.json"
+      ],
+      "outputs": [
+        "semantic_rdf/10_semantic_candidates.json",
+        "semantic_rdf/10_semantic_validated.json",
+        "semantic_rdf/10_dsl_rules.json",
+        "semantic_rdf/10_manual_review_queue.json",
+        "semantic_rdf/10_ibc_minimal_ontology.ttl"
+      ],
+      "status": "pass_with_manual_review",
+      "failures": [],
+      "manual_review_items": {
+        "structure_nodes": 577,
+        "table_candidates": 12,
+        "semantic_candidates": 855
+      }
+    },
+    {
+      "stage": 11,
+      "name": "文档和实体 RDF 图谱",
+      "tools": [
+        "RDFLib",
+        "pySHACL",
+        "OWL-RL",
+        "Python"
+      ],
+      "ai_token_usage": {
+        "used": false,
+        "note": "AI assisted implementation across stages; no external per-stage AI API calls; exact token count unavailable"
+      },
+      "inputs": [
+        "D:\\00_SL1008\\output\\ibc_means_of_egress_structure\\03_structured_document.json"
+      ],
+      "outputs": [
+        "semantic_rdf/11_document_graph.ttl",
+        "semantic_rdf/11_entity_graph.ttl",
+        "semantic_rdf/11_combined_graph.trig",
+        "semantic_rdf/11_combined_graph.jsonld"
+      ],
+      "status": "pass",
+      "failures": [],
+      "manual_review_items": {}
+    },
+    {
+      "stage": 12,
+      "name": "SHACL、原文对齐及 OWL-RL 检查",
+      "tools": [
+        "RDFLib",
+        "pySHACL",
+        "OWL-RL",
+        "Python"
+      ],
+      "ai_token_usage": {
+        "used": false,
+        "note": "AI assisted implementation across stages; no external per-stage AI API calls; exact token count unavailable"
+      },
+      "inputs": [
+        "D:\\00_SL1008\\output\\ibc_means_of_egress_structure\\03_structured_document.json"
+      ],
+      "outputs": [
+        "semantic_rdf/12_shapes.ttl",
+        "semantic_rdf/12_shacl_results.ttl",
+        "semantic_rdf/12_owl_reasoning_report.json",
+        "semantic_rdf/12_validation_report.json"
+      ],
+      "status": "pass",
+      "failures": [],
+      "manual_review_items": {}
+    }
+  ],
+  "resolved_failures": [
+    {
+      "failure": "Missing pySHACL/OWL-RL runtime",
+      "resolution": "Installed isolated output/acc/.semantic_deps"
+    },
+    {
+      "failure": "Standalone list labels merged into text",
+      "resolution": "List labels recognized and indentation retained"
+    },
+    {
+      "failure": "Wrapped four-digit section references mistaken for list labels",
+      "resolution": "Restricted list-number pattern; source text retained"
+    }
+  ],
+  "preserved_first_passes": "output/chapter_processing_history/"
+}

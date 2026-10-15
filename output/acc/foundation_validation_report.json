@@ -1,0 +1,20 @@
+{
+  "created_at_utc": "2026-10-08T18:51:15.400886+00:00",
+  "status": "PASS",
+  "errors": [],
+  "source_rule_count": 462,
+  "scope_partition_valid": true,
+  "source_evidence_valid": true,
+  "mapping_count": 11,
+  "mapping_triples": 93,
+  "ifc4_entities_valid": true,
+  "mvp_candidate_count": 8,
+  "review_context_count": 289,
+  "rule_fingerprints_valid": true,
+  "ids_schema_valid": true,
+  "ids_traceability_valid": true,
+  "tests_run": 25,
+  "ifc_model_files": [],
+  "actual_model_compliance_evaluated": false,
+  "elapsed_seconds": 0.783
+}
