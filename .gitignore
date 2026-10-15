@@ -22,8 +22,9 @@ output/acc/graphdb/home/
 output/acc/runs/
 output/acc/reviewed_facts/
 output/acc/model_tests/
-# Viewer has its own existing Git repository and is versioned separately.
-output/acc/viewer/
+# Viewer sources are tracked in this repository; its original local metadata stays local.
+output/acc/viewer/.git/
+output/acc/viewer/.openai/
 *.pid
 *.log
 
