@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-12",
+  "python": "3.12.10",
+  "height_tests": {
+    "methods": 12,
+    "status": "passed"
+  },
+  "phase4_node_tests": {
+    "tests": 8,
+    "status": "passed"
+  },
+  "browser": {
+    "browser": "headless Microsoft Edge / Playwright",
+    "actual_xeokit_loaded": true,
+    "page_errors": [],
+    "scenarios": [
+      "legacy-demo disclosure",
+      "missing JSON no fallback",
+      "exempt separate",
+      "escaped HTML",
+      "source IFC hash mismatch"
+    ]
+  },
+  "manual_measurement": "PENDING",
+  "solibri": "NOT_PERFORMED",
+  "jira_scrum12_format": "NOT_PROVIDED",
+  "real_bca_check": "Independent named-slab intersection at engine reference only"
+}

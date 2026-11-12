@@ -1,0 +1,493 @@
+diff --git a/phase4_result_reporting/headroom_viewer/index.html b/phase4_result_reporting/headroom_viewer/index.html
+index a00306d..2e992c1 100644
+--- a/phase4_result_reporting/headroom_viewer/index.html
++++ b/phase4_result_reporting/headroom_viewer/index.html
+@@ -130,0 +131,2 @@
++    .stat-chip.exempt, .badge-exempt { background:#252b33; color:#9aa4b2; }
++    .room-card.status-exempt { border-left:3px solid #9aa4b2; }
+@@ -233,0 +236 @@
++    <p id="dataStatus" role="status" style="padding:8px 16px;color:var(--warn);font-size:12px">Loading result provenance…</p>
+@@ -254,0 +258 @@
++import {normalizeReport, buildGuidIndex, verdictStatus, formatNumber, clearanceBarPercent, escapeHtml as e} from "./result-data.js";
+@@ -314,52 +318,2 @@ model.on('error', (err) => {
+-// ─────────────────────────────────────────────────────────────────
+-//  FALLBACK DATA — same rows as results/result_sheet.json, inlined so
+-//  the demo still renders if the fetch is blocked (e.g. opened via
+-//  file://, or the network hiccups mid-presentation).
+-// ─────────────────────────────────────────────────────────────────
+-const FALLBACK_ROWS = [
+-  {
+-    entity_ids: ["0MalxD7nD24Bc1c1qVC3zt"],
+-    clause: "IBC-2021-1208.2",
+-    regulation_excerpt: "Kitchens shall have a ceiling height of not less than 2134 mm.",
+-    verdict: "fail",
+-    measured_value: { value: 1600, unit: "mm" },
+-    threshold: { value: 2134, unit: "mm" },
+-    representation_ref: "rep:kitchen6:clear_height",
+-    rendering_reference: "kitchen6_test/space-kitchen6",
+-    governing: { guid: "0MalxD7nD24Bc1c1qVC3zt", ifc_class: "IfcBeam" },
+-    measurement_geometry: { point: [-1350, 50, 1600], reference_point: [-1350, 50, 0], unit: "mm" },
+-    contributing_elements: [{ guid: "0MalxD7nD24Bc1c1qVC3zt", ifc_class: "IfcBeam" }],
+-    note: null,
+-    _room_name: "Kitchen 6",
+-    _citation: { source: "IBC 2021 §1208.2 — Ceiling height", via: "International Building Code, Chapter 12 (Interior Environment)" },
+-    _render_kind: "clearance",
+-  },
+-  {
+-    entity_ids: ["2qbOTLbCb6dhFPCRS0iax8"],
+-    clause: "IBC-2021-1208.2",
+-    regulation_excerpt: "Habitable spaces shall have a ceiling height of not less than 2134 mm.",
+-    verdict: "pass",
+-    measured_value: { value: 2600, unit: "mm" },
+-    threshold: { value: 2134, unit: "mm" },
+-    representation_ref: "rep:living1:clear_height",
+-    rendering_reference: "kitchen6_test/space-living1",
+-    governing: null,
+-    measurement_geometry: { point: [6000, 0, 2600], reference_point: [6000, 0, 0], unit: "mm" },
+-    contributing_elements: [],
+-    note: null,
+-    _room_name: "Living 1",
+-    _citation: { source: "IBC 2021 §1208.2 — Ceiling height", via: "International Building Code, Chapter 12 (Interior Environment)" },
+-    _render_kind: "clearance",
+-  },
+-];
+-
+-// ─────────────────────────────────────────────────────────────────
+-//  VERDICT → STATUS/COLOUR  (full 6-value Phase-3 enum)
+-// ─────────────────────────────────────────────────────────────────
+-function verdictStatus(v) {
+-  if (v === 'pass' || v === 'exempt') return 'pass';
+-  if (v === 'fail') return 'fail';
+-  return 'warn'; // alert / not-found / not-supported
+-}
+-const COLOR = { fail: [1, 0.2, 0.1], pass: [0.25, 0.73, 0.31], warn: [0.85, 0.62, 0.13] };
+-const CSS   = { fail: '#f85149',     pass: '#3fb950',          warn: '#d29922' };
++const COLOR = {fail:[1,0.2,0.1], pass:[0.25,0.73,0.31], warn:[0.85,0.62,0.13], exempt:[0.6,0.65,0.7]};
++const CSS = {fail:'#f85149', pass:'#3fb950', warn:'#d29922', exempt:'#9aa4b2'};
+@@ -560 +514 @@ RENDERERS.clearance = (row) => {
+-    dimSvg.appendChild(text(pillX + pillW/2, pillY + 13, `${measured} ${g.unit}`, lineColor, 11));
++    dimSvg.appendChild(text(pillX + pillW/2, pillY + 13, `${formatNumber(measured)} ${row.measured_value.unit}`, lineColor, 11));
+@@ -564,3 +518,5 @@ RENDERERS.clearance = (row) => {
+-      const actualPx   = Math.abs(by - ty);
+-      const requiredPx = actualPx * (threshold / measured);
+-      const reqY       = by - requiredPx;
++      const ref = g.reference_point || g.point;
++      const thresholdMm = threshold * (row.threshold.unit === 'm' ? 1000 : 1);
++      const requiredScreen = worldToScreen(ifcToWorld([ref[0], ref[1], ref[2] + thresholdMm]));
++      if (!requiredScreen) { frame = requestAnimationFrame(draw); return; }
++      const reqY = requiredScreen[1];
+@@ -571 +527 @@ RENDERERS.clearance = (row) => {
+-      dimSvg.appendChild(text(tpillX + tpillW/2, tpillY + 13, `${threshold} ${g.unit}`, '#d29922', 11));
++      dimSvg.appendChild(text(tpillX + tpillW/2, tpillY + 13, `${formatNumber(threshold)} ${row.threshold.unit}`, '#d29922', 11));
+@@ -576 +532 @@ RENDERERS.clearance = (row) => {
+-      dimSvg.appendChild(text(gapPillX + gapPillW/2, gapPillY + 11, `Δ ${Math.abs(gap)} ${g.unit} short`, CSS.fail));
++      dimSvg.appendChild(text(gapPillX + gapPillW/2, gapPillY + 11, `Δ ${formatNumber(Math.abs(gap))} ${row.measured_value.unit} short`, CSS.fail));
+@@ -601 +557 @@ let visibleRows = [];   // rows for the currently-selected clause
+-let guidIndex   = {};   // guid → row, built from the FULL dataset
++let guidIndex   = new Map();   // guid → row, built from the FULL dataset
+@@ -605,14 +561,26 @@ let activeCard = null;
+-fetch(JSON_PATH, { cache: 'no-store' })
+-  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+-  // Accept the v1 result sheet (a plain array) and contract v2 (rows under `results`).
+-  .then(d => { allRows = Array.isArray(d) ? d : (d.results || []); onDataReady(); })
+-  .catch(() => { allRows = FALLBACK_ROWS; onDataReady(); });
+-
+-function onDataReady() {
+-  guidIndex = {};
+-  allRows.forEach(row => {
+-    [row.entity_ids?.[0], row.governing?.guid, ...(row.contributing_elements || []).map(o => o.guid)]
+-      .filter(Boolean)
+-      .forEach(id => { guidIndex[id] = row; });
+-  });
+-  populateClauseSelect();
++const dataStatus = document.getElementById('dataStatus');
++async function loadResults() {
++  try {
++    const response = await fetch(JSON_PATH, {cache:'no-store'});
++    if (!response.ok) throw new Error(`Result sheet HTTP ${response.status}`);
++    const data = await response.json();
++    let expectedModelSha256;
++    if (!Array.isArray(data)) {
++      const source = await fetch('./kitchen6_test.ifc', {cache:'no-store'});
++      if (!source.ok) throw new Error('Configured source IFC unavailable');
++      const hash = await crypto.subtle.digest('SHA-256', await source.arrayBuffer());
++      expectedModelSha256 = [...new Uint8Array(hash)].map(b=>b.toString(16).padStart(2,'0')).join('');
++    }
++    // This bundled v1 file is known placeholder data. Explicitly disclose it.
++    const result = normalizeReport(data, {expectedModelSha256, legacyDemo:true});
++    allRows = result.rows;
++    dataStatus.textContent = result.provenance;
++    guidIndex = buildGuidIndex(allRows);
++    populateClauseSelect();
++  } catch(error) {
++    allRows = [];
++    guidIndex = new Map();
++    dataStatus.textContent = `Results unavailable: ${error.message}. No example verdicts substituted.`;
++    document.getElementById('clauseSelect').disabled = true;
++    document.getElementById('emptyState').textContent = 'Could not load verified result data.';
++  }
+@@ -619,0 +588 @@ function onDataReady() {
++loadResults();
+@@ -656,0 +626 @@ function renderSidebarList() {
++    const exempt = visibleRows.filter(r => verdictStatus(r.verdict) === 'exempt').length;
+@@ -660 +630,2 @@ function renderSidebarList() {
+-       ${warn ? `<div class="stat-chip warn">? ${warn} review</div>` : ''}`;
++       ${warn ? `<div class="stat-chip warn">? ${warn} review</div>` : ''}
++       ${exempt ? `<div class="stat-chip exempt">${exempt} exempt</div>` : ''}`;
+@@ -684,2 +655,2 @@ function renderSidebarList() {
+-    const clearClass = status === 'pass' ? 'good' : (typeof m === 'number' ? 'bad' : '');
+-    const badgeClass = { fail:'badge-fail', pass:'badge-pass', warn:'badge-warn' }[status];
++    const clearClass = status === 'pass' ? 'good' : (status === 'fail' ? 'bad' : '');
++    const badgeClass = { fail:'badge-fail', pass:'badge-pass', warn:'badge-warn', exempt:'badge-exempt' }[status];
+@@ -691 +662 @@ function renderSidebarList() {
+-             `<div class="obstruction-item">${o.ifc_class} · ${o.guid}</div>`).join('')}</div>`
++             `<div class="obstruction-item">${e(o.ifc_class)} · ${e(o.guid)}</div>`).join('')}</div>`
+@@ -694 +665 @@ function renderSidebarList() {
+-      ? `<div class="card-note">⚠ ${row.note}</div>`
++      ? `<div class="card-note">⚠ ${e(row.note)}</div>`
+@@ -701 +672 @@ function renderSidebarList() {
+-        <span class="room-name">${row._room_name || row.entity_ids[0]}</span>
++        <span class="room-name">${e(row._room_name || row.entity_ids[0])}</span>
+@@ -705,3 +676,3 @@ function renderSidebarList() {
+-        <div class="metric">Clearance<br><span class="${clearClass}">${clearText}</span></div>
+-        <div class="metric">Required<br><span>${typeof t === 'number' ? t + ' ' + row.threshold.unit : '—'}</span></div>
+-        ${row.governing ? `<div class="metric" style="grid-column:1/-1">Obstruction<br><span>${row.governing.ifc_class}</span></div>` : ''}
++        <div class="metric">Clearance<br><span class="${clearClass}">${e(clearText)}</span></div>
++        <div class="metric">Required<br><span>${typeof t === 'number' ? e(t + ' ' + row.threshold.unit) : '—'}</span></div>
++        ${row.governing ? `<div class="metric" style="grid-column:1/-1">Obstruction<br><span>${e(row.governing.ifc_class)}</span></div>` : ''}
+@@ -709 +680 @@ function renderSidebarList() {
+-      <div class="clause-line">§ ${row.clause} <span class="kind-tag">kind: ${renderKind(row)}</span></div>`;
++      <div class="clause-line">§ ${e(row.clause)} <span class="kind-tag">kind: ${e(renderKind(row))}</span></div>`;
+@@ -722,2 +693,4 @@ function selectRowByGuid(guid) {
+-  const row = guidIndex[guid];
+-  if (!row) return null;
++  const matches = guidIndex.get(guid) || [];
++  if (!matches.length) return null;
++  const current = matches.findIndex(row => row.__card && row.__card === activeCard);
++  const row = matches[(current + 1) % matches.length];
+@@ -805 +778 @@ function showDetail(row) {
+-  const barPct = (hasMeasurement && t) ? Math.min(120, Math.round(m / t * 100)) : 0;
++  const barPct = clearanceBarPercent(m, t);
+@@ -811 +784 @@ function showDetail(row) {
+-    ['Clearance',   hasMeasurement ? `${m} ${unit}` : '—'],
++    ['Clearance',   hasMeasurement ? `${formatNumber(m)} ${unit}` : '—'],
+@@ -813 +786 @@ function showDetail(row) {
+-    ['Gap',         gap !== null ? (gap >= 0 ? '+' : '') + gap + ' ' + unit : '—'],
++    ['Gap',         gap !== null ? (gap >= 0 ? '+' : '') + formatNumber(gap) + ' ' + unit : '—'],
+@@ -824 +797 @@ function showDetail(row) {
+-          <span class="detail-val ${cls}">${v}</span>
++          <span class="detail-val ${cls}">${e(v)}</span>
+@@ -831 +804 @@ function showDetail(row) {
+-          <span>0</span><span style="color:${barColor}">${m} ${unit}</span>
++          <span>0</span><span style="color:${barColor}">${formatNumber(m)} ${unit}</span>
+@@ -843,3 +816,3 @@ function showDetail(row) {
+-        <div class="reg-title">§ ${row.clause}</div>
+-        <div class="reg-body">„${row.regulation_excerpt}"</div>
+-        ${cit.source || cit.via ? `<div class="reg-source">${cit.source || ''}${cit.via ? `<br>${cit.via}` : ''}</div>` : ''}
++        <div class="reg-title">§ ${e(row.clause)}</div>
++        <div class="reg-body">„${e(row.regulation_excerpt)}"</div>
++        ${cit.source || cit.via ? `<div class="reg-source">${e(cit.source || '')}${cit.via ? `<br>${e(cit.via)}` : ''}</div>` : ''}
+@@ -847 +820 @@ function showDetail(row) {
+-      ${row.note ? `<div class="card-note">⚠ ${row.note}</div>` : ''}
++      ${row.note ? `<div class="card-note">⚠ ${e(row.note)}</div>` : ''}
+@@ -867 +840 @@ viewer.scene.input.on('mouseclicked', (coords) => {
+-    hoverTip.textContent   = `ID: ${clickedId} — no regulation applies to this element`;
++    hoverTip.textContent   = `ID: ${clickedId} — no result available for this element`;
+@@ -877 +850,2 @@ viewer.scene.input.on('mousemove', (coords) => {
+-    const row = guidIndex[id];
++    const matches = guidIndex.get(id) || [];
++    const row = matches[0];
+@@ -884 +858 @@ viewer.scene.input.on('mousemove', (coords) => {
+-      hoverTip.textContent = `${icon} ${row._room_name || id}  ·  click to inspect`;
++      hoverTip.textContent = `${icon} ${row._room_name || id}  ·  ${matches.length} result(s); click to cycle`;
+diff --git a/phase4_result_reporting/headroom_viewer/package.json b/phase4_result_reporting/headroom_viewer/package.json
+new file mode 100644
+index 0000000..aa25260
+--- /dev/null
++++ b/phase4_result_reporting/headroom_viewer/package.json
+@@ -0,0 +1 @@
++{"private":true,"type":"module","scripts":{"test":"node --test tests/*.test.mjs"}}
+diff --git a/phase4_result_reporting/headroom_viewer/result-data.js b/phase4_result_reporting/headroom_viewer/result-data.js
+new file mode 100644
+index 0000000..329f3ca
+--- /dev/null
++++ b/phase4_result_reporting/headroom_viewer/result-data.js
+@@ -0,0 +1,76 @@
++// Data boundary for Phase 4. No DOM/WebGL dependency; no verdict recomputation.
++const VERDICTS = new Set(['pass','fail','exempt','alert','not-found','not-supported']);
++const LENGTH = {mm: 1, m: 1000};
++const fail = message => { throw new Error(message); };
++export const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
++export const verdictStatus = value => value === 'exempt' ? 'exempt' : value === 'pass' || value === 'fail' ? value : 'warn';
++
++function quantity(q) {
++  if (!q || !Object.hasOwn(q, 'value')) fail('Missing quantity');
++  if (q.value !== null && (typeof q.value !== 'number' || !Number.isFinite(q.value))) fail('Invalid quantity');
++  if (![null,'mm','m','m2','count','deg'].includes(q.unit)) fail('Unsupported quantity unit');
++  return {...q};
++}
++
++export function normalizeReport(data, {expectedModelSha256, legacyDemo = false} = {}) {
++  let rows, provenance;
++  if (Array.isArray(data)) {
++    if (!legacyDemo) fail('Legacy rows have no model identity; explicit demo mode required');
++    rows = data;
++    provenance = 'DEMO: hand-written legacy rows; not engine output or human-verified evidence.';
++  } else {
++    if (!data || data.contract_version !== 2 || !Array.isArray(data.results)) fail('Invalid v2 result sheet');
++    if (!/^[a-f0-9]{64}$/.test(expectedModelSha256 || '') || data.model?.sha256 !== expectedModelSha256) fail('Result sheet does not match the configured source IFC');
++    rows = data.results;
++    const pending = Array.isArray(data.inputs) && data.inputs.some(i => i.trust_tier !== 'gold');
++    provenance = `Model-bound engine results; human verification not established.${pending ? ' Includes rules below gold trust tier.' : ''}`;
++  }
++  return {provenance, rows: rows.map(row => {
++    if (!row || !VERDICTS.has(row.verdict) || typeof row.clause !== 'string' || !row.clause.trim() || typeof row.regulation_excerpt !== 'string') fail('Invalid verdict or clause');
++    if (!Array.isArray(row.entity_ids) || row.entity_ids.some(id => typeof id !== 'string' || !id)) fail('Invalid entity identities');
++    if (row.verdict !== 'not-supported' && !row.entity_ids.length) fail('Missing target identity');
++    if (row.governing != null && (typeof row.governing.guid !== 'string' || typeof row.governing.ifc_class !== 'string')) fail('Invalid governing element');
++    if (row.contributing_elements != null && (!Array.isArray(row.contributing_elements) || row.contributing_elements.some(e => !e || typeof e.guid !== 'string' || typeof e.ifc_class !== 'string'))) fail('Invalid contributing elements');
++    const measured = quantity(row.measured_value), threshold = quantity(row.threshold);
++    // The clearance renderer computes a gap: put both quantities in the same unit.
++    if (measured.value != null && threshold.value != null && measured.unit !== threshold.unit) {
++      if (!LENGTH[measured.unit] || !LENGTH[threshold.unit]) fail('Incompatible comparison units');
++      threshold.value *= LENGTH[threshold.unit] / LENGTH[measured.unit];
++      threshold.unit = measured.unit;
++    }
++    let geometry = row.measurement_geometry;
++    if (geometry != null) {
++      if (!LENGTH[geometry.unit]) fail('Unsupported geometry unit');
++      const convert = point => {
++        if (!Array.isArray(point) || point.length !== 3 || point.some(v => typeof v !== 'number' || !Number.isFinite(v))) fail('Invalid measurement point');
++        return point.map(v => v * LENGTH[geometry.unit]);
++      };
++      geometry = {...geometry, point: convert(geometry.point), reference_point: geometry.reference_point ? convert(geometry.reference_point) : undefined, unit: 'mm'};
++    }
++    return {...row, measured_value: measured, threshold, measurement_geometry: geometry};
++  })};
++}
++
++export function buildGuidIndex(rows) {
++  const index = new Map();
++  for (const row of rows) {
++    const ids = new Set([...row.entity_ids, row.governing?.guid, ...(row.contributing_elements || []).map(e => e.guid)].filter(Boolean));
++    for (const id of ids) {
++      if (!index.has(id)) index.set(id, []);
++      index.get(id).push(row);
++    }
++  }
++  return index;
++}
++
++export function summarize(rows) {
++  const counts = {pass:0, fail:0, exempt:0, warn:0};
++  for (const row of rows) counts[verdictStatus(row.verdict)]++;
++  const decided = counts.pass + counts.fail, applicable = decided + counts.warn;
++  return {...counts, completion_rate: applicable ? decided/applicable : null, pass_rate: decided ? counts.pass/decided : null};
++}
++
++// Display rounding only; thresholds and verdicts are not changed.
++export const formatNumber = value => typeof value === 'number' ? new Intl.NumberFormat('en-US',{useGrouping:false,maximumFractionDigits:4}).format(value) : '—';
++
++export const clearanceBarPercent = (measured, threshold) => Number.isFinite(measured) && Number.isFinite(threshold) && threshold > 0 ? Math.max(0, Math.min(100, measured / (threshold * 1.2) * 100)) : 0;
+diff --git a/phase4_result_reporting/headroom_viewer/results/result_sheet.json b/phase4_result_reporting/headroom_viewer/results/result_sheet.json
+index 04732b3..08180aa 100644
+--- a/phase4_result_reporting/headroom_viewer/results/result_sheet.json
++++ b/phase4_result_reporting/headroom_viewer/results/result_sheet.json
+@@ -3 +3,3 @@
+-    "entity_ids": ["0MalxD7nD24Bc1c1qVC3zt"],
++    "entity_ids": [
++      "0MalxD7nD24Bc1c1qVC3zt"
++    ],
+@@ -5 +7 @@
+-    "regulation_excerpt": "Kitchens shall have a ceiling height of not less than 2134 mm.",
++    "regulation_excerpt": "IBC 2021 1208.2: kitchen ceiling-height subcheck; 7 ft converted exactly to 2133.6 mm.",
+@@ -7,2 +9,8 @@
+-    "measured_value": { "value": 1600, "unit": "mm" },
+-    "threshold": { "value": 2134, "unit": "mm" },
++    "measured_value": {
++      "value": 1600,
++      "unit": "mm"
++    },
++    "threshold": {
++      "value": 2133.6,
++      "unit": "mm"
++    },
+@@ -11 +19,4 @@
+-    "governing": { "guid": "0MalxD7nD24Bc1c1qVC3zt", "ifc_class": "IfcBeam" },
++    "governing": {
++      "guid": "0MalxD7nD24Bc1c1qVC3zt",
++      "ifc_class": "IfcBeam"
++    },
+@@ -13,2 +24,10 @@
+-      "point": [-1350, 50, 1600],
+-      "reference_point": [-1350, 50, 0],
++      "point": [
++        -1350,
++        50,
++        1600
++      ],
++      "reference_point": [
++        -1350,
++        50,
++        0
++      ],
+@@ -18 +37,4 @@
+-      { "guid": "0MalxD7nD24Bc1c1qVC3zt", "ifc_class": "IfcBeam" }
++      {
++        "guid": "0MalxD7nD24Bc1c1qVC3zt",
++        "ifc_class": "IfcBeam"
++      }
+@@ -20 +42 @@
+-    "note": null,
++    "note": "HAND-WRITTEN DEMO, not engine output or a completed manual measurement.",
+@@ -29 +51,3 @@
+-    "entity_ids": ["2qbOTLbCb6dhFPCRS0iax8"],
++    "entity_ids": [
++      "2qbOTLbCb6dhFPCRS0iax8"
++    ],
+@@ -31 +55 @@
+-    "regulation_excerpt": "Habitable spaces shall have a ceiling height of not less than 2134 mm.",
++    "regulation_excerpt": "IBC 2021 1208.2: ordinary habitable-space ceiling-height subcheck; 7 ft 6 in equals 2286 mm.",
+@@ -33,2 +57,8 @@
+-    "measured_value": { "value": 2600, "unit": "mm" },
+-    "threshold": { "value": 2134, "unit": "mm" },
++    "measured_value": {
++      "value": 2600,
++      "unit": "mm"
++    },
++    "threshold": {
++      "value": 2286,
++      "unit": "mm"
++    },
+@@ -39,2 +69,10 @@
+-      "point": [6000, 0, 2600],
+-      "reference_point": [6000, 0, 0],
++      "point": [
++        6000,
++        0,
++        2600
++      ],
++      "reference_point": [
++        6000,
++        0,
++        0
++      ],
+@@ -44 +82 @@
+-    "note": null,
++    "note": "HAND-WRITTEN DEMO, not engine output or a completed manual measurement.",
+diff --git a/phase4_result_reporting/headroom_viewer/tests/result-data.test.mjs b/phase4_result_reporting/headroom_viewer/tests/result-data.test.mjs
+new file mode 100644
+index 0000000..f8fbfe4
+--- /dev/null
++++ b/phase4_result_reporting/headroom_viewer/tests/result-data.test.mjs
+@@ -0,0 +1,54 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import {normalizeReport, buildGuidIndex, summarize, verdictStatus, escapeHtml, formatNumber, clearanceBarPercent} from '../result-data.js';
++const sha = 'a'.repeat(64);
++const row = (extra={}) => ({entity_ids:['A','B'],clause:'IBC2021-1208.2',regulation_excerpt:'Source text',verdict:'pass',measured_value:{value:2.3,unit:'m'},threshold:{value:2286,unit:'mm'}, ...extra});
++const sheet = rows => ({contract_version:2,model:{sha256:sha},inputs:[{trust_tier:'quarantine'}],results:rows});
++const options = {expectedModelSha256:sha};
++
++test('v2 model identity and pending-rule disclosure', () => {
++  const result = normalizeReport(sheet([row()]),options);
++  assert.match(result.provenance,/below gold/);
++  assert.equal(result.rows[0].threshold.unit,'m');
++  assert.equal(result.rows[0].threshold.value,2.286);
++  assert.equal(result.rows[0].verdict,'pass');
++  assert.throws(()=>normalizeReport(sheet([row()]),{expectedModelSha256:'b'.repeat(64)}));
++  assert.throws(()=>normalizeReport(sheet([row()])));
++});
++test('legacy array requires explicit demo provenance', () => {
++  assert.throws(()=>normalizeReport([row()]));
++  assert.match(normalizeReport([row()],{legacyDemo:true}).provenance,/DEMO/);
++});
++test('all targets and multiple rules survive reverse indexing', () => {
++  const a=row(), b=row({clause:'second rule',governing:{guid:'C',ifc_class:'IfcBeam'},contributing_elements:[{guid:'B',ifc_class:'IfcSpace'}]});
++  const index=buildGuidIndex([a,b]);
++  assert.deepEqual(index.get('B'),[a,b]);
++  assert.deepEqual(index.get('C'),[b]);
++});
++test('exempt and undecided never counted as pass', () => {
++  const counts=summarize(['pass','fail','exempt','alert','not-found','not-supported'].map(verdict=>row({verdict})));
++  assert.deepEqual(counts,{pass:1,fail:1,exempt:1,warn:3,completion_rate:0.4,pass_rate:0.5});
++  assert.equal(verdictStatus('exempt'),'exempt');
++  assert.equal(summarize([row({verdict:'exempt'})]).pass_rate,null);
++});
++test('geometry units convert independently from quantities', () => {
++  const r=normalizeReport(sheet([row({measurement_geometry:{point:[1,2,3],reference_point:[1,2,0],unit:'m'}})]),options).rows[0];
++  assert.deepEqual(r.measurement_geometry.point,[1000,2000,3000]);
++  assert.equal(r.measurement_geometry.unit,'mm');
++});
++test('invalid shape, verdict, quantities, identities and points fail visibly', () => {
++  for(const bad of [{verdict:'unknown'},{entity_ids:[]},{governing:{}},{contributing_elements:[null]},{measured_value:{value:Infinity,unit:'mm'}},{threshold:{value:1,unit:'count'}},{measurement_geometry:{point:[0,NaN,0],unit:'mm'}}]) {
++    assert.throws(()=>normalizeReport(sheet([row(bad)]),options));
++  }
++  assert.throws(()=>normalizeReport({results:[]},options));
++});
++test('imported text cannot become HTML markup',()=>{
++  assert.equal(escapeHtml('<img onerror="bad">&\''),'&lt;img onerror=&quot;bad&quot;&gt;&amp;&#39;');
++});
++
++test('display rounding and the 120-percent bar use the same threshold scale',()=>{
++ assert.equal(formatNumber(1600-2133.6),'-533.6');
++ assert.ok(Math.abs(clearanceBarPercent(2286,2286)-100/1.2)<1e-10);
++ assert.equal(clearanceBarPercent(2400,2000),100);
++ assert.equal(clearanceBarPercent(null,null),0);
++});
+diff --git a/phase4_result_reporting/headroom_viewer/tests/viewer.browser.cjs b/phase4_result_reporting/headroom_viewer/tests/viewer.browser.cjs
+new file mode 100644
+index 0000000..9806b6f
+--- /dev/null
++++ b/phase4_result_reporting/headroom_viewer/tests/viewer.browser.cjs
+@@ -0,0 +1,50 @@
++// Set PLAYWRIGHT_MODULE to an installed Playwright package; serve the viewer on 8872.
++const {chromium}=require(process.env.PLAYWRIGHT_MODULE || 'playwright');
++const assert=require('node:assert/strict'), fs=require('node:fs'), path=require('node:path'), crypto=require('node:crypto');
++const root=path.resolve(__dirname,'..'), base=process.env.REVIEW_VIEWER_URL || 'http://127.0.0.1:8872/';
++const legacy=JSON.parse(fs.readFileSync(path.join(root,'results/result_sheet.json'),'utf8'));
++const sha=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,'kitchen6_test.ifc'))).digest('hex');
++(async()=>{
++ const browser=await chromium.launch({channel:'msedge',headless:true,args:['--enable-unsafe-swiftshader']});
++ const page=await browser.newPage({viewport:{width:1440,height:1000}}), errors=[];
++ page.on('pageerror',e=>errors.push(e.message));
++ try {
++  await page.goto(base);
++  await page.locator('#dataStatus').filter({hasText:'DEMO:'}).waitFor();
++  await page.selectOption('#clauseSelect',legacy[0].clause);
++  assert.equal(await page.locator('.room-card').count(),2);
++  await page.locator('#loader.hidden').waitFor({timeout:60000});
++  await page.locator('.room-card').first().click();
++  assert.match(await page.locator('#detailContent').innerText(),/HAND-WRITTEN DEMO/);
++  if(process.env.REVIEW_SCREENSHOT_DIR) {
++   fs.mkdirSync(process.env.REVIEW_SCREENSHOT_DIR,{recursive:true});
++   await page.screenshot({path:path.join(process.env.REVIEW_SCREENSHOT_DIR,'phase4-review.png')});
++  }
++  await page.route('**/results/result_sheet.json',r=>r.fulfill({status:404,body:'missing'}));
++  await page.reload();
++  await page.locator('#dataStatus').filter({hasText:'No example verdicts substituted'}).waitFor();
++  assert.equal(await page.locator('.room-card').count(),0);
++  assert.equal(await page.locator('#clauseSelect').isDisabled(),true);
++  const rows=[{...legacy[0],verdict:'exempt',note:'<img src=x onerror="window.injected=1">',_room_name:'<b>Room</b>'},{...legacy[1],entity_ids:[...legacy[1].entity_ids,...legacy[0].entity_ids],clause:'SECOND RULE'}];
++  const report={contract_version:2,model:{sha256:sha},inputs:[{trust_tier:'quarantine'}],results:rows};
++  await page.unroute('**/results/result_sheet.json');
++  await page.route('**/results/result_sheet.json',r=>r.fulfill({json:report}));
++  await page.reload();
++  await page.locator('#dataStatus').filter({hasText:'below gold'}).waitFor();
++  await page.selectOption('#clauseSelect',rows[0].clause);
++  assert.match(await page.locator('#statsRow').innerText(),/0 passed/);
++  assert.match(await page.locator('#statsRow').innerText(),/1 exempt/);
++  assert.equal(await page.locator('#roomList img').count(),0);
++  assert.match(await page.locator('.room-name').innerText(),/<b>Room<\/b>/);
++  await page.locator('#loader.hidden').waitFor({timeout:60000});
++  await page.locator('.room-card').click();
++  assert.equal(await page.locator('#detailContent img').count(),0);
++  assert.equal(await page.evaluate(()=>window.injected),undefined);
++  report.model.sha256='0'.repeat(64);
++  await page.reload();
++  await page.locator('#dataStatus').filter({hasText:'does not match'}).waitFor();
++  assert.equal(await page.locator('.room-card').count(),0);
++  assert.deepEqual(errors,[]);
++  console.log(JSON.stringify({legacy_demo:true,missing_data_fails_closed:true,exempt_separate:true,escaped_imports:true,model_hash_guard:true,page_errors:errors}));
++ } finally {await browser.close();}
++})().catch(e=>{console.error(e.stack);process.exit(1)});

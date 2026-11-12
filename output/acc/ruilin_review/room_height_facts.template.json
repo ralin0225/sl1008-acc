@@ -1,0 +1,33 @@
+{
+  "is_synthetic": false,
+  "code_basis": "IBC2021",
+  "model_sha256": null,
+  "target_global_id": null,
+  "measurement_basis": "finished_floor_to_finished_underside",
+  "applicability_verified": false,
+  "exceptions_reviewed": false,
+  "unresolved_exceptions": [],
+  "room_use": null,
+  "ceiling_form": null,
+  "sloped_denominator": "full_room_projected_area",
+  "surface": {
+    "representation": "rectangular_full_domain_piecewise_planar",
+    "unit": "mm",
+    "full_domain_verified": false,
+    "obstructions_resolved": false,
+    "evidence": "",
+    "source_global_ids": [],
+    "length": null,
+    "width": null,
+    "x": [],
+    "y": [],
+    "finished_floor_z": [],
+    "finished_underside_z": []
+  },
+  "review": {
+    "resolution": "PENDING",
+    "reviewer": "",
+    "evidence": "",
+    "facts_sha256": ""
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "source_commit": "439352c224e7a159e169f79760f6eeb01fb3293a",
+  "gold_standard": false,
+  "cases": [
+    {
+      "model": "BCA_[E-3-3]_v5-OBOS.ifc",
+      "model_sha256": "e0906e903387c18e21590cc8b39f86f9f61daa512a1188a615ce29a4c61224bc",
+      "rule": "ibc2021-1011.3-stair-headroom",
+      "guid": "0Pi72lxqT7rB3T2_y3sKda",
+      "governing": "0Pi72lxqT7rB3T2_y3sBTa",
+      "flight_name": "Precast Stair:Stair:327073 Run 1",
+      "slab_name": "Floor:200:327836",
+      "engine_verdict": "fail",
+      "engine_measurement_mm": 1833.8,
+      "threshold_mm": 2032.0,
+      "engine_point_mm": [
+        13923.7,
+        3121.6,
+        7800.0
+      ],
+      "engine_reference_point_mm": [
+        13923.7,
+        3121.6,
+        5966.2
+      ],
+      "automated_slab_underside_z_mm": 7800.0,
+      "automated_clearance_at_engine_reference_mm": 1833.8000000000002,
+      "automated_difference_mm": 2.2737367544323206e-13,
+      "manual_measurement_mm": null,
+      "expected_verdict": null,
+      "solibri_measurement_mm": null,
+      "review_status": "PENDING_MANUAL_MEASUREMENT",
+      "reviewer": null,
+      "limitations": "Only the named slab underside is independently intersected. Nosing line, full width, bottom extension, applicability, and absence of other obstructions remain for manual review."
+    },
+    {
+      "model": "BCA_[E-3-3]_v5-OBOS.ifc",
+      "model_sha256": "e0906e903387c18e21590cc8b39f86f9f61daa512a1188a615ce29a4c61224bc",
+      "rule": "ibc2021-1011.3-stair-headroom",
+      "guid": "0Pi72lxqT7rB3T2_y3sB$v",
+      "governing": "0Pi72lxqT7rB3T2_y3sB5E",
+      "flight_name": "Precast Stair:Stair:329643 Run 1",
+      "slab_name": "Floor:200:329398",
+      "engine_verdict": "pass",
+      "engine_measurement_mm": 2193.6,
+      "threshold_mm": 2032.0,
+      "engine_point_mm": [
+        16350.9,
+        6103.9,
+        10600.0
+      ],
+      "engine_reference_point_mm": [
+        16350.9,
+        6103.9,
+        8406.4
+      ],
+      "automated_slab_underside_z_mm": 10600.000000000002,
+      "automated_clearance_at_engine_reference_mm": 2193.600000000002,
+      "automated_difference_mm": 2.2737367544323206e-12,
+      "manual_measurement_mm": null,
+      "expected_verdict": null,
+      "solibri_measurement_mm": null,
+      "review_status": "PENDING_MANUAL_MEASUREMENT",
+      "reviewer": null,
+      "limitations": "Only the named slab underside is independently intersected. Nosing line, full width, bottom extension, applicability, and absence of other obstructions remain for manual review."
+    }
+  ]
+}

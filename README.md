@@ -47,3 +47,7 @@ Tests that reference the real example IFC files require those inputs locally. Th
 `PASS` and `FAIL` apply only to the explicitly reviewed subcheck scope. Missing applicability, incomplete model information, absent measurement semantics or unreviewed evidence produce `NOT CHECKABLE`; they are not evidence of a compliant or noncompliant building. Model information checks and candidate provision links are distinct from design compliance. No actual model is approved by synthetic tests or by merely adding an `Accessible` property.
 
 See [the ACC documentation](output/acc/README.md) for the existing pipeline, model registration and execution workflow. Historical phase reports retain the counts and limitations from the time they were generated; the branch descriptions above describe the published branch contents.
+
+## Ruilin review branch (2026-11-12)
+
+This branch adds an experimental reviewed-surface room-height evaluator, a two-case BCA manual-review preparation package, and an isolated Phase 4 viewer patch. See [the review handoff](output/acc/ruilin_review/README.md). The room-height evaluator is separate from the existing 15 contracts; manual measurements and Solibri review are still pending.

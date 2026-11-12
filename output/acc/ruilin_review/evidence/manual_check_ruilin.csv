@@ -1,0 +1,3 @@
+model,rule,guid,engine_verdict,engine_measurement_mm,threshold_mm,governing,your_measurement,expected_verdict,solibri_measurement,agree (y/n),reviewer,evidence_file,comment
+BCA_[E-3-3]_v5-OBOS.ifc,ibc2021-1011.3-stair-headroom,0Pi72lxqT7rB3T2_y3sKda,fail,1833.8,2032.0,0Pi72lxqT7rB3T2_y3sBTa,,,,,,,
+BCA_[E-3-3]_v5-OBOS.ifc,ibc2021-1011.3-stair-headroom,0Pi72lxqT7rB3T2_y3sB$v,pass,2193.6,2032.0,0Pi72lxqT7rB3T2_y3sB5E,,,,,,,
